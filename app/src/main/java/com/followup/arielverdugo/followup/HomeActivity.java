@@ -20,7 +20,6 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,8 +32,7 @@ import java.util.List;
 import static com.followup.arielverdugo.followup.R.id.textoSeccion;
 
 public class HomeActivity extends AppCompatActivity {
-
-    private EditText judios;
+    
     private SessionManager sessionManager;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
