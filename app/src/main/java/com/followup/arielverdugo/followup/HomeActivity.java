@@ -32,7 +32,7 @@ import java.util.List;
 import static com.followup.arielverdugo.followup.R.id.textoSeccion;
 
 public class HomeActivity extends AppCompatActivity {
-    
+
     private SessionManager sessionManager;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -44,15 +44,38 @@ public class HomeActivity extends AppCompatActivity {
     private Boolean imageSelected = false;
 
 
-    class RecyclerTouchListener implements RecyclerView.OnItemTouchListener{
+    @Override
+    public void onBackPressed() {
+        AlertDialog alertDialog = new AlertDialog.Builder(
+                HomeActivity.this).create();
+
+        alertDialog.setTitle("Cerrar sesión");
+        alertDialog.setMessage("¿Está seguro de que desea cerrar sesión?");
+
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Aceptar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                sessionManager.logout(HomeActivity.this);
+            }
+        });
+
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancelar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                //DO NOTHING
+            }
+        });
+
+        alertDialog.show();
+    }
+
+    class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
 
         private ClickListener clicklistener;
         private GestureDetector gestureDetector;
 
-        public RecyclerTouchListener(Context context, final RecyclerView recycleView, final ClickListener clicklistener){
+        public RecyclerTouchListener(Context context, final RecyclerView recycleView, final ClickListener clicklistener) {
 
-            this.clicklistener=clicklistener;
-            gestureDetector=new GestureDetector(context,new GestureDetector.SimpleOnGestureListener(){
+            this.clicklistener = clicklistener;
+            gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
                 @Override
                 public boolean onSingleTapUp(MotionEvent e) {
                     return false;
@@ -60,12 +83,11 @@ public class HomeActivity extends AppCompatActivity {
 
                 @Override
                 public void onLongPress(MotionEvent e) {
-                    View child=recycleView.findChildViewUnder(e.getX(),e.getY());
+                    View child = recycleView.findChildViewUnder(e.getX(), e.getY());
 
 
-
-                    if(child!=null && clicklistener!=null){
-                        clicklistener.onLongClick(child,recycleView.getChildAdapterPosition(child));
+                    if (child != null && clicklistener != null) {
+                        clicklistener.onLongClick(child, recycleView.getChildAdapterPosition(child));
                     }
                 }
             });
@@ -73,9 +95,9 @@ public class HomeActivity extends AppCompatActivity {
 
         @Override
         public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
-            View child=rv.findChildViewUnder(e.getX(),e.getY());
-            if(child!=null && clicklistener!=null && gestureDetector.onTouchEvent(e)){
-                clicklistener.onClick(child,rv.getChildAdapterPosition(child));
+            View child = rv.findChildViewUnder(e.getX(), e.getY());
+            if (child != null && clicklistener != null && gestureDetector.onTouchEvent(e)) {
+                clicklistener.onClick(child, rv.getChildAdapterPosition(child));
             }
 
             return false;
@@ -139,15 +161,15 @@ public class HomeActivity extends AppCompatActivity {
 
         switch (textoSeccion.getText().toString()) {
             case "Equipos":
-                Toast.makeText(HomeActivity.this, "Equipos", Toast.LENGTH_SHORT).show();
-                Intent intento = new Intent(HomeActivity.this,EquipoInfoActivity.class);
+                Toast.makeText(HomeActivity.this, getString(R.string.EQUIPOS_CARD_TITLE), Toast.LENGTH_SHORT).show();
+                Intent intento = new Intent(HomeActivity.this, EquipoInfoActivity.class);
                 startActivity(intento);
                 break;
             case "Jugadores":
-                Toast.makeText(HomeActivity.this, "Jugadores", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeActivity.this, getString(R.string.JUGADORES_CARD_TITLE), Toast.LENGTH_SHORT).show();
                 break;
-            case "Situación":
-                Toast.makeText(HomeActivity.this, "Situación", Toast.LENGTH_SHORT).show();
+            case "Situaciones":
+                Toast.makeText(HomeActivity.this, getString(R.string.SITUACION_CARD_TITLE), Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;
@@ -155,11 +177,11 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void manageLongClickEvent(View seccion, int posicion) {
-        TextView textoSeccion = (TextView) seccion.findViewById(R.id.textoSeccion);
+        String textoSeccion = ((TextView) seccion.findViewById(R.id.textoSeccion)).getText().toString();
 
-        switch (textoSeccion.getText().toString()) {
+        switch (textoSeccion) {
             case "Equipos":
-                Intent intento = new Intent(HomeActivity.this,EquipoInfoActivity.class);
+                Intent intento = new Intent(HomeActivity.this, EquipoInfoActivity.class);
                 startActivity(intento);
                 break;
             case "Jugadores":
@@ -176,13 +198,13 @@ public class HomeActivity extends AppCompatActivity {
     public void onClickAgregar(View v) {
         ViewGroup row = (ViewGroup) v.getParent();
         TextView textoSeccion = (TextView) row.findViewById(R.id.textoSeccion);
-        final ViewGroup popupView = (ViewGroup) getLayoutInflater().inflate(R.layout.dialog_agregar_equipo,null);
+        final ViewGroup popupView = (ViewGroup) getLayoutInflater().inflate(R.layout.dialog_agregar_equipo, null);
 
 
         switch (textoSeccion.getText().toString()) {
             case "Equipos":
 
-                escudo = (ImageView) popupView.findViewById(R.id.escudo);
+                escudo = (ImageView) popupView.findViewById(R.id.escudoNuevoEquipo);
                 escudo.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -195,7 +217,7 @@ public class HomeActivity extends AppCompatActivity {
                         pickIntent.setType("image/*");
 
                         Intent chooserIntent = Intent.createChooser(getIntent, "Elegir imagen");
-                        chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[] {pickIntent});
+                        chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{pickIntent});
 
                         //utiliza la constante INTENT_ELEGIR_IMAGEN en onActivityResult
                         startActivityForResult(chooserIntent, INTENT_ELEGIR_IMAGEN);
@@ -203,29 +225,26 @@ public class HomeActivity extends AppCompatActivity {
                 });
 
 
-
                 AlertDialog.Builder alertDialogBuilder =
                         new AlertDialog.Builder(HomeActivity.this)
                                 .setTitle("Equipo")
                                 .setPositiveButton("Agregar", new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
-                                        // capturar y gaurdadr en bd
-                                        final String NOMBRE = (((TextView)popupView.findViewById(R.id.nombreNuevoEquipo)).getText().toString());
-                                        final String ALIAS = (((TextView)popupView.findViewById(R.id.alias)).getText().toString());
-                                        final String BARRIO = (((TextView)popupView.findViewById(R.id.barrio)).getText().toString());
-                                        final String DIRECCION = (((TextView)popupView.findViewById(R.id.direccion)).getText().toString());
+                                        // capturar y guardar en bd
+                                        final String NOMBRE = (((TextView) popupView.findViewById(R.id.nombreNuevoEquipo)).getText().toString());
+                                        final String ALIAS = (((TextView) popupView.findViewById(R.id.apodoNuevoEquipo)).getText().toString());
+                                        final String BARRIO = (((TextView) popupView.findViewById(R.id.barrioNuevoEquipo)).getText().toString());
+                                        final String DOMICILIO = (((TextView) popupView.findViewById(R.id.domicilioNuevoEquipo)).getText().toString());
                                         Bitmap ESCUDO = null;
-                                        if(imageSelected) {
-                                            ESCUDO =((BitmapDrawable) ((ImageView) popupView.findViewById(R.id.escudo)).getDrawable()).getBitmap();
+                                        if (imageSelected) {
+                                            ESCUDO = ((BitmapDrawable) ((ImageView) popupView.findViewById(R.id.escudoNuevoEquipo)).getDrawable()).getBitmap();
                                         }
 
-                                        if(NOMBRE.isEmpty() || ALIAS.isEmpty() || BARRIO.isEmpty() || DIRECCION.isEmpty())
-                                        {
+                                        if (NOMBRE.isEmpty() || ALIAS.isEmpty() || BARRIO.isEmpty() || DOMICILIO.isEmpty()) {
                                             Toast.makeText(HomeActivity.this, "Datos insuficientes", Toast.LENGTH_SHORT).show();
 
-                                        }
-                                        else {
-                                            Equipo e = new Equipo(NOMBRE,ALIAS,BARRIO,DIRECCION,Utils.getByteArrayFromBitmap(ESCUDO));
+                                        } else {
+                                            Equipo e = new Equipo(NOMBRE, ALIAS, BARRIO, DOMICILIO, Utils.getByteArrayFromBitmap(ESCUDO));
                                             EquipoRepository.getInstance(HomeActivity.this).addEquipo(e);
                                             Toast.makeText(HomeActivity.this, "Equipo agregado", Toast.LENGTH_SHORT).show();
                                             dialog.dismiss();
@@ -238,7 +257,7 @@ public class HomeActivity extends AppCompatActivity {
                                     }
                                 });
                 alertDialogBuilder.setView(popupView);
-                AlertDialog alertDialog = alertDialogBuilder.show();
+                alertDialogBuilder.show();
 
                 break;
             case "Jugadores":
@@ -254,15 +273,14 @@ public class HomeActivity extends AppCompatActivity {
 
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {
             switch (requestCode) {
                 case INTENT_ELEGIR_IMAGEN:
                     Uri selectedImageUri = data.getData();
 
-                    if(selectedImageUri !=null) {
+                    if (selectedImageUri != null) {
                         try {
                             escudo.setImageBitmap(decodeUri(selectedImageUri));
                             imageSelected = true;
@@ -313,17 +331,8 @@ public class HomeActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.logout) {
-            String email = sessionManager.getEmail();
-            Toast.makeText(HomeActivity.this, "Adiós!", Toast.LENGTH_SHORT).show();
-            sessionManager.logout();
-            finish();
-            Intent i = new Intent(HomeActivity.this, Ingresar.class);
-            i.putExtra("LOGGEDOUT", true);
-            i.putExtra("EMAIL", email);
-            startActivity(i);
-
+            sessionManager.logout(this);
         }
         return true;
-
     }
 }

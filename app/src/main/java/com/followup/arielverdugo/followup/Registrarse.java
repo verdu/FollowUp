@@ -17,57 +17,39 @@ public class Registrarse extends Activity {
     private SessionManager sessionManager;
     private Button registrarse;
 
-    DatabaseHelper helper = new DatabaseHelper(this);
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrarse);
 
-        sessionManager = new SessionManager(this);
-
-
-        registrarse = (Button) findViewById(R.id.button3);
+        registrarse = (Button) findViewById(R.id.registrarBtn);
 
         registrarse.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String emailText = ((EditText) findViewById(R.id.editText4)).getText().toString();
-                String contrasenaText = ((EditText) findViewById(R.id.editText)).getText().toString();
-                String edadText = ((EditText) findViewById(R.id.editText1)).getText().toString();
-                int edad = Integer.parseInt(edadText);
-                String confirmarText = ((EditText) findViewById(R.id.editText5)).getText().toString();
-                String nombreText = ((EditText) findViewById(R.id.editText2)).getText().toString();
-                String apellidolText = ((EditText) findViewById(R.id.editText3)).getText().toString();
+                String email = ((EditText) findViewById(R.id.newEmail)).getText().toString();
+                String contrasena = ((EditText) findViewById(R.id.newContrasena)).getText().toString();
+                int edad = Integer.parseInt(((EditText) findViewById(R.id.newEdad)).getText().toString());
+                String confirmarText = ((EditText) findViewById(R.id.newContrasena2)).getText().toString();
+                String nombreText = ((EditText) findViewById(R.id.newNombre)).getText().toString();
+                String apellidolText = ((EditText) findViewById(R.id.newApellido)).getText().toString();
 
 
-                if (emailText.isEmpty() || contrasenaText.isEmpty() || confirmarText.isEmpty() || nombreText.isEmpty() || apellidolText.isEmpty() || edadText.isEmpty()) {
+                if (email.isEmpty() || contrasena.isEmpty() || confirmarText.isEmpty() || nombreText.isEmpty() || apellidolText.isEmpty() || email.isEmpty()) {
                     Toast.makeText(Registrarse.this, "Datos insuficientes", Toast.LENGTH_SHORT).show();
 
-                } else if (confirmarText.equals(contrasenaText) == true) {
-                    Usuario u = new Usuario(nombreText, apellidolText, edad, emailText, contrasenaText);
-                    UsuarioRepository.getInstance(Registrarse.this).addUsuario(u);
+                } else if (confirmarText.equals(contrasena) == true) {
+                    UsuarioRepository.getInstance(Registrarse.this).addUsuario(new Usuario(nombreText, apellidolText, edad, email, contrasena));
                     onBackPressed();
-
-                    //sessionManager.guardarEmail(emailText);
+                    sessionManager = SessionManager.getInstance(Registrarse.this);
+                    sessionManager.guardarEmail(email);
+                    Intent intento = new Intent(Registrarse.this,HomeActivity.class);
+                    intento.putExtra("email", email);
                     Toast.makeText(Registrarse.this, "Registro con éxito", Toast.LENGTH_SHORT).show();
-                    Intent intento = new Intent(Registrarse.this, HomeActivity.class);
-
                     startActivity(intento);
-
                 } else {
                     Toast.makeText(Registrarse.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
-
                 }
-
-
             }
 
         });
-
-
     }
-
-
-
-
-
 }
