@@ -16,9 +16,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Registrarse" />
-        <activity android:name=".Ingresar" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".EquipoInfoActivity" />
+        <activity android:name=".JugadorInfoActivity" />
+        <activity android:name=".SituacionInfoActivity" />
     </application>
 
 </manifest>

@@ -1,45 +1,56 @@
 package com.followup.arielverdugo.followup;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.widget.Toast;
 
 /**
  * Created by arielverdugo on 5/7/17.
  */
 
-public class SessionManager
-{
+public class SessionManager {
 
-        private SharedPreferences prefs;
+    private static SharedPreferences prefs;
+    private static SessionManager instance;
+    private static final String PREFS_NAME = "_SESSION_", EMAIL = "_EMAIL_";
 
-        private static final String PREFS_NAME = "_SESSION_", EMAIL = "_EMAIL_";
-
-        public SessionManager(Context context) {
-            prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        }
-
-        public void guardarEmail(String email) {
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.putString(EMAIL, email);
-            editor.apply();
-        }
-
-
-        public boolean estaLogueado() {
-            return !prefs.getString(EMAIL, "").isEmpty();
-        }
-
-
-        public String getEmail() {
-            return prefs.getString(EMAIL, "");
-        }
-
-        public void logout() {
-            SharedPreferences.Editor editor = prefs.edit();
-
-            editor.remove(EMAIL);
-
-            editor.apply();
-        }
+    public SessionManager(Context context) {
+        prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
     }
 
+    public static SessionManager getInstance(Context context) {
+        if (instance == null) {
+            instance = new SessionManager(context);
+        }
+        return instance;
+    }
+
+    public void guardarEmail(String email) {
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(EMAIL, email);
+        editor.apply();
+    }
+
+    public boolean estaLogueado() {
+        return !prefs.getString(EMAIL, "").isEmpty();
+    }
+
+    public String getEmail() {
+        return prefs.getString(EMAIL, "");
+    }
+
+    public void logout(Context context) {
+        SharedPreferences.Editor editor = prefs.edit();
+
+        editor.remove(EMAIL);
+
+        editor.apply();
+
+        Intent i = new Intent(context, MainActivity.class);
+        i.putExtra("LOGGEDOUT", true);
+        ((Activity) context).finish();
+        context.startActivity(i);
+    }
+}

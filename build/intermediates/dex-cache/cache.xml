@@ -2,22 +2,418 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/arielverdugo/AndroidStudioProjects/Followup/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\47219917f507122b5dc3886ee0aa6414e3424b6a\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="6603bd93df536576e553be796b47dd3fc4d5905e">
-        <dex dex="/Users/arielverdugo/AndroidStudioProjects/Followup/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_bcd31d2d331ccb58557f213128efaecf4eebea33/classes.dex" />
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_c128660a9b0993eb150c601b239ec389bbb54e9e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\9873a01b7a2fbaae0b83c908f3e9b934ab36e86e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\classes_4c0be9188a6891911bb75d6d434e31b3ae7f5ee8.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/arielverdugo/AndroidStudioProjects/Followup/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="C:\Users\Rodrigo\.android\build-cache\887860d39846c1583d32f228c54ca17786eeca93\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f771a46b67cd4f6bb6733da7f7d089058e114ffa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="aeb2d5cbf78c8288eda6659757201dcc7ab63485">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_402f5eb0a4f6c2ef404229f2c5dc063f15b56ed1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.android\build-cache\47219917f507122b5dc3886ee0aa6414e3424b6a\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_c128660a9b0993eb150c601b239ec389bbb54e9e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/arielverdugo/AndroidStudioProjects/Followup/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_bc717058a0b5adfb4c505897bebe04e88d6e24e2/classes.dex" />
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_3745f577b20e57333a99f606e0910418a30fb4f2\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\887860d39846c1583d32f228c54ca17786eeca93\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\classes_f771a46b67cd4f6bb6733da7f7d089058e114ffa.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.android\build-cache\d30274ec9bf0aca10bbf0f91404208da40270a1b\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8516fa878a5b3ab57541af7927e9af5d57564de7\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\3f1cb13924ccc5265b9ce9805e804eaab0b05bfc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\classes_51b3c7b8d439ff857426ff5cf24c4cb315cfc0d7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_66f70f5f071dcda8425c2f760f47a5fc3d0abb77.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.android\build-cache\df6ed80adbc1f35831a9d0a7d78453e5a69b4d29\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_42e26d72d33963c390409bcb946b63bb1f910201\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.android\build-cache\3020a1cff71436bd7a09ee935cbae46b1891af6e\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_e2aa050d763446a9addec7393e68bea87e85e270\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_d819ba8e4db1a0b7d84d68c5fb6e6790f82e3b30.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\3020a1cff71436bd7a09ee935cbae46b1891af6e\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_e2aa050d763446a9addec7393e68bea87e85e270.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\35d17a99065348974841b8265d0357284a56f9df\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\classes_2ef3f99539c7a8ba5a9cc4989e0675d0c5c43c60.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_d819ba8e4db1a0b7d84d68c5fb6e6790f82e3b30\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\d30274ec9bf0aca10bbf0f91404208da40270a1b\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_c01aa38aabceaae65c6ee7d32575b0b23108a624.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.android\build-cache\d30274ec9bf0aca10bbf0f91404208da40270a1b\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_c01aa38aabceaae65c6ee7d32575b0b23108a624\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\8198946dd1c2797d876f3367b0761c7a9de1ba86\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\classes_a8214bc10dfd4985fa5cae7460bd578c0b4c7d06.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.android\build-cache\35d17a99065348974841b8265d0357284a56f9df\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2ef3f99539c7a8ba5a9cc4989e0675d0c5c43c60\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.gradle\caches\modules-2\files-2.1\com.j256.ormlite\ormlite-android\5.0\1f065373aeef355dd9e2fd9854efd5ed4d54f6d\ormlite-android-5.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="01f065373aeef355dd9e2fd9854efd5ed4d54f6d">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\ormlite-android-5.0_7e3c807208bab3aaae6ceb044fcf33bee63812a0.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_66f70f5f071dcda8425c2f760f47a5fc3d0abb77\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.android\build-cache\47219917f507122b5dc3886ee0aa6414e3424b6a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9003c2b075452a00d34df7bcd20fa8d3807b2f00\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.gradle\caches\modules-2\files-2.1\com.j256.ormlite\ormlite-android\5.0\1f065373aeef355dd9e2fd9854efd5ed4d54f6d\ormlite-android-5.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="01f065373aeef355dd9e2fd9854efd5ed4d54f6d">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\ormlite-android-5.0_7e3c807208bab3aaae6ceb044fcf33bee63812a0\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\df6ed80adbc1f35831a9d0a7d78453e5a69b4d29\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\classes_42e26d72d33963c390409bcb946b63bb1f910201.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.android\build-cache\8198946dd1c2797d876f3367b0761c7a9de1ba86\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a8214bc10dfd4985fa5cae7460bd578c0b4c7d06\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\507602779828003355cd4ff316e0caec78f75467\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\classes_0100265bcba42a1c5853bd5bfd8262c7c5b86369.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\3020a1cff71436bd7a09ee935cbae46b1891af6e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\classes_2163989c5342abd95c9f520277208eaf4a98165a.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.android\build-cache\3020a1cff71436bd7a09ee935cbae46b1891af6e\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2163989c5342abd95c9f520277208eaf4a98165a\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\3f1cb13924ccc5265b9ce9805e804eaab0b05bfc\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_04104bc682e221836ac87f7915ea7be7d4de26f5.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.android\build-cache\507602779828003355cd4ff316e0caec78f75467\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0100265bcba42a1c5853bd5bfd8262c7c5b86369\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.android\build-cache\3f1cb13924ccc5265b9ce9805e804eaab0b05bfc\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_51b3c7b8d439ff857426ff5cf24c4cb315cfc0d7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.android\build-cache\3f1cb13924ccc5265b9ce9805e804eaab0b05bfc\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_04104bc682e221836ac87f7915ea7be7d4de26f5\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\d30274ec9bf0aca10bbf0f91404208da40270a1b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\classes_8516fa878a5b3ab57541af7927e9af5d57564de7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\47219917f507122b5dc3886ee0aa6414e3424b6a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\classes_9003c2b075452a00d34df7bcd20fa8d3807b2f00.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.gradle\caches\modules-2\files-2.1\com.j256.ormlite\ormlite-core\5.0\3382b8260646dd334a1b9c1b3d412fcb73d8b21\ormlite-core-5.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="03382b8260646dd334a1b9c1b3d412fcb73d8b21">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\ormlite-core-5.0_b071ab37ecec17bd7396b3427f56823056bd7e89\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.android\build-cache\9873a01b7a2fbaae0b83c908f3e9b934ab36e86e\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_36e51c73cd876531143c4c4ebfb4e786ce7c1ec6\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\9873a01b7a2fbaae0b83c908f3e9b934ab36e86e\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_36e51c73cd876531143c4c4ebfb4e786ce7c1ec6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\d6a1f475469b7df086a7d455d1f5afc72ae4155c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\classes_bcfe42986b0590de8cfaf88946b023c2cd3596e8.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.android\build-cache\57620dabeee18686671afabf012facd818ccffde\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_673a172168513c7a8f9d0245997dde79bc5fa067\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.gradle\caches\modules-2\files-2.1\com.j256.ormlite\ormlite-core\5.0\3382b8260646dd334a1b9c1b3d412fcb73d8b21\ormlite-core-5.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="03382b8260646dd334a1b9c1b3d412fcb73d8b21">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\ormlite-core-5.0_b071ab37ecec17bd7396b3427f56823056bd7e89.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\57620dabeee18686671afabf012facd818ccffde\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\classes_673a172168513c7a8f9d0245997dde79bc5fa067.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.android\build-cache\d6a1f475469b7df086a7d455d1f5afc72ae4155c\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_bcfe42986b0590de8cfaf88946b023c2cd3596e8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.android\build-cache\f5c758f91aa00d187fab5a2415d8ae8bdc468d9c\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f1841050e341e4b193213371e93d8838b8d3f4a5\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rodrigo\.android\build-cache\f5c758f91aa00d187fab5a2415d8ae8bdc468d9c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\pre-dexed\debug\classes_f1841050e341e4b193213371e93d8838b8d3f4a5.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rodrigo\.android\build-cache\9873a01b7a2fbaae0b83c908f3e9b934ab36e86e\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="C:\Users\Rodrigo\OneDrive\Copy\AndroidProjects\FollowUp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4c0be9188a6891911bb75d6d434e31b3ae7f5ee8\classes.dex" />
     </item>
 
 </items>

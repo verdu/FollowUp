@@ -1,129 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true">
 
-    tools:context="com.followup.arielverdugo.followup.Registrarse"
-    tools:layout_editor_absoluteY="81dp"
-    tools:layout_editor_absoluteX="0dp">
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="66dp"
-        android:layout_height="45dp"
-        android:hint="Edad"
-        android:layout_marginEnd="5dp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="@+id/editText4"
-        app:layout_constraintRight_toRightOf="@+id/editText4"
-        android:layout_marginTop="61dp"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="63dp"
-        app:layout_constraintLeft_toLeftOf="@+id/editText3"
-        app:layout_constraintTop_toTopOf="@+id/editText3"
-        android:layout_marginRight="5dp"
-        tools:layout_editor_absoluteY="153dp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintVertical_bias="0.555" />
-
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="0dp"
-        android:layout_height="38dp"
-        android:hint="Repetir pass"
-        android:layout_marginStart="43dp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        android:layout_marginTop="40dp"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="38dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="41dp"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="0dp"
-        android:layout_height="38dp"
-        android:hint="Contraseña"
-        tools:layout_constraintBottom_creator="1"
-        android:layout_marginStart="41dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="178dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="34dp" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="68dp"
-        android:layout_height="38dp"
-        android:hint="Email"
-        android:layout_marginStart="43dp"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        android:layout_marginEnd="47dp"
-        app:layout_constraintRight_toRightOf="@+id/editText"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="30dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="43dp"
-        android:layout_marginRight="47dp"
-        tools:layout_editor_absoluteY="227dp"
-        app:layout_constraintHorizontal_bias="0.0" />
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="76dp"
-        android:layout_height="40dp"
-        android:hint="Apellido"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="92dp"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="41dp" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="0dp"
-        android:layout_height="38dp"
-        android:hint="Nombre"
-        android:layout_marginStart="1dp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintRight_toRightOf="@+id/editText3"
-        android:layout_marginTop="27dp"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="27dp"
-        app:layout_constraintLeft_toLeftOf="@+id/editText3"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="1dp"
-        android:layout_marginRight="1dp" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"
-        android:layout_marginStart="16dp"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="25dp"
-        app:layout_constraintLeft_toRightOf="@+id/editText5"
-        android:layout_marginLeft="16dp" />
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
+
+        <!--  Name Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/newNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:hint="Nombre" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!--  Apellido Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/newApellido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:hint="Apellido" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- Email Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/newEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="Email" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!--  Name Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/newEdad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="Edad" />
+        </android.support.design.widget.TextInputLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+        <!-- Password Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/newContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="Contraseña"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- Password 2 Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/newContrasena2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="Repetir contraseña"/>
+        </android.support.design.widget.TextInputLayout>
+
+
+        <!-- Registrarse Button -->
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/registrarBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:padding="12dp"
+            android:text="Registrarse"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -41,7 +41,7 @@ public class SeccionAdapter extends RecyclerView.Adapter<SeccionAdapter.SeccionV
                                                    int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_card, parent, false);
+                .inflate(R.layout.activity_card_seccion, parent, false);
         // set the view's size, margins, paddings and layout parameters
 
         return new SeccionViewHolder(v);
