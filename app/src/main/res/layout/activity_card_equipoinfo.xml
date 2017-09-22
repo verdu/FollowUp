@@ -5,14 +5,17 @@
     android:layout_width="match_parent" android:layout_height="150dp" android:foreground="@drawable/card_foreground"
     card_view:cardCornerRadius="4dp"
     card_view:cardElevation="4dp"
-    card_view:cardUseCompatPadding="true">
+    card_view:cardUseCompatPadding="true"
+    android:id="@+id/cardViewEquipoInfo"
+    android:background="@drawable/background_selector">
+
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:clickable="true"
-        android:focusable="true"
-        android:background="@drawable/card_foreground">
+        android:background="@drawable/background_selector">
+
+
 
         <ImageView
             android:id="@+id/imagenEquipoInfo"

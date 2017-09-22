@@ -32,7 +32,7 @@ import java.util.List;
 import static com.followup.arielverdugo.followup.R.id.textoSeccion;
 
 public class HomeActivity extends AppCompatActivity {
-    
+
     private SessionManager sessionManager;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;

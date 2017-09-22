@@ -55,9 +55,4 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             e.printStackTrace();
         }
     }
-
-    public void addUsuario(Usuario u)
-    {
-
-    }
 }

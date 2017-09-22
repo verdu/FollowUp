@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/eliminar"
+        android:title="eliminar"
+        android:icon="@drawable/editar"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/modificar"
+        android:title="modificar"
+        android:icon="@drawable/eliminar"
+        app:showAsAction="ifRoom" />
+
+</menu>
