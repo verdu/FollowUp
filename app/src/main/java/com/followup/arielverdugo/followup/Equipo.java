@@ -85,6 +85,11 @@ public class Equipo {
         this.escudo = escudo;
     }
 
+    public int getId()
+    {
+        return id;
+    }
+
 
 
 }

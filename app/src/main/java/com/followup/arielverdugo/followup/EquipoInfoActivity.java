@@ -8,11 +8,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import static android.view.View.Z;
+import static com.followup.arielverdugo.followup.SeccionAdapterEquipoInfo.SeccionEquipoInfoViewHolder.posiciones;
 
 /**
  * Created by arielverdugo on 9/9/17.
@@ -26,6 +32,7 @@ public class EquipoInfoActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private int mState = 1;
 
+    private RecyclerView.Adapter lastmAdapter;
 
 
 
@@ -99,7 +106,7 @@ public class EquipoInfoActivity extends AppCompatActivity {
         mAdapter = new SeccionAdapterEquipoInfo(equipos);
         mRecyclerView.setAdapter(mAdapter);
 
-        /*
+
         RecyclerTouchListener r = new RecyclerTouchListener(this,
                 mRecyclerView, new ClickListener() {
             @Override
@@ -110,25 +117,19 @@ public class EquipoInfoActivity extends AppCompatActivity {
 
             @Override
             public void onLongClick(View view,final int position) {
-
-                manageLongClickEvent(view , position);
                 //estado del menu, ahora que es 2 como entro en el else muestra el menu
                 mState = 2;
                 //vuelve a llamar al oncreateOptionsMenu
                 invalidateOptionsMenu();
 
+
             }
         });
 
-        mRecyclerView.addOnItemTouchListener(r);*/
-
-
+        mRecyclerView.addOnItemTouchListener(r);
     }
 
-    private void manageLongClickEvent(View seccion, int posicion) {
-        View equipo = seccion.findViewById(R.id.cardViewEquipoInfo);
-        equipo.requestFocus();
-    }
+
 
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -142,10 +143,57 @@ public class EquipoInfoActivity extends AppCompatActivity {
         }
         else{
             for (int i = 0; i < menu.size(); i++)
+            {
                 menu.getItem(i).setVisible(true);
+            }
         }
 
         return true;
     }
+
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+
+        int id = 0;
+
+        List<Equipo> equipos = EquipoRepository.getInstance(this).getEquipos();
+
+        int posicionaBorrar = 0;
+        switch (item.getItemId()) {
+            case R.id.eliminar:
+                List posicionesEliminar = new ArrayList();
+
+                for (int i = 0; i < posiciones.size() ;i++){
+                    posicionesEliminar.add(posiciones.get(i));
+                }
+                //el problema es q el posiciones es global
+                for(int i = posicionesEliminar.size() - 1; i >= 0;i--) {
+
+                    posicionaBorrar = (Integer)posicionesEliminar.get(i);
+                    id = equipos.get(posicionaBorrar).getId();
+                    posiciones.remove(i);
+                    EquipoRepository.getInstance(EquipoInfoActivity.this).deleteEquipoById(id);
+                }
+                List<Equipo> equiposDefinitivos = EquipoRepository.getInstance(this).getEquipos();
+                lastmAdapter = new SeccionAdapterEquipoInfo(equiposDefinitivos);
+                mRecyclerView.setAdapter(lastmAdapter);
+                //cambio el estado para que desaparezca el menu
+                mState = 1;
+                invalidateOptionsMenu();
+
+                return true;
+
+            case R.id.editar:
+                Toast.makeText(EquipoInfoActivity.this,"Equipo editado",Toast.LENGTH_SHORT).show();
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+
+    }
+
 
 }
