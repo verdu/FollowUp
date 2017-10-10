@@ -219,17 +219,17 @@ public class HomeActivity extends AppCompatActivity {
                                             ESCUDO =((BitmapDrawable) ((ImageView) popupView.findViewById(R.id.escudo)).getDrawable()).getBitmap();
                                         }
 
-                                        if(NOMBRE.isEmpty() || ALIAS.isEmpty() || BARRIO.isEmpty() || DIRECCION.isEmpty())
+                                        /* if(NOMBRE.isEmpty() || ALIAS.isEmpty() || BARRIO.isEmpty() || DIRECCION.isEmpty())
                                         {
                                             Toast.makeText(HomeActivity.this, "Datos insuficientes", Toast.LENGTH_SHORT).show();
 
-                                        }
-                                        else {
+                                        } */
+                                        //else {
                                             Equipo e = new Equipo(NOMBRE,ALIAS,BARRIO,DIRECCION,Utils.getByteArrayFromBitmap(ESCUDO));
                                             EquipoRepository.getInstance(HomeActivity.this).addEquipo(e);
                                             Toast.makeText(HomeActivity.this, "Equipo agregado", Toast.LENGTH_SHORT).show();
                                             dialog.dismiss();
-                                        }
+                                        //}
                                     }
                                 })
                                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

@@ -39,7 +39,7 @@ public class SeccionAdapterEquipoInfo extends RecyclerView.Adapter<SeccionAdapte
         //cambie de private a static para acceder a sus valores
         static SparseBooleanArray selectedItems = new SparseBooleanArray();
 
-        static List posiciones = new ArrayList();
+        static List<Integer> posiciones = new ArrayList<Integer>();
 
         public SeccionEquipoInfoViewHolder(View v) {
             super(v);
@@ -58,24 +58,10 @@ public class SeccionAdapterEquipoInfo extends RecyclerView.Adapter<SeccionAdapte
                 public boolean onLongClick(View v) {
                     if (selectedItems.get(getAdapterPosition(), false)) {
                         selectedItems.delete(getAdapterPosition());
-
-                        //agregue desde aca
-                        int totalPosiciones = posiciones.size();
-                        for (int i = 0; i < totalPosiciones;i++) {
-                            if((Integer)posiciones.get(i) == getAdapterPosition())
-                            {
-                                posiciones.remove((Integer)posiciones.get(i));
-                            }
-                        }
-                        //hasta aca
-                        //posiciones.remove(getAdapterPosition());
                         v.setSelected(false);
                     }
                     else {
                         selectedItems.put(getAdapterPosition(), true);
-
-                        //agrego las pocisiones
-                        posiciones.add(getAdapterPosition());
                         v.setSelected(true);
 
                     }
@@ -129,10 +115,6 @@ public class SeccionAdapterEquipoInfo extends RecyclerView.Adapter<SeccionAdapte
         return equipos.size();
     }
 
-    public SparseBooleanArray getSelectedItems(SparseBooleanArray selectedItems)
-    {
-        return selectedItems;
-    }
 
 
 }

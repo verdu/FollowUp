@@ -1,7 +1,15 @@
 package com.followup.arielverdugo.followup;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,14 +19,18 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
-import static android.view.View.Z;
 import static com.followup.arielverdugo.followup.SeccionAdapterEquipoInfo.SeccionEquipoInfoViewHolder.posiciones;
+import static com.followup.arielverdugo.followup.SeccionAdapterEquipoInfo.SeccionEquipoInfoViewHolder.selectedItems;
 
 /**
  * Created by arielverdugo on 9/9/17.
@@ -34,6 +46,9 @@ public class EquipoInfoActivity extends AppCompatActivity {
 
     private RecyclerView.Adapter lastmAdapter;
 
+    private ImageView escudo;
+    public static final int INTENT_ELEGIR_IMAGEN = 1;
+    private Boolean imageSelected = false;
 
 
     class RecyclerTouchListener implements RecyclerView.OnItemTouchListener{
@@ -118,7 +133,7 @@ public class EquipoInfoActivity extends AppCompatActivity {
             @Override
             public void onLongClick(View view,final int position) {
                 //estado del menu, ahora que es 2 como entro en el else muestra el menu
-                mState = 2;
+                mState = checkIfSelectedPositions();
                 //vuelve a llamar al oncreateOptionsMenu
                 invalidateOptionsMenu();
 
@@ -128,6 +143,13 @@ public class EquipoInfoActivity extends AppCompatActivity {
 
         mRecyclerView.addOnItemTouchListener(r);
     }
+
+    private Integer checkIfSelectedPositions()
+    {
+        System.out.println("checkIfSelectedPositions selectedItems size: " + selectedItems.size());
+        return selectedItems.size() > 0 ? 2 : 1;
+    }
+
 
 
 
@@ -151,41 +173,152 @@ public class EquipoInfoActivity extends AppCompatActivity {
         return true;
     }
 
+    //como posciones es global si voy para atras quiero que vuelva a ser 0
+    public void onBackPressed()
+    {
+        //moveTaskToBack(true);
+        finish();
+        posiciones.clear();
+    }
+
+
 
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
 
-        int id = 0;
-
         List<Equipo> equipos = EquipoRepository.getInstance(this).getEquipos();
 
-        int posicionaBorrar = 0;
         switch (item.getItemId()) {
             case R.id.eliminar:
-                List posicionesEliminar = new ArrayList();
-
-                for (int i = 0; i < posiciones.size() ;i++){
-                    posicionesEliminar.add(posiciones.get(i));
+                for(int i = selectedItems.size() - 1; i >= 0;i--) {
+                    int idEquipoAEliminar = equipos.get(selectedItems.keyAt(i)).getId();
+                    EquipoRepository.getInstance(EquipoInfoActivity.this).deleteEquipoById(idEquipoAEliminar);
                 }
-                //el problema es q el posiciones es global
-                for(int i = posicionesEliminar.size() - 1; i >= 0;i--) {
+                selectedItems.clear();
 
-                    posicionaBorrar = (Integer)posicionesEliminar.get(i);
-                    id = equipos.get(posicionaBorrar).getId();
-                    posiciones.remove(i);
-                    EquipoRepository.getInstance(EquipoInfoActivity.this).deleteEquipoById(id);
-                }
                 List<Equipo> equiposDefinitivos = EquipoRepository.getInstance(this).getEquipos();
                 lastmAdapter = new SeccionAdapterEquipoInfo(equiposDefinitivos);
                 mRecyclerView.setAdapter(lastmAdapter);
                 //cambio el estado para que desaparezca el menu
-                mState = 1;
+                mState = checkIfSelectedPositions();
                 invalidateOptionsMenu();
-
                 return true;
 
             case R.id.editar:
-                Toast.makeText(EquipoInfoActivity.this,"Equipo editado",Toast.LENGTH_SHORT).show();
+
+                final ViewGroup popupView = (ViewGroup) getLayoutInflater().inflate(R.layout.dialog_editar_equipo, null);
+
+
+                    //traer los valores a editar y listo
+                    final List<Equipo> equipoEditar = EquipoRepository.getInstance(this).getEquipos();;
+                    //la hice final para poder acceder a la posciion a editar, para luego conseguir el id
+                    //final int posicionEditar = (int) selectedItems.get(0);
+                    final int posicionEditar = selectedItems.keyAt(0);
+
+                    String nombreAnterior = equipoEditar.get(posicionEditar).getNombre();
+                    String apodoAnterior =  equipoEditar.get(posicionEditar).getApodo();
+                    String barrioAnterior = equipoEditar.get(posicionEditar).getBarrio();
+                    String direccionAnterior = equipoEditar.get(posicionEditar).getDireccion();
+                    int id = equipoEditar.get(posicionEditar).getId();
+                    byte[] escudoAnterior = equipoEditar.get(posicionEditar).getEscudo();
+
+                    EditText nombre = (EditText) popupView.findViewById(R.id.editarNombreNuevoEquipo);
+                    nombre.setText(nombreAnterior);
+                    EditText apodo = (EditText) popupView.findViewById(R.id.editarAlias);
+                    apodo.setText(apodoAnterior);
+                    EditText direccion = (EditText) popupView.findViewById(R.id.editarDireccion);
+                    direccion.setText(direccionAnterior);
+                    EditText barrio = (EditText) popupView.findViewById(R.id.editarBarrio);
+                    barrio.setText(barrioAnterior);
+
+                    if (escudoAnterior == null)
+                    {
+                        escudo = (ImageView) popupView.findViewById(R.id.editarEscudo);
+                        escudo.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                //para ir a la galeria
+                                Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                                getIntent.setType("image/*");
+
+                                Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                                pickIntent.setType("image/*");
+
+                                Intent chooserIntent = Intent.createChooser(getIntent, "Elegir imagen");
+                                chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{pickIntent});
+
+                                //utiliza la constante INTENT_ELEGIR_IMAGEN en onActivityResult
+                                startActivityForResult(chooserIntent, INTENT_ELEGIR_IMAGEN);
+                            }
+                        });
+
+                    }
+                    else
+                    {
+                        escudo = (ImageView) popupView.findViewById(R.id.editarEscudo);
+
+                        Bitmap bitmap = BitmapFactory.decodeByteArray(escudoAnterior, 0, escudoAnterior.length);
+                        escudo.setImageBitmap(bitmap);
+
+                        escudo.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                //para ir a la galeria
+                                Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                                getIntent.setType("image/*");
+
+                                Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                                pickIntent.setType("image/*");
+
+                                Intent chooserIntent = Intent.createChooser(getIntent, "Elegir imagen");
+                                chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{pickIntent});
+
+                                //utiliza la constante INTENT_ELEGIR_IMAGEN en onActivityResult
+                                startActivityForResult(chooserIntent, INTENT_ELEGIR_IMAGEN);
+                            }
+                        });
+                    }
+
+                    AlertDialog.Builder alertDialogBuilder =
+                            new AlertDialog.Builder(EquipoInfoActivity.this)
+                                    .setTitle("Editar Equipo")
+                                    .setPositiveButton("Editar", new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            // capturar y gaurdadr en bd
+                                            final String NOMBRE = (((TextView) popupView.findViewById(R.id.editarNombreNuevoEquipo)).getText().toString());
+                                            final String ALIAS = (((TextView) popupView.findViewById(R.id.editarAlias)).getText().toString());
+                                            final String BARRIO = (((TextView) popupView.findViewById(R.id.editarBarrio)).getText().toString());
+                                            final String DIRECCION = (((TextView) popupView.findViewById(R.id.editarDireccion)).getText().toString());
+
+                                            int id = equipoEditar.get(posicionEditar).getId();
+                                            EquipoRepository.getInstance(EquipoInfoActivity.this).deleteEquipoById(id);
+
+                                            Bitmap ESCUDO = null;
+                                            ESCUDO = ((BitmapDrawable) ((ImageView) popupView.findViewById(R.id.editarEscudo)).getDrawable()).getBitmap();
+
+                                            Equipo e = new Equipo(id,NOMBRE, ALIAS, BARRIO, DIRECCION, Utils.getByteArrayFromBitmap(ESCUDO));
+                                            EquipoRepository.getInstance(EquipoInfoActivity.this).addEquipo(e);
+                                            Toast.makeText(EquipoInfoActivity.this, "Equipo editado", Toast.LENGTH_SHORT).show();
+
+                                            //se refresca el cardview
+                                            List<Equipo> equiposEditados = EquipoRepository.getInstance(EquipoInfoActivity.this).getEquipos();
+                                            lastmAdapter = new SeccionAdapterEquipoInfo(equiposEditados);
+                                            mRecyclerView.setAdapter(lastmAdapter);
+                                            dialog.dismiss();
+                                            mState = checkIfSelectedPositions();
+                                            invalidateOptionsMenu();
+                                        }
+                                    })
+                                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.cancel();
+                                        }
+                                    });
+                    alertDialogBuilder.setView(popupView);
+                    AlertDialog alertDialog = alertDialogBuilder.show();
+
 
                 return true;
             default:
@@ -194,6 +327,58 @@ public class EquipoInfoActivity extends AppCompatActivity {
         }
 
     }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Activity.RESULT_OK) {
+            switch (requestCode) {
+                case INTENT_ELEGIR_IMAGEN:
+                    Uri selectedImageUri = data.getData();
+
+                    if(selectedImageUri !=null) {
+                        try {
+                            escudo.setImageBitmap(decodeUri(selectedImageUri));
+                            imageSelected = true;
+                        } catch (FileNotFoundException e) {
+                            throw new RuntimeException(e);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                    break;
+            }
+        }
+    }
+
+    private Bitmap decodeUri(Uri selectedImage) throws FileNotFoundException {
+        BitmapFactory.Options o = new BitmapFactory.Options();
+        o.inJustDecodeBounds = true;
+
+        BitmapFactory.decodeStream(getContentResolver().openInputStream(selectedImage), null, o);
+        // The new size we want to scale to
+        final int REQUIRED_SIZE = 150;
+
+        // Find the correct scale value. It should be the power of 2.
+        int width_tmp = o.outWidth, height_tmp = o.outHeight;
+        int scale = 1;
+        while (true) {
+            if (width_tmp / 2 < REQUIRED_SIZE
+                    || height_tmp / 2 < REQUIRED_SIZE) {
+                break;
+            }
+            width_tmp /= 2;
+            height_tmp /= 2;
+            scale *= 2;
+        }
+
+        // Decode with inSampleSize
+        BitmapFactory.Options o2 = new BitmapFactory.Options();
+        o2.inSampleSize = scale;
+        return BitmapFactory.decodeStream(getContentResolver().openInputStream(selectedImage), null, o2);
+
+    }
+
 
 
 }

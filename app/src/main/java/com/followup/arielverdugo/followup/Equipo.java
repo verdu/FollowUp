@@ -44,6 +44,18 @@ public class Equipo {
 
     }
 
+    //agregue esto para el editar
+    public Equipo(int id,String nombre,String apodo, String barrio,String direccion,byte[] escudo)
+    {
+        this.id = id;
+        this.nombre = nombre;
+        this.apodo = apodo;
+        this.barrio = barrio;
+        this.direccion = direccion;
+        this.escudo = escudo;
+
+    }
+
     public String getNombre() {
         return nombre;
     }
