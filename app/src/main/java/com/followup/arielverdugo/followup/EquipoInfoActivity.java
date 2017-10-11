@@ -210,17 +210,16 @@ public class EquipoInfoActivity extends AppCompatActivity {
 
 
                     //traer los valores a editar y listo
-                    final List<Equipo> equipoEditar = EquipoRepository.getInstance(this).getEquipos();;
+                    final List<Equipo> equiposEditar = EquipoRepository.getInstance(this).getEquipos();;
                     //la hice final para poder acceder a la posciion a editar, para luego conseguir el id
-                    //final int posicionEditar = (int) selectedItems.get(0);
                     final int posicionEditar = selectedItems.keyAt(0);
 
-                    String nombreAnterior = equipoEditar.get(posicionEditar).getNombre();
-                    String apodoAnterior =  equipoEditar.get(posicionEditar).getApodo();
-                    String barrioAnterior = equipoEditar.get(posicionEditar).getBarrio();
-                    String direccionAnterior = equipoEditar.get(posicionEditar).getDireccion();
-                    int id = equipoEditar.get(posicionEditar).getId();
-                    byte[] escudoAnterior = equipoEditar.get(posicionEditar).getEscudo();
+                    String nombreAnterior = equiposEditar.get(posicionEditar).getNombre();
+                    String apodoAnterior =  equiposEditar.get(posicionEditar).getApodo();
+                    String barrioAnterior = equiposEditar.get(posicionEditar).getBarrio();
+                    String direccionAnterior = equiposEditar.get(posicionEditar).getDireccion();
+                    int id = equiposEditar.get(posicionEditar).getId();
+                    byte[] escudoAnterior = equiposEditar.get(posicionEditar).getEscudo();
 
                     EditText nombre = (EditText) popupView.findViewById(R.id.editarNombreNuevoEquipo);
                     nombre.setText(nombreAnterior);
@@ -291,24 +290,27 @@ public class EquipoInfoActivity extends AppCompatActivity {
                                             final String ALIAS = (((TextView) popupView.findViewById(R.id.editarAlias)).getText().toString());
                                             final String BARRIO = (((TextView) popupView.findViewById(R.id.editarBarrio)).getText().toString());
                                             final String DIRECCION = (((TextView) popupView.findViewById(R.id.editarDireccion)).getText().toString());
-
-                                            int id = equipoEditar.get(posicionEditar).getId();
-                                            EquipoRepository.getInstance(EquipoInfoActivity.this).deleteEquipoById(id);
-
                                             Bitmap ESCUDO = null;
                                             ESCUDO = ((BitmapDrawable) ((ImageView) popupView.findViewById(R.id.editarEscudo)).getDrawable()).getBitmap();
 
-                                            Equipo e = new Equipo(id,NOMBRE, ALIAS, BARRIO, DIRECCION, Utils.getByteArrayFromBitmap(ESCUDO));
-                                            EquipoRepository.getInstance(EquipoInfoActivity.this).addEquipo(e);
-                                            Toast.makeText(EquipoInfoActivity.this, "Equipo editado", Toast.LENGTH_SHORT).show();
+                                            equiposEditar.get(posicionEditar).setNombre(NOMBRE);
+                                            equiposEditar.get(posicionEditar).setApodo(ALIAS);
+                                            equiposEditar.get(posicionEditar).setBarrio(BARRIO);
+                                            equiposEditar.get(posicionEditar).setDireccion(DIRECCION);
+                                            equiposEditar.get(posicionEditar).setEscudo(Utils.getByteArrayFromBitmap(ESCUDO));
 
+                                            EquipoRepository.getInstance(EquipoInfoActivity.this).updateEquipo(equiposEditar.get(posicionEditar));
+                                            Toast.makeText(EquipoInfoActivity.this, "Equipo editado", Toast.LENGTH_SHORT).show();
+                                            equiposEditar.clear();
+                                            selectedItems.clear();
                                             //se refresca el cardview
                                             List<Equipo> equiposEditados = EquipoRepository.getInstance(EquipoInfoActivity.this).getEquipos();
                                             lastmAdapter = new SeccionAdapterEquipoInfo(equiposEditados);
                                             mRecyclerView.setAdapter(lastmAdapter);
                                             dialog.dismiss();
-                                            mState = checkIfSelectedPositions();
+                                            mState = 1;
                                             invalidateOptionsMenu();
+
                                         }
                                     })
                                     .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

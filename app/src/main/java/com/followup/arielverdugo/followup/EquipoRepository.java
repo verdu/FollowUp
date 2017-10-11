@@ -76,5 +76,14 @@ public class EquipoRepository
         return null;
     }
 
+    public void updateEquipo(Equipo a)
+    {
+        try {
+            dao.update(a);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
