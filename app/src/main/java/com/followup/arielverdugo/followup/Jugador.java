@@ -1,0 +1,111 @@
+package com.followup.arielverdugo.followup;
+
+import com.j256.ormlite.field.DataType;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
+/**
+ * Created by arielverdugo on 7/6/17.
+ */
+
+@DatabaseTable(tableName = "jugador")
+public class Jugador {
+
+    @DatabaseField(generatedId = true)
+    //private int id;
+    public int id;
+
+
+    @DatabaseField
+    private String nombre;
+
+    @DatabaseField
+    private String apellido;
+
+    @DatabaseField
+    private String equipo;
+
+    @DatabaseField
+    private String posicion;
+
+    @DatabaseField
+    private int altura;
+
+    @DatabaseField(dataType = DataType.BYTE_ARRAY)
+    private byte[] foto;
+
+
+    public Jugador(){}
+
+
+    public Jugador(String nombre, String apellido, String equipo, String posicion, int altura, byte[] foto)
+    {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.equipo = equipo;
+        this.posicion = posicion;
+        this.altura = altura;
+        this.foto = foto;
+
+
+    }
+
+
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getEquipo() {
+        return equipo;
+    }
+
+    public void setBEquipo(String equipo) {
+        this.equipo = equipo;
+    }
+
+    public String getPosicion() {
+        return posicion;
+    }
+
+    public void setPosicion(String posicion) {
+        this.posicion = posicion;
+    }
+
+    public int getAltura() {
+        return altura;
+    }
+
+    public void setAltura(Integer altura) {
+        this.altura = altura;
+    }
+
+    public byte[] getFoto()
+    {
+        return foto;
+    }
+
+    public void setFoto(byte[]escudo) {
+        this.foto = foto;
+    }
+
+    public int getId()
+    {
+        return id;
+    }
+
+
+
+}

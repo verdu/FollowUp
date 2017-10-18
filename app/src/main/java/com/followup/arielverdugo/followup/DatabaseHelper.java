@@ -21,7 +21,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     private static final String DB_NAME = "Followuptest.sqlite";
     //si modifico la bd cambiar db version, y ejecuta onUpgrade
-    private static final int DB_VERSION = 5;
+    private static final int DB_VERSION = 6;
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);

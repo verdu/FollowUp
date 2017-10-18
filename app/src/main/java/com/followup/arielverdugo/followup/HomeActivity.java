@@ -20,7 +20,10 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,8 +43,12 @@ public class HomeActivity extends AppCompatActivity {
     private TextView tituloSeccion;
     private ImageView agregar;
     private ImageView escudo;
+    private ImageView foto;
     public static final int INTENT_ELEGIR_IMAGEN = 1;
+    public static final int INTENT_ELEGIR_FOTO = 2;
     private Boolean imageSelected = false;
+    private Boolean fotoSelected = false;
+
 
 
     class RecyclerTouchListener implements RecyclerView.OnItemTouchListener{
@@ -139,12 +146,12 @@ public class HomeActivity extends AppCompatActivity {
 
         switch (textoSeccion.getText().toString()) {
             case "Equipos":
-                Toast.makeText(HomeActivity.this, "Equipos", Toast.LENGTH_SHORT).show();
                 Intent intento = new Intent(HomeActivity.this,EquipoInfoActivity.class);
                 startActivity(intento);
                 break;
             case "Jugadores":
-                Toast.makeText(HomeActivity.this, "Jugadores", Toast.LENGTH_SHORT).show();
+                Intent intentoDos = new Intent(HomeActivity.this,JugadorInfoActivity.class);
+                startActivity(intentoDos);
                 break;
             case "Situación":
                 Toast.makeText(HomeActivity.this, "Situación", Toast.LENGTH_SHORT).show();
@@ -163,7 +170,8 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intento);
                 break;
             case "Jugadores":
-                Toast.makeText(HomeActivity.this, "Jugadores", Toast.LENGTH_SHORT).show();
+                Intent intentoDos = new Intent(HomeActivity.this,JugadorInfoActivity.class);
+                startActivity(intentoDos);
                 break;
             case "Situación":
                 Toast.makeText(HomeActivity.this, "Situación", Toast.LENGTH_SHORT).show();
@@ -177,7 +185,7 @@ public class HomeActivity extends AppCompatActivity {
         ViewGroup row = (ViewGroup) v.getParent();
         TextView textoSeccion = (TextView) row.findViewById(R.id.textoSeccion);
         final ViewGroup popupView = (ViewGroup) getLayoutInflater().inflate(R.layout.dialog_agregar_equipo,null);
-
+        final ViewGroup popupViewJugadores = (ViewGroup) getLayoutInflater().inflate(R.layout.dialog_agregar_jugador,null);
 
         switch (textoSeccion.getText().toString()) {
             case "Equipos":
@@ -241,8 +249,114 @@ public class HomeActivity extends AppCompatActivity {
                 AlertDialog alertDialog = alertDialogBuilder.show();
 
                 break;
+
             case "Jugadores":
-                Toast.makeText(HomeActivity.this, "Jugadores!", Toast.LENGTH_SHORT).show();
+
+                foto = (ImageView) popupViewJugadores.findViewById(R.id.fotoJugador);
+                foto.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        //para ir a la galeria
+                        Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                        getIntent.setType("image/*");
+
+                        Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                        pickIntent.setType("image/*");
+
+                        Intent chooserIntent = Intent.createChooser(getIntent, "Elegir foto");
+                        chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[] {pickIntent});
+
+                        //utiliza la constante INTENT_ELEGIR_FOTO en onActivityResult
+                        startActivityForResult(chooserIntent, INTENT_ELEGIR_FOTO);
+                    }
+                });
+
+                //Capturo todos los nombres de los equipos y seteo el spinner
+                List<Equipo> equipos = EquipoRepository.getInstance(this).getEquipos();
+                ArrayList<String> equiposNombre = new ArrayList<>();
+                for (int i = 0; i < equipos.size(); i++)
+                {
+                    equiposNombre.add(equipos.get(i).getNombre());
+                }
+
+                final Spinner spinnerEquipos = (Spinner) popupViewJugadores.findViewById(R.id.equipoJugador);
+                ArrayAdapter<String> adapter;
+                adapter = new ArrayAdapter<String>(HomeActivity.this,R.layout.spinner_equipos, equiposNombre);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                //Cree una clase NothingSelectedSpinnerAdapter y un xml Spinner_row_selected
+                spinnerEquipos.setAdapter(
+                        new NothingSelectedSpinnerAdapter(
+                                adapter,
+                                R.layout.spinner_row_nothing_selected_equipo,
+                                this));
+
+                spinnerEquipos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                        Object item = parent.getItemAtPosition(pos);
+                    }
+                    public void onNothingSelected(AdapterView<?> parent) {
+                    }
+                });
+
+
+                ArrayList<String> posicionesJugadores = new ArrayList<>();
+                posicionesJugadores.add("Base");
+                posicionesJugadores.add("Ayuda Base");
+                posicionesJugadores.add("Alero");
+                posicionesJugadores.add("Ala Pivot");
+                posicionesJugadores.add("Pivot");
+                final Spinner spinnerPosicion = (Spinner) popupViewJugadores.findViewById(R.id.posicionJugador);
+                ArrayAdapter<String> adapterPosicion;
+                adapterPosicion = new ArrayAdapter<String>(HomeActivity.this,R.layout.spinner_posicion, posicionesJugadores);
+                adapterPosicion.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+                spinnerPosicion.setAdapter(new NothingSelectedSpinnerAdapter(
+                        adapterPosicion,
+                        R.layout.spinner_row_nothing_selected_posicion,
+                        this));
+
+
+                spinnerPosicion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                        Object item = parent.getItemAtPosition(pos);
+                    }
+                    public void onNothingSelected(AdapterView<?> parent) {
+                    }
+                });
+
+
+                AlertDialog.Builder alertDialogBuilderJugadores =
+                        new AlertDialog.Builder(HomeActivity.this)
+                                .setTitle("Jugador")
+                                .setPositiveButton("Agregar", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        // capturar y gaurdadr en bd
+                                        final String NOMBRE = (((TextView)popupViewJugadores.findViewById(R.id.nombreJugador)).getText().toString());
+                                        final String APELLIDO = (((TextView)popupViewJugadores.findViewById(R.id.apellidoJugador)).getText().toString());
+                                        final int ALTURA = Integer.parseInt(((TextView)popupViewJugadores.findViewById(R.id.alturaJugador)).getText().toString());
+                                        Bitmap FOTO = null;
+                                        if(fotoSelected) {
+                                            FOTO =((BitmapDrawable) ((ImageView) popupViewJugadores.findViewById(R.id.fotoJugador)).getDrawable()).getBitmap();
+                                        }
+                                        final String EQUIPO = spinnerEquipos.getSelectedItem().toString();
+                                        final String POSICION = spinnerPosicion.getSelectedItem().toString();
+
+                                        Jugador j = new Jugador(NOMBRE,APELLIDO,EQUIPO,POSICION,ALTURA,Utils.getByteArrayFromBitmap(FOTO));
+                                        JugadorRepository.getInstance(HomeActivity.this).addJugador(j);
+                                        Toast.makeText(HomeActivity.this, "Jugador  agregado", Toast.LENGTH_SHORT).show();
+                                        dialog.dismiss();
+
+                                    }
+                                })
+                                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.cancel();
+                                    }
+                                });
+                alertDialogBuilderJugadores.setView(popupViewJugadores);
+                AlertDialog alertDialogJugadores = alertDialogBuilderJugadores.show();
+                alertDialogJugadores.getWindow().setLayout(1100, 1600);
+
                 break;
             case "Situación":
                 Toast.makeText(HomeActivity.this, "Situación!", Toast.LENGTH_SHORT).show();
@@ -259,7 +373,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {
             switch (requestCode) {
-                case INTENT_ELEGIR_IMAGEN:
+                case (INTENT_ELEGIR_IMAGEN):
                     Uri selectedImageUri = data.getData();
 
                     if(selectedImageUri !=null) {
@@ -273,6 +387,21 @@ public class HomeActivity extends AppCompatActivity {
                         }
                     }
                     break;
+                case (INTENT_ELEGIR_FOTO):
+                    Uri selectedFotoUri = data.getData();
+
+                    if(selectedFotoUri !=null) {
+                        try {
+                            foto.setImageBitmap(decodeUri(selectedFotoUri));
+                            fotoSelected = true;
+                        } catch (FileNotFoundException e) {
+                            throw new RuntimeException(e);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                    break;
+
             }
         }
     }
