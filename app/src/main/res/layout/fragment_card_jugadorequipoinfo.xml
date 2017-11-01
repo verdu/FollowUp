@@ -1,0 +1,18 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="#eaecee">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerJugadorInfo"
+        android:layout_width="384dp"
+        android:layout_height="555dp"
+        android:layout_marginTop="8dp"
+        android:padding="3dp"
+        android:scrollbars="vertical" />
+
+</LinearLayout>

@@ -90,6 +90,7 @@ public class NothingSelectedSpinnerAdapter implements SpinnerAdapter, ListAdapte
 
         // Could re-use the convertView if possible, use setTag...
         return adapter.getDropDownView(position - EXTRA, null, parent);
+
     }
 
     /**

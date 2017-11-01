@@ -76,6 +76,8 @@ public class JugadorRepository
         return null;
     }
 
+
+
     public void updateJugador(Jugador a)
     {
         try {

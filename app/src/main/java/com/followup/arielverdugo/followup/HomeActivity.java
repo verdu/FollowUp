@@ -23,6 +23,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -150,7 +151,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intento);
                 break;
             case "Jugadores":
-                Intent intentoDos = new Intent(HomeActivity.this,JugadorInfoActivity.class);
+                Intent intentoDos = new Intent(HomeActivity.this,JugadorEquipoInfoActivity.class);
                 startActivity(intentoDos);
                 break;
             case "Situación":
@@ -170,7 +171,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intento);
                 break;
             case "Jugadores":
-                Intent intentoDos = new Intent(HomeActivity.this,JugadorInfoActivity.class);
+                Intent intentoDos = new Intent(HomeActivity.this,JugadorEquipoInfoActivity.class);
                 startActivity(intentoDos);
                 break;
             case "Situación":
@@ -272,6 +273,7 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });
 
+                //Spinner equipo
                 //Capturo todos los nombres de los equipos y seteo el spinner
                 List<Equipo> equipos = EquipoRepository.getInstance(this).getEquipos();
                 ArrayList<String> equiposNombre = new ArrayList<>();
@@ -299,7 +301,7 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });
 
-
+                //Spinner posicion
                 ArrayList<String> posicionesJugadores = new ArrayList<>();
                 posicionesJugadores.add("Base");
                 posicionesJugadores.add("Ayuda Base");
@@ -324,6 +326,32 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });
 
+                //Spinner altura
+                Integer alturaMinima = 160;
+                Integer alturaMaxima = 221;
+                Integer step = 1;
+                String[] myValues = getArrayWithSteps(alturaMinima, alturaMaxima, step);
+                NumberPicker picker = new NumberPicker(HomeActivity.this);
+                picker.setDisplayedValues(myValues);
+                picker.setWrapSelectorWheel(false);
+
+                final Spinner spinnerAlturas = (Spinner) popupViewJugadores.findViewById(R.id.alturaJugador);
+                ArrayAdapter<String> adapterAltura;
+                adapterAltura = new ArrayAdapter<String>(HomeActivity.this,R.layout.spinner_altura, myValues);
+                adapterAltura.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinnerAlturas.setAdapter(
+                        new NothingSelectedSpinnerAdapter(
+                                adapterAltura,
+                                R.layout.spinner_row_nothing_selected_altura,
+                                this));
+
+                spinnerAlturas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                        Object item = parent.getItemAtPosition(pos);
+                    }
+                    public void onNothingSelected(AdapterView<?> parent) {
+                    }
+                });
 
                 AlertDialog.Builder alertDialogBuilderJugadores =
                         new AlertDialog.Builder(HomeActivity.this)
@@ -333,16 +361,28 @@ public class HomeActivity extends AppCompatActivity {
                                         // capturar y gaurdadr en bd
                                         final String NOMBRE = (((TextView)popupViewJugadores.findViewById(R.id.nombreJugador)).getText().toString());
                                         final String APELLIDO = (((TextView)popupViewJugadores.findViewById(R.id.apellidoJugador)).getText().toString());
-                                        final int ALTURA = Integer.parseInt(((TextView)popupViewJugadores.findViewById(R.id.alturaJugador)).getText().toString());
                                         Bitmap FOTO = null;
                                         if(fotoSelected) {
                                             FOTO =((BitmapDrawable) ((ImageView) popupViewJugadores.findViewById(R.id.fotoJugador)).getDrawable()).getBitmap();
                                         }
                                         final String EQUIPO = spinnerEquipos.getSelectedItem().toString();
                                         final String POSICION = spinnerPosicion.getSelectedItem().toString();
+                                        final int ALTURA = Integer.parseInt(spinnerAlturas.getSelectedItem().toString());
 
                                         Jugador j = new Jugador(NOMBRE,APELLIDO,EQUIPO,POSICION,ALTURA,Utils.getByteArrayFromBitmap(FOTO));
                                         JugadorRepository.getInstance(HomeActivity.this).addJugador(j);
+
+                                        /*
+                                        Integer idJugadorEquipo = j.getId();
+                                        Equipo equipoSeleccionado = (Equipo) spinnerEquipos.getSelectedItem();
+                                        Integer idEquipoSeleccionado = equipoSeleccionado.getId();
+                                        JugadorEquipo JugadorporEquipo = new JugadorEquipo(idJugadorEquipo,idEquipoSeleccionado);
+                                        */
+                                        //Grabo en la tabla jugadorEquipo
+                                        //Equipo equipoSeleccionado = (Equipo) spinnerEquipos.getSelectedItem();
+                                        //JugadorEquipo JugadorporEquipo = new JugadorEquipo(equipoSeleccionado,j);
+
+
                                         Toast.makeText(HomeActivity.this, "Jugador  agregado", Toast.LENGTH_SHORT).show();
                                         dialog.dismiss();
 
@@ -358,8 +398,8 @@ public class HomeActivity extends AppCompatActivity {
                 alertDialogJugadores.getWindow().setLayout(1100, 1600);
 
                 break;
-            case "Situación":
-                Toast.makeText(HomeActivity.this, "Situación!", Toast.LENGTH_SHORT).show();
+            case "Mis Jugadores":
+                Toast.makeText(HomeActivity.this, "Mis Jugadores!", Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;
@@ -454,5 +494,21 @@ public class HomeActivity extends AppCompatActivity {
         }
         return true;
 
+    }
+
+    //pasos del spinnner
+    public String[] getArrayWithSteps(Integer iMinValue,Integer iMaxValue, Integer iStep)
+    {
+        double iStepsArray = iMaxValue-iMinValue; //obtengo el largo del array
+
+        String[] arrayValues= new String[(int)iStepsArray]; //creo un array de ese largo
+        arrayValues[0] = String.valueOf(iMinValue);
+
+        for(int i = 1; i < iStepsArray; i++)
+        {
+            arrayValues[i] = String.valueOf(Integer.parseInt(arrayValues[i-1])+iStep);
+        }
+
+        return arrayValues;
     }
 }

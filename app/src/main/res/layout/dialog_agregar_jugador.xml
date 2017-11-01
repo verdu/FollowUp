@@ -48,47 +48,31 @@
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         app:layout_constraintRight_toRightOf="@+id/apellidoJugador"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="17dp"
         app:layout_constraintTop_toBottomOf="@+id/apellidoJugador"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="@+id/apellidoJugador"
         app:layout_constraintHorizontal_bias="0.0" />
 
 
-    <EditText
-        android:id="@+id/alturaJugador"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="altura"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="26dp"
-        app:layout_constraintTop_toBottomOf="@+id/posicionJugador"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="16dp" />
-
     <ImageView
         android:id="@+id/fotoJugador"
         android:layout_width="74dp"
         android:layout_height="74dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="38dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginBottom="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.778"
-        app:layout_constraintLeft_toLeftOf="@+id/alturaJugador"
-        app:layout_constraintRight_toRightOf="@+id/alturaJugador"
-        app:layout_constraintTop_toBottomOf="@+id/alturaJugador"
-        app:layout_constraintVertical_bias="0.178"
         app:srcCompat="@drawable/anadirimagen"
         tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="134dp"
         tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="155dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/alturaJugador"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/alturaJugador"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Spinner
         android:id="@+id/posicionJugador"
@@ -103,6 +87,18 @@
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="@+id/equipoJugador"
         app:layout_constraintHorizontal_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/alturaJugador"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/posicionJugador"
+        android:layout_marginTop="42dp"
+        app:layout_constraintTop_toBottomOf="@+id/posicionJugador"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/posicionJugador" />
 
 
 </android.support.constraint.ConstraintLayout>
