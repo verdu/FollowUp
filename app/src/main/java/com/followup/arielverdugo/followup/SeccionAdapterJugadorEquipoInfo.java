@@ -1,6 +1,7 @@
 package com.followup.arielverdugo.followup;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.widget.CardView;
@@ -8,10 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.followup.arielverdugo.followup.interfaces.RecyclerViewClickListener;
 
@@ -23,13 +23,11 @@ import java.util.List;
  */
 
 public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<SeccionAdapterJugadorEquipoInfo.SeccionJugadorInfoViewHolder> {
-    private List<Equipo> equipos;
     private List<Jugador> jugadores;
+    public Equipo equipo;
 
     private static RecyclerViewClickListener itemListener;
     private Context c;
-    List<Jugador>jugadoresTotales =  JugadorRepository.getInstance(this.c).getJugadores();
-
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -38,7 +36,7 @@ public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<Seccio
         // each data item is just a string in this case
         public ImageView fotoJugador;
         public ImageView escudo;
-        public ListView nombreApellidoJugador;
+        public TextView nombreJugador;
         public TextView nombreEquipo;
         public CardView cv;
 
@@ -48,9 +46,9 @@ public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<Seccio
 
             //fotoJugador = (ImageView) v.findViewById(R.id.fotoEquipoJugadorInfo);
             escudo = (ImageView) v.findViewById(R.id.escudoEquipoJugadorInfo);
-            //nombreApellidoJugador = (ListView) v.findViewById(R.id.nombreApellidoJugadorInfo);
-            nombreEquipo = (TextView) v.findViewById(R.id.nombreEquipoJugadorInfo);
-            nombreEquipo = (TextView) v.findViewById(R.id.nombreEquipoJugadorInfo);
+            nombreJugador = (TextView) v.findViewById(R.id.nombreJugadorInfo);
+            //nombreEquipo = (TextView) v.findViewById(R.id.nombreEquipoJugadorInfo);
+            //nombreEquipo = (TextView) v.findViewById(R.id.nombreEquipoJugadorInfo);
             cv = (CardView) v.findViewById(R.id.cardViewJugadorEquipoInfo);
 
         }
@@ -58,12 +56,13 @@ public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<Seccio
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public SeccionAdapterJugadorEquipoInfo(List<Equipo> equipos,List<Jugador>jugadores,Context c) {
-        this.equipos = equipos;
+    public SeccionAdapterJugadorEquipoInfo(Equipo e, List<Jugador> jugadores ,Context c) {
+        this.equipo = equipo;
         this.jugadores = jugadores;
         this.c=c;
 
     }
+
 
     // Create new views (invoked by the layout manager)
     @Override
@@ -79,20 +78,8 @@ public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<Seccio
     @Override
     public void onBindViewHolder(SeccionJugadorInfoViewHolder viewHolder, int i) {
 
-        if (equipos.get(i).getEscudo() != null) {
-            Bitmap escudoEquipo = BitmapFactory.decodeByteArray(equipos.get(i).getEscudo(), 0, equipos.get(i).getEscudo().length);
-            viewHolder.escudo.setImageBitmap(escudoEquipo);
-
-        } else {
-            viewHolder.escudo.setImageResource(R.drawable.sinimagen);
-        }
-        viewHolder.nombreEquipo.setText(equipos.get(i).getNombre());
-
-
-
-
-        int id = jugadoresTotales.get(i).getId();
-        Jugador jugadoresPorEquipo = JugadorRepository.getInstance(this.c).findJugadorById(id);
+//int id = jugadoresTotales.get(i).getId();
+        //Jugador jugadoresPorEquipo = JugadorRepository.getInstance(this.c).findJugadorById(id);
         //List<Jugador>jugadoresPorEquipo = JugadorEquipoRepository.getInstance(this.c).findJugadorPorEquipoById(id);
 
         /*if (jugadoresPorEquipo.getFoto() != null) {
@@ -103,29 +90,16 @@ public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<Seccio
             viewHolder.fotoJugador.setImageResource(R.drawable.sinimagen);
         }*/
 
-        String nombreEquipo = equipos.get(i).getNombre();
-
-        ArrayList<String>valores = new ArrayList<>();
-        for(int x = 0; x < jugadoresTotales.size(); x++)
-        {
-            if(nombreEquipo.equals(jugadores.get(x).getEquipo().toString()))
-            {
-                valores.add(jugadores.get(x).getNombre() + " " +jugadores.get(x).getApellido());
-            }
-            ArrayAdapter<String> adapter;
-            adapter = new ArrayAdapter<String>(this.c,android.R.layout.simple_list_item_1,valores);
-            //viewHolder.nombreApellidoJugador.setAdapter(adapter);
-        }
-
+        //String nombreEquipo = equiposTotales.get(i).getNombre();
+        viewHolder.nombreJugador.setText(jugadores.get(i).getNombre());
+            //viewHolder.apellidoJugador.setText(jugadores.get(x).getApellido());
 
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return equipos.size();
+        return jugadores.size();
     }
-
-
 
 }

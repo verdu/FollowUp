@@ -1,5 +1,7 @@
 package com.followup.arielverdugo.followup;
 
+import android.accounts.Account;
+
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
@@ -22,8 +24,8 @@ public class Jugador {
     @DatabaseField
     private String apellido;
 
-    @DatabaseField
-    private String equipo;
+    @DatabaseField(canBeNull = false, foreign = true, foreignAutoCreate = true)
+    private Equipo equipo;
 
     @DatabaseField
     private String posicion;
@@ -38,7 +40,7 @@ public class Jugador {
     public Jugador(){}
 
 
-    public Jugador(String nombre, String apellido, String equipo, String posicion, int altura, byte[] foto)
+    public Jugador(String nombre, String apellido, Equipo equipo, String posicion, int altura, byte[] foto)
     {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -68,11 +70,11 @@ public class Jugador {
         this.apellido = apellido;
     }
 
-    public String getEquipo() {
+    public Equipo getEquipo() {
         return equipo;
     }
 
-    public void setBEquipo(String equipo) {
+    public void setBEquipo(Equipo equipo) {
         this.equipo = equipo;
     }
 

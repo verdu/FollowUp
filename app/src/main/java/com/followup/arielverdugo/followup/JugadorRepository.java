@@ -51,6 +51,8 @@ public class JugadorRepository
         }
     }
 
+
+
     public Jugador findJugadorById(int id){
         try {
             return dao.queryForId(id);

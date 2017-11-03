@@ -49,6 +49,8 @@ public class HomeActivity extends AppCompatActivity {
     public static final int INTENT_ELEGIR_FOTO = 2;
     private Boolean imageSelected = false;
     private Boolean fotoSelected = false;
+    private List<Equipo> equipos;
+    private Integer equipoSelected;
 
 
 
@@ -234,7 +236,7 @@ public class HomeActivity extends AppCompatActivity {
 
                                         } */
                                         //else {
-                                            Equipo e = new Equipo(NOMBRE,ALIAS,BARRIO,DIRECCION,Utils.getByteArrayFromBitmap(ESCUDO));
+                                            Equipo e = new Equipo(NOMBRE,ALIAS,BARRIO,DIRECCION,Utils.getByteArrayFromBitmap(ESCUDO), null);
                                             EquipoRepository.getInstance(HomeActivity.this).addEquipo(e);
                                             Toast.makeText(HomeActivity.this, "Equipo agregado", Toast.LENGTH_SHORT).show();
                                             dialog.dismiss();
@@ -275,7 +277,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 //Spinner equipo
                 //Capturo todos los nombres de los equipos y seteo el spinner
-                List<Equipo> equipos = EquipoRepository.getInstance(this).getEquipos();
+                equipos = EquipoRepository.getInstance(this).getEquipos();
                 ArrayList<String> equiposNombre = new ArrayList<>();
                 for (int i = 0; i < equipos.size(); i++)
                 {
@@ -295,7 +297,9 @@ public class HomeActivity extends AppCompatActivity {
 
                 spinnerEquipos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-                        Object item = parent.getItemAtPosition(pos);
+                        if(pos > 0) {
+                            equipoSelected = pos-1;
+                        }
                     }
                     public void onNothingSelected(AdapterView<?> parent) {
                     }
@@ -365,11 +369,11 @@ public class HomeActivity extends AppCompatActivity {
                                         if(fotoSelected) {
                                             FOTO =((BitmapDrawable) ((ImageView) popupViewJugadores.findViewById(R.id.fotoJugador)).getDrawable()).getBitmap();
                                         }
-                                        final String EQUIPO = spinnerEquipos.getSelectedItem().toString();
+
                                         final String POSICION = spinnerPosicion.getSelectedItem().toString();
                                         final int ALTURA = Integer.parseInt(spinnerAlturas.getSelectedItem().toString());
 
-                                        Jugador j = new Jugador(NOMBRE,APELLIDO,EQUIPO,POSICION,ALTURA,Utils.getByteArrayFromBitmap(FOTO));
+                                        Jugador j = new Jugador(NOMBRE,APELLIDO,equipos.get(equipoSelected),POSICION,ALTURA,Utils.getByteArrayFromBitmap(FOTO));
                                         JugadorRepository.getInstance(HomeActivity.this).addJugador(j);
 
                                         /*

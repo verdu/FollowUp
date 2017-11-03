@@ -5,6 +5,7 @@ import android.content.Context;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.stmt.QueryBuilder;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -18,8 +19,9 @@ public class JugadorEquipoRepository
     private static JugadorEquipoRepository instance;
 
     private Dao<JugadorEquipo, Integer> dao;
-    private Dao<Jugador,Integer>jugadorDao;
-    private Dao<Equipo,Integer>equipoDao;
+    private Dao<Jugador,Integer> jugadorDao;
+    private Dao<Equipo,Integer> equipoDao;
+    private Dao<JugadorEquipo,Integer> jugadorEquipoDao;
 
     public static JugadorEquipoRepository getInstance(Context context) {
         if(instance == null)
@@ -82,8 +84,9 @@ public class JugadorEquipoRepository
         return null;
     }
 
-    /*public List<Jugador>findJugadorPorEquipoById(int id){
+    public List<Jugador>findJugadorPorEquipoById(int id){
         try {
+            QueryBuilder<JugadorEquipo, Integer> jugadorEquipoQb = jugadorEquipoDao.queryBuilder();
             QueryBuilder<Jugador, Integer> jugadorQb = jugadorDao.queryBuilder();
             QueryBuilder<Equipo, Integer> equipoQb = equipoDao.queryBuilder();
 
@@ -104,7 +107,7 @@ public class JugadorEquipoRepository
             e.printStackTrace();
         }
         return null;
-    }*/
+    }
 
 
 }

@@ -1,8 +1,12 @@
 package com.followup.arielverdugo.followup;
 
+import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
+
+import java.util.List;
 
 /**
  * Created by arielverdugo on 7/6/17.
@@ -31,28 +35,19 @@ public class Equipo {
     @DatabaseField(dataType = DataType.BYTE_ARRAY)
     private byte[] escudo;
 
+    @ForeignCollectionField(eager = true)
+    ForeignCollection<Jugador> jugadores;
 
     public Equipo(){}
 
-    public Equipo(String nombre,String apodo, String barrio,String direccion,byte[] escudo)
+    public Equipo(String nombre, String apodo, String barrio, String direccion, byte[] escudo, ForeignCollection<Jugador> jugadores)
     {
         this.nombre = nombre;
         this.apodo = apodo;
         this.barrio = barrio;
         this.direccion = direccion;
         this.escudo = escudo;
-
-    }
-
-    //agregue esto para el editar
-    public Equipo(int id,String nombre,String apodo, String barrio,String direccion,byte[] escudo)
-    {
-        this.id = id;
-        this.nombre = nombre;
-        this.apodo = apodo;
-        this.barrio = barrio;
-        this.direccion = direccion;
-        this.escudo = escudo;
+        this.jugadores = jugadores;
 
     }
 
@@ -101,7 +96,4 @@ public class Equipo {
     {
         return id;
     }
-
-
-
 }

@@ -21,7 +21,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     private static final String DB_NAME = "Followuptest.sqlite";
     //si modifico la bd cambiar db version, y ejecuta onUpgrade
-    private static final int DB_VERSION = 7;
+    private static final int DB_VERSION = 8;
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -45,9 +45,10 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         try {
 
             TableUtils.dropTable(connectionSource,Equipo.class,true);
-            TableUtils.createTableIfNotExists(connectionSource, Usuario.class);
             TableUtils.createTableIfNotExists(connectionSource, Equipo.class);
+            TableUtils.createTableIfNotExists(connectionSource, Usuario.class);
             TableUtils.createTableIfNotExists(connectionSource, EquipoUsuario.class);
+            TableUtils.dropTable(connectionSource,Jugador.class,true);
             TableUtils.createTableIfNotExists(connectionSource, Jugador.class);
             TableUtils.createTableIfNotExists(connectionSource, JugadorEquipo.class);
             //TableUtils.clearTable(connectionSource,Equipo.class);

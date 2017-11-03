@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,7 +29,6 @@ public class FragmentJugadorEquipoInfo extends android.support.v4.app.Fragment
     public static final int INTENT_ELEGIR_FOTO = 2;
     private Boolean imageSelected = false;
     private Boolean fotoSelected = false;
-
     private static final String TAG = "RecyclerViewFragment";
     private static final String KEY_LAYOUT_MANAGER = "layoutManager";
     private enum LayoutManagerType {
@@ -37,8 +37,6 @@ public class FragmentJugadorEquipoInfo extends android.support.v4.app.Fragment
     }
     private static final int SPAN_COUNT = 2;
     protected LayoutManagerType mCurrentLayoutManagerType;
-
-
 
     class RecyclerTouchListener implements RecyclerView.OnItemTouchListener{
 
@@ -88,21 +86,6 @@ public class FragmentJugadorEquipoInfo extends android.support.v4.app.Fragment
         }
     }
 
-    /*class FragmentJugadorEquipoInfo extends Fragment{
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View v = inflater.inflate(R.layout.fragment_layout, container, false);
-            TextView tv = (TextView) v.findViewById(R.id.text);
-            tv.setText(this.getTag() + " Content");
-            return v;
-        }
-    }*/
 
     public void onCreate(Bundle savedInstanceState)
     {
@@ -116,11 +99,8 @@ public class FragmentJugadorEquipoInfo extends android.support.v4.app.Fragment
 
         View v = inflater.inflate(R.layout.fragment_card_jugadorequipoinfo, container, false);
         v.setTag(TAG);
-       
-
 
         List<Equipo> equipos = EquipoRepository.getInstance(getActivity()).getEquipos();
-        List<Jugador>jugadores = JugadorRepository.getInstance(getActivity()).getJugadores();
 
         mRecyclerView = (RecyclerView) v.findViewById(R.id.recyclerJugadorInfo);
         mRecyclerView.setHasFixedSize(true);
@@ -134,7 +114,10 @@ public class FragmentJugadorEquipoInfo extends android.support.v4.app.Fragment
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
 
-        mAdapter = new SeccionAdapterJugadorEquipoInfo(equipos,jugadores,getActivity());
+        Equipo e = EquipoRepository.getInstance(this.getContext()).findEquipoById(getArguments().getInt("equipoId"));
+
+        mAdapter = new SeccionAdapterJugadorEquipoInfo(e, new ArrayList<Jugador>(e.jugadores), getActivity());
+
         mRecyclerView.setAdapter(mAdapter);
 
         RecyclerTouchListener r = new RecyclerTouchListener(getActivity(),
