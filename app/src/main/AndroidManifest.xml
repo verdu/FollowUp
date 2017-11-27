@@ -20,6 +20,8 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".EquipoInfoActivity" />
         <activity android:name=".JugadorEquipoInfoActivity" />
+        <activity android:name=".PickImageActivity" />
+
 
     </application>
 

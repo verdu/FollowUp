@@ -2,8 +2,10 @@ package com.followup.arielverdugo.followup;
 
 import android.accounts.Account;
 
+import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 /**
@@ -24,8 +26,9 @@ public class Jugador {
     @DatabaseField
     private String apellido;
 
-    @DatabaseField(canBeNull = false, foreign = true, foreignAutoCreate = true)
+    @DatabaseField(canBeNull = false, foreign = true, foreignAutoCreate = true, foreignAutoRefresh = true)
     private Equipo equipo;
+
 
     @DatabaseField
     private String posicion;

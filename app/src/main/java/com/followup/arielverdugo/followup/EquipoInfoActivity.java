@@ -153,7 +153,6 @@ public class EquipoInfoActivity extends AppCompatActivity {
 
 
 
-
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.equipo_info_menu, menu);

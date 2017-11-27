@@ -236,7 +236,7 @@ public class HomeActivity extends AppCompatActivity {
 
                                         } */
                                         //else {
-                                            Equipo e = new Equipo(NOMBRE,ALIAS,BARRIO,DIRECCION,Utils.getByteArrayFromBitmap(ESCUDO), null);
+                                            Equipo e = new Equipo(NOMBRE,ALIAS,BARRIO,DIRECCION,Utils.getByteArrayFromBitmap(ESCUDO),null);
                                             EquipoRepository.getInstance(HomeActivity.this).addEquipo(e);
                                             Toast.makeText(HomeActivity.this, "Equipo agregado", Toast.LENGTH_SHORT).show();
                                             dialog.dismiss();
@@ -376,6 +376,7 @@ public class HomeActivity extends AppCompatActivity {
                                         Jugador j = new Jugador(NOMBRE,APELLIDO,equipos.get(equipoSelected),POSICION,ALTURA,Utils.getByteArrayFromBitmap(FOTO));
                                         JugadorRepository.getInstance(HomeActivity.this).addJugador(j);
 
+
                                         /*
                                         Integer idJugadorEquipo = j.getId();
                                         Equipo equipoSeleccionado = (Equipo) spinnerEquipos.getSelectedItem();
@@ -399,7 +400,7 @@ public class HomeActivity extends AppCompatActivity {
                                 });
                 alertDialogBuilderJugadores.setView(popupViewJugadores);
                 AlertDialog alertDialogJugadores = alertDialogBuilderJugadores.show();
-                alertDialogJugadores.getWindow().setLayout(1100, 1600);
+                //alertDialogJugadores.getWindow().setLayout(1000, 1400);
 
                 break;
             case "Mis Jugadores":

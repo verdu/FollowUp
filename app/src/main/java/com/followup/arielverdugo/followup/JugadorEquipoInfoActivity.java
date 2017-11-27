@@ -1,8 +1,10 @@
 package com.followup.arielverdugo.followup;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.TabHost;
 
@@ -20,12 +22,16 @@ public class JugadorEquipoInfoActivity extends FragmentActivity{
     FragmentTabHost mTabHost;
     static String nombreTab;
     static boolean change = false;
+    static int idEquipo;
+    static JugadorEquipoInfoActivity jugadorEquipoActivity;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jugadorinfo);
+
+        jugadorEquipoActivity = this;
         sessionManager = new SessionManager(this);
 
         for(int i = 0; i < equiposTotales.size(); i++)
@@ -36,24 +42,23 @@ public class JugadorEquipoInfoActivity extends FragmentActivity{
 
             Bundle b = new Bundle();
             b.putInt("equipoId", equiposTotales.get(i).getId());
+            idEquipo = equiposTotales.get(i).getId();
             mTabHost.addTab(
                     mTabHost.newTabSpec(equiposTotales.get(i).getNombre()).setIndicator(equiposTotales.get(i).getNombre(), null),
                     FragmentJugadorEquipoInfo.class, b);
 
         }
+
+
         mTabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String tabId) {
                 nombreTab = tabId;
                 change = true;
-
             }
         });
+
     }
-
-
-
-
 
 
 

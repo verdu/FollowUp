@@ -21,8 +21,8 @@ import java.util.List;
 
 public class FragmentJugadorEquipoInfo extends android.support.v4.app.Fragment
 {
-
-    private RecyclerView mRecyclerView;
+    //es estatico el Recycler para poder recargar el cardview en el SeccionAdapterJugadorEquipoInfo
+    static RecyclerView mRecyclerViewStatic;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     public static final int INTENT_ELEGIR_IMAGEN = 1;
@@ -102,8 +102,8 @@ public class FragmentJugadorEquipoInfo extends android.support.v4.app.Fragment
 
         List<Equipo> equipos = EquipoRepository.getInstance(getActivity()).getEquipos();
 
-        mRecyclerView = (RecyclerView) v.findViewById(R.id.recyclerJugadorInfo);
-        mRecyclerView.setHasFixedSize(true);
+        mRecyclerViewStatic = (RecyclerView) v.findViewById(R.id.recyclerJugadorInfo);
+        mRecyclerViewStatic.setHasFixedSize(true);
 
         mCurrentLayoutManagerType = LayoutManagerType.LINEAR_LAYOUT_MANAGER;
 
@@ -118,10 +118,10 @@ public class FragmentJugadorEquipoInfo extends android.support.v4.app.Fragment
 
         mAdapter = new SeccionAdapterJugadorEquipoInfo(e, new ArrayList<Jugador>(e.jugadores), getActivity());
 
-        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerViewStatic.setAdapter(mAdapter);
 
         RecyclerTouchListener r = new RecyclerTouchListener(getActivity(),
-                mRecyclerView, new ClickListener() {
+                mRecyclerViewStatic, new ClickListener() {
             @Override
             public void onClick(View view, final int position) {
                 //Values are passing to activity & to fragment as well
@@ -133,7 +133,7 @@ public class FragmentJugadorEquipoInfo extends android.support.v4.app.Fragment
             }
         });
 
-        mRecyclerView.addOnItemTouchListener(r);
+        mRecyclerViewStatic.addOnItemTouchListener(r);
 
 
         return v;
@@ -143,8 +143,8 @@ public class FragmentJugadorEquipoInfo extends android.support.v4.app.Fragment
         int scrollPosition = 0;
 
         // If a layout manager has already been set, get current scroll position.
-        if (mRecyclerView.getLayoutManager() != null) {
-            scrollPosition = ((LinearLayoutManager) mRecyclerView.getLayoutManager())
+        if (mRecyclerViewStatic.getLayoutManager() != null) {
+            scrollPosition = ((LinearLayoutManager) mRecyclerViewStatic.getLayoutManager())
                     .findFirstCompletelyVisibleItemPosition();
         }
 
@@ -162,8 +162,8 @@ public class FragmentJugadorEquipoInfo extends android.support.v4.app.Fragment
                 mCurrentLayoutManagerType = LayoutManagerType.LINEAR_LAYOUT_MANAGER;
         }
 
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.scrollToPosition(scrollPosition);
+        mRecyclerViewStatic.setLayoutManager(mLayoutManager);
+        mRecyclerViewStatic.scrollToPosition(scrollPosition);
     }
 
     @Override
@@ -172,5 +172,6 @@ public class FragmentJugadorEquipoInfo extends android.support.v4.app.Fragment
         savedInstanceState.putSerializable(KEY_LAYOUT_MANAGER, mCurrentLayoutManagerType);
         super.onSaveInstanceState(savedInstanceState);
     }
+
 
 }
