@@ -2,10 +2,12 @@ package com.followup.arielverdugo.followup;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TabHost;
 
 import java.util.List;
@@ -26,6 +28,8 @@ public class JugadorEquipoInfoActivity extends FragmentActivity{
     static JugadorEquipoInfoActivity jugadorEquipoActivity;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +37,7 @@ public class JugadorEquipoInfoActivity extends FragmentActivity{
 
         jugadorEquipoActivity = this;
         sessionManager = new SessionManager(this);
+
 
         for(int i = 0; i < equiposTotales.size(); i++)
         {
@@ -49,15 +54,32 @@ public class JugadorEquipoInfoActivity extends FragmentActivity{
 
         }
 
+        if (mTabHost != null) {
+            mTabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+                @Override
+                public void onTabChanged(String tabId) {
+                    nombreTab = tabId;
+                    change = true;
+                }
+            });
+        }
+        else
+        {
 
-        mTabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
-            @Override
-            public void onTabChanged(String tabId) {
-                nombreTab = tabId;
-                change = true;
-            }
-        });
+        }
 
+
+    }
+
+    public JugadorEquipoInfoActivity()
+    {
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intento = new Intent(JugadorEquipoInfoActivity.this,HomeActivity.class);
+        startActivity(intento);
     }
 
 

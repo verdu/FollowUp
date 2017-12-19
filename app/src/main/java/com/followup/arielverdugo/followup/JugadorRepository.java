@@ -43,6 +43,10 @@ public class JugadorRepository
         return null;
     }
 
+    public List<Jugador> getJugadoresFavoritos(){
+        return findWhere("favorito",1);
+    }
+
     public void addJugador(Jugador c){
         try {
             dao.create(c);

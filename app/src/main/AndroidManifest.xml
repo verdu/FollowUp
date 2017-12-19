@@ -4,8 +4,10 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
@@ -20,7 +22,9 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".EquipoInfoActivity" />
         <activity android:name=".JugadorEquipoInfoActivity" />
-        <activity android:name=".PickImageActivity" />
+        <activity android:name=".EditarJugadorActivity" />
+        <activity android:name=".TipsActivity" />
+        <activity android:name=".SeguimientoActivity" />
 
 
     </application>

@@ -39,11 +39,14 @@ public class Jugador {
     @DatabaseField(dataType = DataType.BYTE_ARRAY)
     private byte[] foto;
 
+    @DatabaseField(canBeNull = false)
+    private int favorito;
+
 
     public Jugador(){}
 
 
-    public Jugador(String nombre, String apellido, Equipo equipo, String posicion, int altura, byte[] foto)
+    public Jugador(String nombre, String apellido, Equipo equipo, String posicion, int altura, byte[] foto,int favorito)
     {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -51,6 +54,7 @@ public class Jugador {
         this.posicion = posicion;
         this.altura = altura;
         this.foto = foto;
+        this.favorito = favorito;
 
 
     }
@@ -77,7 +81,7 @@ public class Jugador {
         return equipo;
     }
 
-    public void setBEquipo(Equipo equipo) {
+    public void setEquipo(Equipo equipo) {
         this.equipo = equipo;
     }
 
@@ -102,13 +106,30 @@ public class Jugador {
         return foto;
     }
 
-    public void setFoto(byte[]escudo) {
+    public void setFoto(byte[]foto) {
         this.foto = foto;
     }
 
     public int getId()
     {
         return id;
+    }
+
+    public boolean isFavourite()
+    {
+        if(favorito == 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    public void setFavourite(int favorito)
+    {
+        this.favorito = favorito;
     }
 
 

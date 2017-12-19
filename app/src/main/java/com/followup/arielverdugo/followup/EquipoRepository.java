@@ -60,6 +60,16 @@ public class EquipoRepository
         return null;
     }
 
+    public List<Equipo> findEquipoByName(String name)
+    {
+        try {
+            return dao.queryBuilder().where().eq("nombre",name).query();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public void deleteEquipoById(int id){
         try {
             dao.deleteById(id);

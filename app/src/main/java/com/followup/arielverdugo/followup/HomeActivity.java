@@ -51,6 +51,9 @@ public class HomeActivity extends AppCompatActivity {
     private Boolean fotoSelected = false;
     private List<Equipo> equipos;
     private Integer equipoSelected;
+    private int IS_TRUE = 1;
+    private int IS_FALSE = 0;
+
 
 
 
@@ -135,7 +138,8 @@ public class HomeActivity extends AppCompatActivity {
         List<Seccion> secciones = new ArrayList<Seccion>();
         secciones.add(new Seccion(R.drawable.basketballteam, "Equipos"));
         secciones.add(new Seccion(R.drawable.basketballplayer, "Jugadores"));
-        secciones.add(new Seccion(R.drawable.basketballfield, "Situación"));
+        secciones.add(new Seccion(R.drawable.stadistics, "Seguimientos"));
+        secciones.add(new Seccion(R.drawable.basketballfield, "Tips"));
 
         mAdapter = new SeccionAdapter(secciones);
         mRecyclerView.setAdapter(mAdapter);
@@ -156,7 +160,11 @@ public class HomeActivity extends AppCompatActivity {
                 Intent intentoDos = new Intent(HomeActivity.this,JugadorEquipoInfoActivity.class);
                 startActivity(intentoDos);
                 break;
-            case "Situación":
+            case "Seguimientos":
+
+                break;
+            case "Tips":
+
                 Toast.makeText(HomeActivity.this, "Situación", Toast.LENGTH_SHORT).show();
                 break;
             default:
@@ -176,9 +184,13 @@ public class HomeActivity extends AppCompatActivity {
                 Intent intentoDos = new Intent(HomeActivity.this,JugadorEquipoInfoActivity.class);
                 startActivity(intentoDos);
                 break;
-            case "Situación":
-                Toast.makeText(HomeActivity.this, "Situación", Toast.LENGTH_SHORT).show();
+            case "Seguimientos":
+                Intent intentoCuatro = new Intent(HomeActivity.this,SeguimientoActivity.class);
+                startActivity(intentoCuatro);
                 break;
+            case "Tips":
+                Intent intentoTres = new Intent(HomeActivity.this,TipsActivity.class);
+                startActivity(intentoTres);
             default:
                 break;
         }
@@ -373,20 +385,8 @@ public class HomeActivity extends AppCompatActivity {
                                         final String POSICION = spinnerPosicion.getSelectedItem().toString();
                                         final int ALTURA = Integer.parseInt(spinnerAlturas.getSelectedItem().toString());
 
-                                        Jugador j = new Jugador(NOMBRE,APELLIDO,equipos.get(equipoSelected),POSICION,ALTURA,Utils.getByteArrayFromBitmap(FOTO));
+                                        Jugador j = new Jugador(NOMBRE,APELLIDO,equipos.get(equipoSelected),POSICION,ALTURA,Utils.getByteArrayFromBitmap(FOTO),IS_FALSE);
                                         JugadorRepository.getInstance(HomeActivity.this).addJugador(j);
-
-
-                                        /*
-                                        Integer idJugadorEquipo = j.getId();
-                                        Equipo equipoSeleccionado = (Equipo) spinnerEquipos.getSelectedItem();
-                                        Integer idEquipoSeleccionado = equipoSeleccionado.getId();
-                                        JugadorEquipo JugadorporEquipo = new JugadorEquipo(idJugadorEquipo,idEquipoSeleccionado);
-                                        */
-                                        //Grabo en la tabla jugadorEquipo
-                                        //Equipo equipoSeleccionado = (Equipo) spinnerEquipos.getSelectedItem();
-                                        //JugadorEquipo JugadorporEquipo = new JugadorEquipo(equipoSeleccionado,j);
-
 
                                         Toast.makeText(HomeActivity.this, "Jugador  agregado", Toast.LENGTH_SHORT).show();
                                         dialog.dismiss();

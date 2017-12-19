@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.followup.arielverdugo.followup.JugadorEquipoInfoActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
+
+    <EditText
+        android:id="@+id/editarNombreJugador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="nombre"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="31dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp" />
+
+    <EditText
+        android:id="@+id/editarApellidoJugador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="apellido"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/editarNombreJugador"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp" />
+
+    <Spinner
+        android:id="@+id/editarEquipoJugador"
+        android:layout_width="223dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/editarApellidoJugador"
+        android:layout_marginTop="17dp"
+        app:layout_constraintTop_toBottomOf="@+id/editarApellidoJugador"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/editarApellidoJugador"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+
+    <ImageView
+        android:id="@+id/editarFotoJugador"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.794"
+        app:layout_constraintLeft_toLeftOf="@+id/editarAlturaJugador"
+        app:layout_constraintRight_toRightOf="@+id/editarAlturaJugador"
+        app:layout_constraintTop_toBottomOf="@+id/editarAlturaJugador"
+        app:layout_constraintVertical_bias="0.297"
+        app:srcCompat="@drawable/anadirimagen"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1" />
+
+    <Spinner
+        android:id="@+id/editarPosicionJugador"
+        android:spinnerMode="dialog"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/editarEquipoJugador"
+        android:layout_marginTop="34dp"
+        app:layout_constraintTop_toBottomOf="@+id/editarEquipoJugador"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/editarEquipoJugador"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/editarAlturaJugador"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/editarPosicionJugador"
+        android:layout_marginTop="42dp"
+        app:layout_constraintTop_toBottomOf="@+id/editarPosicionJugador"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/editarPosicionJugador" />
+
+    <Button
+        android:id="@+id/aceptarEdicion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar"
+        android:layout_marginBottom="19dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editarFotoJugador"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+</android.support.constraint.ConstraintLayout>

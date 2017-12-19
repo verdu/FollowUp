@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -53,6 +54,10 @@ public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<Seccio
     private static RecyclerViewClickListener itemListener;
     private Context c;
 
+    List<Jugador>jugadoresIntermedio = new ArrayList<Jugador>();
+
+
+
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
@@ -66,6 +71,10 @@ public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<Seccio
         public TextView altura;
         public CardView cv;
         public ImageView menu;
+        public CheckBox favorito;
+
+
+
 
 
         public SeccionJugadorInfoViewHolder(View v) {
@@ -79,10 +88,7 @@ public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<Seccio
             //nombreEquipo = (TextView) v.findViewById(R.id.nombreEquipoJugadorInfo);
             cv = (CardView) v.findViewById(R.id.cardViewJugadorEquipoInfo);
             menu =(ImageView) v.findViewById(R.id.menu);
-            final CheckBox checkBox = (CheckBox) v.findViewById(R.id.star);
-
-
-
+            favorito = (CheckBox) v.findViewById(R.id.star);
 
         }
 
@@ -113,6 +119,11 @@ public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<Seccio
 
 
         final int id = jugadores.get(i).getId();
+        final Jugador jugadorActual = jugadores.get(i);
+        //final Jugador jugadorEditar = JugadorRepository.getInstance(EditarJugadorActivity.this).findJugadorById(idJugador);
+
+
+
         if(jugadores.get(i).getFoto() != null){
             Bitmap fotoJugador = BitmapFactory.decodeByteArray(jugadores.get(i).getFoto(), 0, jugadores.get(i).getFoto().length);
             viewHolder.fotoJugador.setImageBitmap(fotoJugador);
@@ -131,6 +142,35 @@ public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<Seccio
             }
         });
 
+
+        if(jugadorActual.isFavourite())
+        {
+            viewHolder.favorito.setChecked(true);
+        }
+        else
+        {
+            viewHolder.favorito.setChecked(false);
+
+        }
+
+        viewHolder.favorito.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(!viewHolder.favorito.isChecked())
+                {
+                   SeguimientoActivity.jugadoresFavoritos.remove(i);
+
+                    jugadorActual.setFavourite(0);
+                    JugadorRepository.getInstance(c).updateJugador(jugadorActual);
+                }
+                else {
+                    SeguimientoActivity.jugadoresFavoritos.add(jugadorActual);
+                    jugadorActual.setFavourite(1);
+                    JugadorRepository.getInstance(c).updateJugador(jugadorActual);
+                }
+            }
+        });
     }
 
     private void showPopupMenu(View view,int position,Context context,int id) {
@@ -145,17 +185,11 @@ public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<Seccio
     }
 
 
-
-
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return jugadores.size();
     }
-
-
-
-
 
 }
 
@@ -182,196 +216,14 @@ class MyMenuItemClickListener implements PopupMenu.OnMenuItemClickListener{
     public boolean onMenuItemClick(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.editarJugadorEquipo:
-                final Jugador jugadorEditar = JugadorRepository.getInstance(context).findJugadorById(id);
-
-                LayoutInflater inflater = (LayoutInflater) context.getSystemService( context.LAYOUT_INFLATER_SERVICE);
-                final ViewGroup popupViewEditar = (ViewGroup) inflater.inflate(R.layout.dialog_editar_jugador, null);
-                String nombreAnterior = jugadorEditar.getNombre();
-                String apellidoAnterior = jugadorEditar.getApellido();
-                byte[] fotoAnterior = jugadorEditar.getFoto();
-
-
-                EditText nombre = (EditText) popupViewEditar.findViewById(R.id.editarNombreJugador);
-                nombre.setText(nombreAnterior);
-                EditText apellido = (EditText) popupViewEditar.findViewById(R.id.editarApellidoJugador);
-                apellido.setText(apellidoAnterior);
-
-
-                if (fotoAnterior == null)
-                {
-                    fotoJugador = (ImageView) popupViewEditar.findViewById(R.id.editarFotoJugador);
-                    fotoJugador.setImageResource(R.drawable.anadirimagen);
-                    fotoJugador.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            //para ir a la galeria
-                            /*Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                            getIntent.setType("image/*");
-
-                            Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                            pickIntent.setType("image/*");
-
-                            Intent chooserIntent = Intent.createChooser(getIntent, "Elegir imagen");
-                            chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{pickIntent});
-
-                            //utiliza la constante INTENT_ELEGIR_IMAGEN en onActivityResult
-                            ((Activity) context).startActivityForResult(chooserIntent, INTENT_ELEGIR_IMAGEN);*/
-                            /*
-                            Intent pickImage = new Intent(context, PickImageActivity.class);
-                            pickImage.putExtra(RECEIVER_KEY, new ResultReceiver(null) {
-                                public void onReceive(int resultCode, Bundle data) {
-                                    System.out.println(data.get("img"));
-                                    Drawable d = new BitmapDrawable(context.getResources(), (Bitmap)data.get("img"));
-
-                                    fotoJugador.setImageDrawable(d);
-                                }
-                            });
-                            context.startActivity(pickImage);*/
-
-                        }
-                    });
-
+                Intent intento = new Intent(context,EditarJugadorActivity.class);
+                intento.putExtra("id",id);
+                context.startActivity(intento);
+                Equipo e = EquipoRepository.getInstance(context).findEquipoById(JugadorEquipoInfoActivity.idEquipo);
+                if(EditarJugadorActivity.editado.equals(true)) {
+                    lastmAdapter = new SeccionAdapterJugadorEquipoInfo(e, new ArrayList<Jugador>(e.jugadores), context);
+                    FragmentJugadorEquipoInfo.mRecyclerViewStatic.setAdapter(lastmAdapter);
                 }
-                else
-                {
-                    fotoJugador = (ImageView) popupViewEditar.findViewById(R.id.editarFotoJugador);
-
-                    Bitmap bitmap = BitmapFactory.decodeByteArray(fotoAnterior, 0, fotoAnterior.length);
-                    fotoJugador.setImageBitmap(bitmap);
-
-                    fotoJugador.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            //para ir a la galeria
-                            /*Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                            getIntent.setType("image/*");
-
-                            Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                            pickIntent.setType("image/*");
-
-                            Intent chooserIntent = Intent.createChooser(getIntent, "Elegir imagen");
-                            chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{pickIntent});
-
-                            //utiliza la constante INTENT_ELEGIR_IMAGEN en onActivityResult
-                            ((Activity) context).startActivityForResult(chooserIntent, INTENT_ELEGIR_IMAGEN);*/
-
-
-                            /*Intent pickImage = new Intent(context, PickImageActivity.class);
-                            Handler handler = null;
-                            pickImage.putExtra(RECEIVER_KEY, new ResultReceiver(handler) {
-
-                                public void onReceive(int resultCode, Bundle data) {
-
-                                }
-                            });
-                            Bundle things = new Bundle();
-
-                            context.startActivity(pickImage);*/
-
-
-                        }
-                    });
-                }
-                //se crea y llena el spiner de equipos
-                List<Equipo> equipos = EquipoRepository.getInstance(context).getEquipos();
-                ArrayList<String> equiposNombre = new ArrayList<>();
-                for (int i = 0; i < equipos.size(); i++)
-                {
-                    equiposNombre.add(equipos.get(i).getNombre());
-                }
-
-                final Spinner spinnerEquipos = (Spinner) popupViewEditar.findViewById(R.id.editarEquipoJugador);
-                ArrayAdapter<String> adapter;
-                adapter = new ArrayAdapter<String>(context,R.layout.spinner_equipos, equiposNombre);
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                //Cree una clase NothingSelectedSpinnerAdapter y un xml Spinner_row_selected
-                spinnerEquipos.setAdapter(adapter);
-                String compareValue = jugadorEditar.getEquipo().getNombre();
-
-                if (!compareValue.equals(null)) {
-                    int spinnerPosition = adapter.getPosition(compareValue);
-                    spinnerEquipos.setSelection(spinnerPosition);
-                }
-
-
-                //se crea y llena el spinner de posciones
-                ArrayList<String> posicionesJugadores = new ArrayList<>();
-                posicionesJugadores.add("Base");
-                posicionesJugadores.add("Ayuda Base");
-                posicionesJugadores.add("Alero");
-                posicionesJugadores.add("Ala Pivot");
-                posicionesJugadores.add("Pivot");
-
-                final Spinner spinnerPosiciones = (Spinner) popupViewEditar.findViewById(R.id.editarPosicionJugador);
-                ArrayAdapter<String>adapterPosiciones;
-                adapterPosiciones = new ArrayAdapter<String>(context,R.layout.spinner_posicion, posicionesJugadores);
-                adapterPosiciones.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spinnerPosiciones.setAdapter(adapterPosiciones);
-                String compareValuePosicion = jugadorEditar.getPosicion();
-
-                if (!compareValuePosicion.equals(null)) {
-                    int spinnerPosition = adapterPosiciones.getPosition(compareValuePosicion);
-                    spinnerPosiciones.setSelection(spinnerPosition);
-                }
-
-                //se crea y llena el spinner de altura
-
-                Integer alturaMinima = 160;
-                Integer alturaMaxima = 221;
-                Integer step = 1;
-                String[] myValues = getArrayWithSteps(alturaMinima, alturaMaxima, step);
-                NumberPicker picker = new NumberPicker(context);
-                picker.setDisplayedValues(myValues);
-                picker.setWrapSelectorWheel(false);
-
-                final Spinner spinnerAlturas = (Spinner) popupViewEditar.findViewById(R.id.editarAlturaJugador);
-                ArrayAdapter<String> adapterAltura;
-                adapterAltura = new ArrayAdapter<String>(context,R.layout.spinner_altura, myValues);
-                adapterAltura.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spinnerAlturas.setAdapter(adapterAltura);
-                int alturaJugador = jugadorEditar.getAltura();
-                String compareValueAltura = Integer.toString(alturaJugador);
-
-                if (!compareValueAltura.equals(null)) {
-                    int spinnerPosition = adapterAltura.getPosition(compareValueAltura);
-                    spinnerAlturas.setSelection(spinnerPosition);
-                }
-
-
-
-                AlertDialog.Builder builderEditar =
-                        new AlertDialog.Builder(context)
-                                .setTitle("Editar Jugador")
-                                .setPositiveButton("Editar", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        // capturar y gaurdadr en bd
-                                        final String NOMBRE = (((TextView) popupViewEditar.findViewById(R.id.editarNombreJugador)).getText().toString());
-                                        final String APELLIDO = (((TextView) popupViewEditar.findViewById(R.id.editarApellidoJugador)).getText().toString());
-                                        Bitmap FOTO = null;
-                                        FOTO = ((BitmapDrawable) ((ImageView) popupViewEditar.findViewById(R.id.editarFotoJugador)).getDrawable()).getBitmap();
-
-                                        jugadorEditar.setNombre(NOMBRE);
-                                        jugadorEditar.setApellido(APELLIDO);
-                                        jugadorEditar.setFoto(Utils.getByteArrayFromBitmap(FOTO));
-
-                                        JugadorRepository.getInstance(context).updateJugador(jugadorEditar);
-                                        Toast.makeText(context, "Jugador editado", Toast.LENGTH_SHORT).show();
-
-                                        //se refresca el cardview
-
-                                        dialog.dismiss();
-
-                                    }
-                                })
-                                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dialog.cancel();
-                                    }
-                                });
-                builderEditar.setView(popupViewEditar);
-                builderEditar.show();
 
                 break;
 
@@ -388,10 +240,17 @@ class MyMenuItemClickListener implements PopupMenu.OnMenuItemClickListener{
                         .setMessage("Are you sure you want to delete this entry?")
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
+
                                 JugadorRepository.getInstance(context).deleteJugadorById(id);
                                 Equipo e = EquipoRepository.getInstance(context).findEquipoById(JugadorEquipoInfoActivity.idEquipo);
+                                //para refrescar los equipos
+                                Intent i1 = new Intent (context, JugadorEquipoInfoActivity.class);
+                                context.startActivity(i1);
+
                                 lastmAdapter = new SeccionAdapterJugadorEquipoInfo(e,new ArrayList<Jugador>(e.jugadores),context);
                                 FragmentJugadorEquipoInfo.mRecyclerViewStatic.setAdapter(lastmAdapter);
+                                //agregue esto
+
                             }
                         })
                         .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
@@ -408,11 +267,6 @@ class MyMenuItemClickListener implements PopupMenu.OnMenuItemClickListener{
         }
         return false;
     }
-
-
-
-
-
 
 
     private  Bitmap decodeUri(Uri selectedImage) throws FileNotFoundException {
