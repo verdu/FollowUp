@@ -162,6 +162,7 @@ public class HomeActivity extends AppCompatActivity {
                 break;
             case "Seguimientos":
 
+
                 break;
             case "Tips":
 
@@ -401,10 +402,11 @@ public class HomeActivity extends AppCompatActivity {
                 alertDialogBuilderJugadores.setView(popupViewJugadores);
                 AlertDialog alertDialogJugadores = alertDialogBuilderJugadores.show();
                 //alertDialogJugadores.getWindow().setLayout(1000, 1400);
-
                 break;
-            case "Mis Jugadores":
-                Toast.makeText(HomeActivity.this, "Mis Jugadores!", Toast.LENGTH_SHORT).show();
+            case "Seguimientos":
+                Intent intent = new Intent(HomeActivity.this,InicioSeguimientoActivity.class);
+                startActivity(intent);
+
                 break;
             default:
                 break;

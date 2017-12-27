@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        android:background="@color/customBlack">
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+           android:id="@+id/imagen_perfilJugador"
+           android:layout_width="96dp"
+           android:layout_height="96dp"
+           android:layout_alignParentLeft="true"
+           android:layout_alignParentStart="true"
+           android:layout_alignParentTop="true"
+           android:paddingLeft="15dp"
+           android:src="@drawable/hardenmaster"
+           app:civ_border_color="@color/red"
+           app:civ_border_width="2dp"
+            app:civ_fill_color="@color/white"
+           tools:layout_editor_absoluteX="0dp"
+           tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+            android:id="@+id/apellidoJugadorSeguimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="28dp"
+            android:layout_marginStart="28dp"
+            android:layout_toEndOf="@+id/imagen_perfilJugador"
+            android:layout_toRightOf="@+id/imagen_perfilJugador"
+            android:text="Grande Text"
+            android:paddingLeft="50dp"
+            android:paddingTop="10dp"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white"
+            android:textSize="40dp" />
+
+        <TextView
+            android:id="@+id/nombreJugadorSeguimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/apellidoJugadorSeguimiento"
+            android:layout_centerHorizontal="true"
+            android:text="Chico text"
+            android:textSize="15dp"
+            android:paddingLeft="45dp"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/redArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_arrow_red" />
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
