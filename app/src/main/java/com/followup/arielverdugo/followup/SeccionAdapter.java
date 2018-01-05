@@ -62,4 +62,9 @@ public class SeccionAdapter extends RecyclerView.Adapter<SeccionAdapter.SeccionV
     public int getItemCount() {
         return secciones.size();
     }
+
+    public void hola()
+    {
+
+    }
 }

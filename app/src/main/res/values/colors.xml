@@ -6,4 +6,8 @@
     <color name="darkGraySelected">#939292</color>
     <color name="red">#d72626</color>
     <color name="customBlack">#403f3f</color>
+    <color name="orange">#ea5f0d</color>
+    <color name="yellow">#d9d923</color>
+    <color name="violet">#d124b6</color>
+    <color name="blue">#0f3fd1</color>
 </resources>
