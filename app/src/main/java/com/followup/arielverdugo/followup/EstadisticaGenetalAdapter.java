@@ -35,6 +35,7 @@ public class EstadisticaGenetalAdapter extends RecyclerView.Adapter<RecyclerView
 
             case 2:
                 View view2 = mInflater.inflate(R.layout.item_recycler_generales_subheader, parent, false);
+                //view2.setPadding(100,0,0,0);
                 return new ViewHolder2(view2);
 
             default:return null;
