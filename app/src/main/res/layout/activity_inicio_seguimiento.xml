@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -55,4 +56,37 @@
             </LinearLayout>
         </android.support.v4.app.FragmentTabHost>
     </RelativeLayout>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/menu_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:fab_labelStyle="@style/Etiquetas"
+        fab:fab_addButtonColorNormal="?attr/colorPrimary"
+        fab:fab_addButtonSize="normal"
+        fab:fab_labelsPosition="left"
+        tools:layout_editor_absoluteX="135dp"
+        tools:layout_editor_absoluteY="224dp">
+
+
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/accion_buscar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="?attr/colorAccent"
+            fab:fab_icon="@drawable/save"
+            fab:fab_size="mini"
+            fab:fab_title="Guardar" />
+
+
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+
+
 </android.support.constraint.ConstraintLayout>

@@ -10,4 +10,6 @@
     <color name="yellow">#d9d923</color>
     <color name="violet">#d124b6</color>
     <color name="blue">#0f3fd1</color>
+    <color name="negro_semitransparente">#B2000000</color>
+    <color name="blanco">#fafafa</color>
 </resources>

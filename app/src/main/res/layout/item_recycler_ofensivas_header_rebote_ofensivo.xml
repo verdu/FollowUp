@@ -21,14 +21,14 @@
 
             <TextView
                 android:id="@+id/testReboteOfensivo"
-                android:layout_width="50dp"
+                android:layout_width="120dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="36dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:lines="1"
-                android:text="Goles de Campo Hechos"
+                android:text="Rebotes Ofensivos"
                 android:gravity="bottom"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/orange"
@@ -37,8 +37,9 @@
             <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
                 android:id="@+id/elegantNumberRebotesOfensivos"
                 android:layout_width="200dp"
-                app:backGroundColor="@color/orange"
+                app:backGroundColor="@color/white"
                 app:textSize="20sp"
+                app:textColor="@color/orange"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="18dp"
                 android:layout_centerHorizontal="true"
