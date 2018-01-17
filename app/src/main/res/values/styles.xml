@@ -17,5 +17,9 @@
 
     <style name="AppTheme.PopupOverlay" parent="Base.ThemeOverlay.AppCompat.Light" />
 
+    <style name="AppTheme.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="android:textColorPrimary">@color/orange</item>
+    </style>
+
 
 </resources>

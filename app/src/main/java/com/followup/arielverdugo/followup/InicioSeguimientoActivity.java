@@ -86,24 +86,24 @@ public class InicioSeguimientoActivity extends FragmentActivity implements Adapt
         //mTabHost.getTabWidget().getChildAt(0).getLayoutParams().width = 100;
 
 
-        mTabHost.addTab(mTabHost.newTabSpec("situacion").setIndicator("S"),
-                TabEstadisticaSituacion.class, null);
-        mTabHost.getTabWidget().getChildAt(1).setBackgroundColor(ContextCompat.getColor(this, R.color.yellow));
-        TextView titleSituacion = (TextView) mTabHost.getTabWidget().getChildAt(1).findViewById(android.R.id.title);
-        titleSituacion.setTextColor(Color.parseColor("#ffffff"));
-
         mTabHost.addTab(mTabHost.newTabSpec("ofensiva").setIndicator("O"),
                 TabEstadisticaOfensiva.class, null);
-        mTabHost.getTabWidget().getChildAt(2).setBackgroundColor(ContextCompat.getColor(this, R.color.violet));
-        TextView titleOfensiva = (TextView) mTabHost.getTabWidget().getChildAt(2).findViewById(android.R.id.title);
+        mTabHost.getTabWidget().getChildAt(1).setBackgroundColor(ContextCompat.getColor(this, R.color.violet));
+        TextView titleOfensiva = (TextView) mTabHost.getTabWidget().getChildAt(1).findViewById(android.R.id.title);
         titleOfensiva.setTextColor(Color.parseColor("#ffffff"));
 
 
         mTabHost.addTab(mTabHost.newTabSpec("defensiva").setIndicator("D"),
                 TabEstadisticaDefensiva.class, null);
-        mTabHost.getTabWidget().getChildAt(3).setBackgroundColor(ContextCompat.getColor(this, R.color.blue));
-        TextView titleDefensiva = (TextView) mTabHost.getTabWidget().getChildAt(3).findViewById(android.R.id.title);
+        mTabHost.getTabWidget().getChildAt(2).setBackgroundColor(ContextCompat.getColor(this, R.color.blue));
+        TextView titleDefensiva = (TextView) mTabHost.getTabWidget().getChildAt(2).findViewById(android.R.id.title);
         titleDefensiva.setTextColor(Color.parseColor("#ffffff"));
+
+        mTabHost.addTab(mTabHost.newTabSpec("situacion").setIndicator("S"),
+                TabEstadisticaSituacion.class, null);
+        mTabHost.getTabWidget().getChildAt(3).setBackgroundColor(ContextCompat.getColor(this, R.color.yellow));
+        TextView titleSituacion = (TextView) mTabHost.getTabWidget().getChildAt(3).findViewById(android.R.id.title);
+        titleSituacion.setTextColor(Color.parseColor("#ffffff"));
 
 
         //mTabHost.getTabWidget().getChildAt(0).findViewById(android.R.id.title);
@@ -111,7 +111,7 @@ public class InicioSeguimientoActivity extends FragmentActivity implements Adapt
         recyclerViewGenerales = (RecyclerView) findViewById(R.id.recyclerGenerales);
         int numberOfColumns = 2;
         recyclerViewGenerales.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
-        adapter = new EstadisticaGenetalAdapter(this,data);
+        adapter = new EstadisticaGeneralAdapter(this,data);
         recyclerViewGenerales.setAdapter(adapter);*/
 
 

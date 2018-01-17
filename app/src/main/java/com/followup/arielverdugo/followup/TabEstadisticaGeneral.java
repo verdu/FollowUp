@@ -1,6 +1,5 @@
 package com.followup.arielverdugo.followup;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -9,28 +8,20 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTabHost;
-import android.support.v4.app.FragmentTransaction;
 import android.widget.RadioButton;
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.RadioButton;
+
 /**
  * Created by arielverdugo on 27/12/17.
  */
 
-public class TabEstadisticaGeneral extends android.support.v4.app.Fragment implements EstadisticaGenetalAdapter.ItemClickListener{
+public class TabEstadisticaGeneral extends android.support.v4.app.Fragment implements EstadisticaGeneralAdapter.ItemClickListener{
 
     private static final String TAG = "RecyclerViewFragment";
     private static final String KEY_LAYOUT_MANAGER = "layoutManager";
     private static final int SPAN_COUNT = 2;
-    private static final int DATASET_COUNT = 60;
+    private static final int DATASET_COUNT = 12;
     RecyclerView recyclerViewGenerales;
 
     private StaggeredGridLayoutManager gaggeredGridLayoutManager;
@@ -46,7 +37,7 @@ public class TabEstadisticaGeneral extends android.support.v4.app.Fragment imple
     protected RadioButton mGridLayoutRadioButton;
 
     protected RecyclerView mRecyclerView;
-    protected EstadisticaGenetalAdapter mAdapter;
+    protected EstadisticaGeneralAdapter mAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
     protected String[] mDataset;
 
@@ -82,13 +73,16 @@ public class TabEstadisticaGeneral extends android.support.v4.app.Fragment imple
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
 
-        mAdapter = new EstadisticaGenetalAdapter(c,mDataset);
+        mAdapter = new EstadisticaGeneralAdapter(c,mDataset);
         mAdapter.setClickListener(this);
         // Set CustomAdapter as the adapter for RecyclerView.
 
         mRecyclerView.setAdapter(mAdapter);
         int numberOfColumns = 2;
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setItemViewCacheSize(12);
         mRecyclerView.setLayoutManager(new GridLayoutManager(c, numberOfColumns));
+
         ///////////////////////////////////////////////////////////////////////////
 
         /*

@@ -37,5 +37,7 @@ dependencies {
     compile 'com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4'
     compile 'com.android.support:design:22.2.0'
     compile 'de.hdodenhof:circleimageview:2.2.0'
+    compile 'com.shawnlin:number-picker:2.4.4'
+    compile 'com.cepheuen.elegant-number-button:lib:1.0.2'
     testCompile 'junit:junit:4.12'
 }

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="200dp"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="5dp"
+    android:layout_height="180dp">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:lines="1"
+            android:id="@+id/testSubTov"
+            android:padding="10dp"
+            android:layout_alignParentLeft="true"
+            />
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

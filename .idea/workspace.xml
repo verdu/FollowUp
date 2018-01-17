@@ -12,21 +12,79 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea333ddd-9aeb-41bd-bd75-463d1bb9bd95" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_cepheuen_elegant_number_button_lib_1_0_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_shawnlin_number_picker_2_4_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaDefensivaAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaOfensivaAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaSituacionAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_header_bloqueos.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_header_rebotes.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_header_robos.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_subheader_bloqueos.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_subheader_rebotes.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_subheader_robos.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_header_asistencias.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_header_puntos.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_header_rebotes.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_header_tov.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_header_valoracion.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_asistencias.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_minutos.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_puntos.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_rebotes.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_tov.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_valoracion.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_golescampo_hechos.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_golescampo_intentados.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_golescampo_porcentaje.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_rebote_ofensivo.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_simples_hechos.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_simples_intentados.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_simples_porcentaje.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_triples_hechos.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_triples_intentados.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_triples_porcentaje.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_golescampo_hechos.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_golescampo_intentados.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_golescampo_porcentaje.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_rebote_ofensivo.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_simples_hechos.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_simples_intentados.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_simples_porcentaje.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_triples_hechos.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_triples_intentados.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_triples_porcentaje.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_situacion_header_entrenamiento.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_situacion_header_partido.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_situacion_subheader_entrenamiento.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_situacion_subheader_partido.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaGenetalAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaGeneralAdapter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_header.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_header_minutos.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaGenetalAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaGenetalAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_inicio_seguimiento.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_inicio_seguimiento.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_header.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_header.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_generales.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_generales.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/InicioSeguimientoActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/InicioSeguimientoActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/SeccionAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/SeccionAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaDefensiva.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaDefensiva.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaGeneral.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaGeneral.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaOfensiva.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaOfensiva.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaSituacion.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaSituacion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_defensivas.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_defensivas.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_ofensivas.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_ofensivas.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_situaciones.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_situaciones.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
     </list>
     <ignored path="FollowUp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,7 +107,20 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="FollowUp" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+            </PATH>
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -61,18 +132,18 @@
       <file leaf-file-name="InicioSeguimientoActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/InicioSeguimientoActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-922">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="1035">
+              <caret line="91" column="32" lean-forward="false" selection-start-line="91" selection-start-column="32" selection-end-line="91" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TabEstadisticaGeneral.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaGeneral.java">
+      <file leaf-file-name="EstadisticaSituacionAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaSituacionAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1611">
-              <caret line="155" column="28" lean-forward="false" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="28" />
+            <state relative-caret-position="313">
+              <caret line="250" column="64" lean-forward="false" selection-start-line="250" selection-start-column="64" selection-end-line="250" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,14 +151,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EstadisticaGenetalAdapter.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaGenetalAdapter.java">
+      <file leaf-file-name="activity_inicio_seguimiento.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_inicio_seguimiento.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="29" />
+            <state relative-caret-position="-286">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EstadisticaGeneralAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaGeneralAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="375" selection-end-column="0" />
               <folding>
-                <element signature="e#2031#2032#0" expanded="true" />
-                <element signature="e#2066#2067#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,8 +183,8 @@
       <list>
         <option value="Interface" />
         <option value="layoutResourceFile_vertical" />
-        <option value="Class" />
         <option value="resourceFile" />
+        <option value="Class" />
         <option value="layoutResourceFile" />
       </list>
     </option>
@@ -113,6 +196,9 @@
       <find>newTabSpec</find>
       <find>Obje</find>
       <find>equipoSelected</find>
+      <find>DATASET_COUNT</find>
+      <find>getItemC</find>
+      <find>getitemV</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -1839,57 +1925,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TwoWayPagerFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EditarJugadorActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/HorizontalPageFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/JugadorRepository.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/HorizontalPageAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/UtilsNew.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/SeccionAdapterJugadorEquipoInfo.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_card_seguimiento_jugador.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/spinner_jugadores.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/SeguimientoAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/SeguimientoActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_tabhost_jugadorequipoinfo.xml" />
-        <option value="$USER_HOME$/.gradle/caches/transforms-1/files-1.1/onboarder-1.0.4.aar/a5dc256a322e500cf481bcde8a3e7e3e/res/values/values.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/dropdown_item_spinner_jugador.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/fondofotoperfil.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/ejemplo.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ejemplo.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/custom_dropdown_jugadores.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/CustomAdapterJugadores.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/custom_spinner_jugadores.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_jugadorinfo.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/JugadorEquipoInfoActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_estadistica_general.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_estadistica_situacion.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_estadistica_ofensiva.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaSituacion.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaOfensiva.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_header_minutos.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_header_asistencias.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_header_valoracion.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_header_tov.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/InicioSeguimientoActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_ofensivas.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaDefensiva.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_defensivas.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_situaciones.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/tab_selected_background.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/myrect.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/SeccionAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/HomeActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/InicioSeguimientoActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/space_header_subheader.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/verga.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_card_jugadorequipoinfo.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_generales.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_inicio_seguimiento.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_header.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaGenetalAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaGeneral.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_golescampo_hechos.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_golescampo_porcentaje.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_triples_hechos.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_triples_porcentaje.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_golescampo_intentados.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_triples_intentados.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_simples_hechos.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_simples_intentados.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_simples_porcentaje.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_rebote_ofensivo.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_golescampo_hechos.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_golescampo_intentados.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_golescampo_porcentaje.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_triples_hechos.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_triples_intentados.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_triples_porcentaje.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_simples_hechos.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_simples_intentados.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_simples_porcentaje.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_rebote_ofensivo.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaOfensivaAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_golescampo_hechos.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_golescampo_intentados.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_golescampo_porcentaje.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_triples_hechos.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_triples_intentados.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_triples_porcentaje.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaOfensiva.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaDefensivaAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_header_rebotes.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_header_robos.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_header_bloqueos.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_subheader_rebotes.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_subheader_robos.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_subheader_bloqueos.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaDefensiva.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaSituacion.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_situacion_header_entrenamiento.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_situacion_header_partido.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_situacion_subheader_entrenamiento.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaSituacionAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recycler_situacion_subheader_partido.xml" />
       </list>
     </option>
   </component>
@@ -1976,7 +2062,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1985,8 +2071,8 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1999,8 +2085,8 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2013,19 +2099,29 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="followup" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FollowUp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="ProjectPane" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2126,7 +2222,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515437034099" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516217433709" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2174,7 +2270,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515437034099" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516217433709" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2336,7 +2432,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515437034100" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516217433710" />
       </method>
     </configuration>
     <list size="1">
@@ -2392,27 +2488,27 @@
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5565093" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32692307" sideWeight="0.4914163" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09375" sideWeight="0.48855507" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34254807" sideWeight="0.48855507" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21030043" sideWeight="0.5088889" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15745193" sideWeight="0.50858366" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16452074" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29206732" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46033654" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.05528846" sideWeight="0.49713877" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19350961" sideWeight="0.4914163" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11057692" sideWeight="0.4914163" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957748" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1509299" sideWeight="0.4911111" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2639485" sideWeight="0.4911111" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24852072" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19110577" sideWeight="0.48426324" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1358173" sideWeight="0.48426324" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21030043" sideWeight="0.5088889" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2426,14 +2522,14 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.328125" sideWeight="0.5565093" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5565093" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21030043" sideWeight="0.5088889" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15745193" sideWeight="0.50858366" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37096775" sideWeight="0.8590844" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26081732" sideWeight="0.4914163" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33533654" sideWeight="0.4914163" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -2441,21 +2537,21 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24852072" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29206732" sideWeight="0.48426324" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19110577" sideWeight="0.48426324" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32692307" sideWeight="0.4914163" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2596154" sideWeight="0.48855507" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34254807" sideWeight="0.48855507" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16452074" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29206732" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16452074" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10817308" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.05528846" sideWeight="0.49713877" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957748" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13018598" sideWeight="0.4911111" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22031474" sideWeight="0.4911111" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -2489,19 +2585,25 @@
           <option name="timeStamp" value="325" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaGeneral.java</url>
-          <line>85</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaGeneralAdapter.java</url>
+          <line>150</line>
           <properties />
-          <option name="timeStamp" value="474" />
+          <option name="timeStamp" value="586" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaGeneral.java</url>
-          <line>156</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaGeneralAdapter.java</url>
+          <line>41</line>
           <properties />
-          <option name="timeStamp" value="475" />
+          <option name="timeStamp" value="588" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaGeneralAdapter.java</url>
+          <line>45</line>
+          <properties />
+          <option name="timeStamp" value="589" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="476" />
+      <option name="time" value="600" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="FollowUp">
@@ -2510,376 +2612,355 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_card.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_generales.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaGeneral.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="50" column="1" lean-forward="false" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="21" />
+        <state relative-caret-position="592">
+          <caret line="63" column="74" lean-forward="true" selection-start-line="63" selection-start-column="74" selection-end-line="63" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_equipoinfo.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_golescampo_porcentaje.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="15" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/onboarder-1.0.4.aar/a5dc256a322e500cf481bcde8a3e7e3e/res/values/values.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_golescampo_intentados.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        <state relative-caret-position="165">
+          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_triples_intentados.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="44" column="64" lean-forward="true" selection-start-line="44" selection-start-column="64" selection-end-line="44" selection-end-column="64" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_triples_porcentaje.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="54" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="54" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_header_asistencias.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_agregar_jugador.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_simples_hechos.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="15" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/equipo_info_menu.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_simples_intentados.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="15" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/menu.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-24/android/widget/ArrayAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="112" column="11" lean-forward="false" selection-start-line="112" selection-start-column="11" selection-end-line="112" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dropdown_item_spinner_jugador.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/fondofotoperfil.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_simples_porcentaje.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        <state relative-caret-position="309">
+          <caret line="34" column="41" lean-forward="true" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_tabhost_jugadorequipoinfo.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_minutos.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="375">
+          <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/ejemplo.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ejemplo.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/custom_dropdown_jugadores.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/red_arrow.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/right_arrow_red.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/CustomAdapterJugadores.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/platforms/android-24/data/res/values/ids.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="40" column="24" lean-forward="false" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/custom_spinner_jugadores.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_asistencias.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_golescampo_intentados.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_golescampo_porcentaje.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_triples_hechos.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_triples_intentados.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_triples_porcentaje.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_simples_intentados.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_simples_porcentaje.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_rebote_ofensivo.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="50" lean-forward="false" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader_golescampo_hechos.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_simples_hechos.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_golescampo_intentados.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_triples_hechos.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_triples_intentados.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaOfensiva.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="126" column="69" lean-forward="false" selection-start-line="126" selection-start-column="69" selection-end-line="126" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_ofensivas.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_triples_porcentaje.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="52" lean-forward="false" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_golescampo_hechos.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="27" column="42" lean-forward="false" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_rebote_ofensivo.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_header_rebotes.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_header_robos.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_header_bloqueos.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="37" column="46" lean-forward="false" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_golescampo_hechos.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_subheader_rebotes.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_subheader_robos.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_defensivos_subheader_bloqueos.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="44" lean-forward="false" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaDefensiva.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaSituacion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="69" lean-forward="false" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaOfensiva.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="8" column="50" lean-forward="false" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_defensivas.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_situaciones.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/tab_selected_background.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_ofensivas.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/myrect.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="31" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaDefensiva.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/SeccionAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/JugadorEquipoInfoActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-122">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/a9509cf804633b7c34896263f85cdcc7/res/values/values.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="44" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_card_equipoinfo.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="72" column="37" lean-forward="false" selection-start-line="70" selection-start-column="3" selection-end-line="72" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/24.2.1/recyclerview-v7-24.2.1-sources.jar!/android/support/v7/widget/GridLayoutManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="81" column="11" lean-forward="false" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/SeccionAdapterEquipoInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="88" column="57" lean-forward="false" selection-start-line="88" selection-start-column="57" selection-end-line="88" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/space_header_subheader.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/HomeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="112" column="61" lean-forward="false" selection-start-line="112" selection-start-column="61" selection-end-line="112" selection-end-column="61" />
+          <caret line="18" column="115" lean-forward="false" selection-start-line="18" selection-start-column="88" selection-end-line="18" selection-end-column="115" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaOfensivaAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/verga.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_card_jugadorequipoinfo.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_subheader.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_generales_header.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="61" lean-forward="false" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_jugadorinfo.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="50" column="8" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_inicio_seguimiento.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="23" column="47" lean-forward="false" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_estadisticas_generales.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/FragmentJugadorEquipoInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-542">
-          <caret line="82" column="17" lean-forward="false" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/TabEstadisticaGeneral.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1611">
-          <caret line="155" column="28" lean-forward="false" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="28" />
+        <state relative-caret-position="-197">
+          <caret line="423" column="95" lean-forward="false" selection-start-line="423" selection-start-column="72" selection-end-line="423" selection-end-column="95" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2888,21 +2969,111 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/InicioSeguimientoActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-922">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="1035">
+          <caret line="91" column="32" lean-forward="false" selection-start-line="91" selection-start-column="32" selection-end-line="91" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaGenetalAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaDefensivaAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="29" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
           <folding>
-            <element signature="e#2031#2032#0" expanded="true" />
-            <element signature="e#2066#2067#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_header_triples_hechos.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaGeneralAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="375" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_situacion_header_entrenamiento.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_situacion_header_partido.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="37" column="53" lean-forward="false" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_situacion_subheader_entrenamiento.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="49" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="49" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_ofensivas_subheader_golescampo_porcentaje.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_recycler_situacion_subheader_partido.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/followup/arielverdugo/followup/EstadisticaSituacionAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="250" column="64" lean-forward="false" selection-start-line="250" selection-start-column="64" selection-end-line="250" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_inicio_seguimiento.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-286">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
   </component>
