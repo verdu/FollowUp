@@ -41,5 +41,6 @@ dependencies {
     compile 'com.cepheuen.elegant-number-button:lib:1.0.2'
     compile 'com.getbase:floatingactionbutton:1.10.1'
     compile 'com.hanks.animatecheckbox:library:0.1'
+    compile 'com.github.ivbaranov:materiallettericon:0.2.3'
     testCompile 'junit:junit:4.12'
 }

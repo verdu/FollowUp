@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeDialogSimple"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/tituloEntrenamientoSimple"
+            android:layout_width="294dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="56dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Arme su rutina de tiros libres"
+            android:textSize="23dp"
+            app:layout_constraintBottom_toTopOf="@+id/entrenamientoSuma"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <TextView
+            android:id="@+id/tituloRepeticiones"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_alignBottom="@+id/entrenamientoResta"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="11dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginRight="19dp"
+            android:text="Repeteiciones"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/entrenamientoResta"
+            app:layout_constraintTop_toBottomOf="@+id/tituloEntrenamientoSimple" />
+
+        <TextView
+            android:id="@+id/entrenamientoSeries"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/cantidadRepeticiones"
+            android:layout_alignBottom="@+id/cantidadRepeticiones"
+            android:layout_alignLeft="@+id/tituloEntrenamientoSimple"
+            android:layout_alignStart="@+id/tituloEntrenamientoSimple"
+            android:text="Serie: 1"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cantidadRepeticiones"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/cantidadRepeticiones"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tituloRepeticiones"
+            android:layout_alignStart="@+id/tituloRepeticiones"
+            android:layout_below="@+id/tituloRepeticiones"
+            android:layout_marginTop="26dp"
+            android:ems="10"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/entrenamientoSeries"
+            app:layout_constraintTop_toBottomOf="@+id/tituloRepeticiones"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageButton
+            android:id="@+id/entrenamientoSuma"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tituloEntrenamientoSimple"
+            android:layout_marginTop="18dp"
+            app:layout_constraintBottom_toTopOf="@+id/entrenamientoSeries"
+            app:layout_constraintEnd_toStartOf="@+id/entrenamientoResta"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tituloEntrenamientoSimple"
+            app:srcCompat="@drawable/suma" />
+
+        <ImageButton
+            android:id="@+id/entrenamientoResta"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@+id/entrenamientoSuma"
+            android:layout_marginLeft="19dp"
+            android:layout_marginStart="19dp"
+            android:layout_toEndOf="@+id/entrenamientoSuma"
+            android:layout_toRightOf="@+id/entrenamientoSuma"
+            app:layout_constraintBottom_toTopOf="@+id/entrenamientoSeries"
+            app:layout_constraintEnd_toStartOf="@+id/tituloRepeticiones"
+            app:layout_constraintStart_toEndOf="@+id/entrenamientoSuma"
+            app:layout_constraintTop_toBottomOf="@+id/tituloEntrenamientoSimple"
+            app:srcCompat="@drawable/resta" />
+
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

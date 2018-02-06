@@ -25,7 +25,8 @@
         <activity android:name=".EditarJugadorActivity" />
         <activity android:name=".TipsActivity" />
         <activity android:name=".SeguimientoActivity" />
-        <activity android:name=".InicioSeguimientoActivity" />
+        <activity android:name=".InicioSeguimientoPartidoActivity" />
+        <activity android:name=".InicioSeguimientoEntrenamientoActivity" />
 
 
     </application>

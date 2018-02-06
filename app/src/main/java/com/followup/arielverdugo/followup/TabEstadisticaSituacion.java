@@ -21,7 +21,7 @@ public class TabEstadisticaSituacion extends android.support.v4.app.Fragment imp
     private static final String TAG = "RecyclerViewFragment";
     private static final String KEY_LAYOUT_MANAGER = "layoutManager";
     private static final int SPAN_COUNT = 2;
-    private static final int DATASET_COUNT = 4;
+    private static final int DATASET_COUNT = 2;
     RecyclerView recyclerViewGenerales;
 
     private StaggeredGridLayoutManager gaggeredGridLayoutManager;
@@ -78,9 +78,9 @@ public class TabEstadisticaSituacion extends android.support.v4.app.Fragment imp
         // Set CustomAdapter as the adapter for RecyclerView.
 
         mRecyclerView.setAdapter(mAdapter);
-        int numberOfColumns = 2;
+        int numberOfColumns = 1;
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setItemViewCacheSize(4);
+        mRecyclerView.setItemViewCacheSize(2);
         mRecyclerView.setLayoutManager(new GridLayoutManager(c, numberOfColumns));
 
         ///////////////////////////////////////////////////////////////////////////

@@ -39,7 +39,7 @@ public class CustomAdapterJugadores extends BaseAdapter implements SpinnerAdapte
         this.apellido = apellido;
         this.foto = foto;
         this.c = c;
-        jugadoresSeguimiento = JugadorRepository.getInstance(c).getJugadores();
+        jugadoresSeguimiento = JugadorRepository.getInstance(c).getJugadoresFavoritos();
         inflter = (LayoutInflater.from(c));
     }
     @Override

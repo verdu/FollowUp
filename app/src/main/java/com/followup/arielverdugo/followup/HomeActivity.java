@@ -202,6 +202,7 @@ public class HomeActivity extends AppCompatActivity {
         TextView textoSeccion = (TextView) row.findViewById(R.id.textoSeccion);
         final ViewGroup popupView = (ViewGroup) getLayoutInflater().inflate(R.layout.dialog_agregar_equipo,null);
         final ViewGroup popupViewJugadores = (ViewGroup) getLayoutInflater().inflate(R.layout.dialog_agregar_jugador,null);
+        //final ViewGroup popupViewSituacion = (ViewGroup) getLayoutInflater().inflate(R.layout.dialog_situacion,null);
 
         switch (textoSeccion.getText().toString()) {
             case "Equipos":
@@ -404,8 +405,50 @@ public class HomeActivity extends AppCompatActivity {
                 //alertDialogJugadores.getWindow().setLayout(1000, 1400);
                 break;
             case "Seguimientos":
-                Intent intent = new Intent(HomeActivity.this,InicioSeguimientoActivity.class);
-                startActivity(intent);
+
+                //Intent intent = new Intent(HomeActivity.this,InicioSeguimientoPartidoActivity.class);
+                //startActivity(intent);
+
+                final CharSequence[] items = {" Partido ","Entrenamiento"};
+                final ArrayList seletedItems=new ArrayList();
+
+                AlertDialog dialog = new AlertDialog.Builder(this)
+                        .setTitle("Seleccione situación")
+                        .setSingleChoiceItems(items, 1, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int indexSelected) {
+
+                            }
+                        }).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int id) {
+                                //  Your code when user clicked on OK
+                                //  You can write the code  to save the selected item here
+                                dialog.dismiss();
+                                int selectedPosition = ((AlertDialog)dialog).getListView().getCheckedItemPosition();
+                                switch (selectedPosition){
+                                    case 0:
+                                        Intent intent = new Intent(HomeActivity.this,InicioSeguimientoPartidoActivity.class);
+                                        startActivity(intent);
+                                        break;
+                                    case 1:
+                                        Intent intent2 = new Intent(HomeActivity.this,InicioSeguimientoEntrenamientoActivity.class);
+                                        startActivity(intent2);
+                                        break;
+
+                                    default:
+                                        break;
+                                }
+                            }
+                        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int id) {
+                                //  Your code when user clicked on Cancel
+                            }
+                        }).create();
+                dialog.show();
+
+
 
                 break;
             default:

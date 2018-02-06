@@ -50,7 +50,7 @@ import static com.followup.arielverdugo.followup.SeccionAdapterEquipoInfo.Seccio
 public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<SeccionAdapterJugadorEquipoInfo.SeccionJugadorInfoViewHolder> {
     private List<Jugador> jugadores;
     public Equipo equipo;
-
+    public static List<Jugador>  jugadoresFavoritos;
     private static RecyclerViewClickListener itemListener;
     private Context c;
 
@@ -156,16 +156,19 @@ public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<Seccio
         viewHolder.favorito.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                jugadoresFavoritos = JugadorRepository.getInstance(c).getJugadoresFavoritos();
                 if(!viewHolder.favorito.isChecked())
                 {
-                   SeguimientoActivity.jugadoresFavoritos.remove(i);
+                   //SeguimientoActivity.jugadoresFavoritos.remove(i);
+                    jugadoresFavoritos.remove(i);
 
                     jugadorActual.setFavourite(0);
                     JugadorRepository.getInstance(c).updateJugador(jugadorActual);
                 }
                 else {
-                    SeguimientoActivity.jugadoresFavoritos.add(jugadorActual);
+                    //SeguimientoActivity.jugadoresFavoritos.add(jugadorActual);
+                    jugadoresFavoritos.add(jugadorActual);
+
                     jugadorActual.setFavourite(1);
                     JugadorRepository.getInstance(c).updateJugador(jugadorActual);
                 }

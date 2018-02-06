@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="150dp" android:foreground="@drawable/card_foreground"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="4dp"
+    card_view:cardUseCompatPadding="true"
+    android:id="@+id/cardViewSeleccionarEntrenamiento"
+    android:background="@drawable/background_selector">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/relativeEntrenamientos"
+        android:background="@drawable/background_selector"
+        android:elevation="3dp"
+        card_view:cardCornerRadius="0dp">
+
+
+        <TextView
+            android:id="@+id/pruebaIcono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/imagenEquipoInfo"
+            android:text="Configure su entrenamiento"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <com.github.ivbaranov.mli.MaterialLetterIcon
+            android:id="@+id/iconLibres"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/pruebaIcono"
+            android:layout_marginLeft="100dp"
+            android:layout_marginStart="100dp"
+            app:mli_shape_color="@color/red"
+            app:mli_letter_color="@color/black" />
+
+        <com.github.ivbaranov.mli.MaterialLetterIcon
+            android:id="@+id/iconDobles"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@+id/iconLibres"
+            android:layout_marginLeft="17dp"
+            android:layout_marginStart="17dp"
+            android:layout_toEndOf="@+id/iconLibres"
+            android:layout_toRightOf="@+id/iconLibres"
+            app:mli_shape_color="@color/red"
+            app:mli_letter_color="@color/black" />
+
+        <com.github.ivbaranov.mli.MaterialLetterIcon
+            android:id="@+id/iconTriples"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/pruebaIcono"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_toEndOf="@+id/iconDobles"
+            android:layout_toRightOf="@+id/iconDobles"
+            app:mli_shape_color="@color/red"
+            app:mli_letter_color="@color/black" />
+
+
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/more2"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@null"/>
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
