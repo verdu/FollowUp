@@ -72,8 +72,7 @@
         tools:layout_editor_absoluteX="135dp"
         tools:layout_editor_absoluteY="224dp">
 
-
-
+        
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/accion_save"
             android:layout_width="wrap_content"
@@ -86,16 +85,6 @@
 
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/verga"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="425dp" />
 
 
 

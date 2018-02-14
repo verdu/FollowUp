@@ -35,7 +35,7 @@
                 android:textSize="12dp" />
 
             <com.shawnlin.numberpicker.NumberPicker
-                android:id="@+id/minPicker"
+                android:id="@+id/minutos"
                 np_wheelItemCount="1"
                 android:layout_width="60dp"
                 android:layout_height="135dp"
@@ -58,13 +58,13 @@
                 app:np_width="70dp" />
 
             <com.shawnlin.numberpicker.NumberPicker
-                android:id="@+id/segPicker"
+                android:id="@+id/segundos"
                 np_wheelItemCount="1"
                 android:layout_width="60dp"
                 android:layout_height="135dp"
-                android:layout_alignTop="@+id/minPicker"
-                android:layout_toEndOf="@+id/minPicker"
-                android:layout_toRightOf="@+id/minPicker"
+                android:layout_alignTop="@+id/minutos"
+                android:layout_toEndOf="@+id/minutos"
+                android:layout_toRightOf="@+id/minutos"
                 android:background="@color/white"
                 app:np_dividerColor="@color/orange"
                 app:np_formatter="@string/number_picker_formatter"

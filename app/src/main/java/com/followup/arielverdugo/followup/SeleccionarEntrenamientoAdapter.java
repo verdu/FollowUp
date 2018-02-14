@@ -156,9 +156,8 @@ public class SeleccionarEntrenamientoAdapter extends RecyclerView.Adapter<Selecc
 
                                 TextView myText = new TextView(contextSeleccionarEnetrenamiento);
                                 EditText editText = new EditText(contextSeleccionarEnetrenamiento);
+                                editText.setText("10");
                                 editText.setInputType(InputType.TYPE_CLASS_NUMBER);
-                                //myText.setLayoutParams(new RelativeLayout.LayoutParams(200, 200));
-                                //myText.setId(contador);
                                 myText.setId(id);
                                 myText.setTextSize(20);
                                 myText.setPadding(0,50,0,0);
@@ -191,7 +190,7 @@ public class SeleccionarEntrenamientoAdapter extends RecyclerView.Adapter<Selecc
                                 TextView myText = new TextView(contextSeleccionarEnetrenamiento);
                                 EditText editText = new EditText(contextSeleccionarEnetrenamiento);
                                 editText.setInputType(InputType.TYPE_CLASS_NUMBER);
-                                //myText.setLayoutParams(new RelativeLayout.LayoutParams(200, 200));
+                                editText.setText("10");
                                 myText.setId(id);
                                 myText.setPadding(0,50,0,0);
                                 myText.setText("Serie: " + contadorLibres);
@@ -574,13 +573,8 @@ public class SeleccionarEntrenamientoAdapter extends RecyclerView.Adapter<Selecc
                         }
                     });
 
-
-
                 }
             });
-
-
-
 
         }
 
@@ -588,7 +582,6 @@ public class SeleccionarEntrenamientoAdapter extends RecyclerView.Adapter<Selecc
         public void onClick(View v) {
 
         }
-
 
     }
 
@@ -695,6 +688,15 @@ public class SeleccionarEntrenamientoAdapter extends RecyclerView.Adapter<Selecc
                 Intent intento2 = new Intent(context,InicioSeguimientoEntrenamientoActivity.class);
                 //((InicioSeguimientoEntrenamientoActivity)context).onCreate();
                 SeleccionarEntrenamientoAdapter.SeleccionarEntrenamientoViewHolder.flag = 0;
+                EstadisticaEntrenamientoSimpleAdapter.contadorSimple = 0;
+                EstadisticaEntrenamientoSimpleAdapter.tagsEntrenamientoSimple.clear();
+                EstadisticaEntrenamientoSimpleAdapter.viewsSimple.clear();
+                EstadisticaEntrenamientoDobleAdapter.contadorDoble = 0;
+                EstadisticaEntrenamientoDobleAdapter.tagsEntrenamientoDoble.clear();
+                EstadisticaEntrenamientoDobleAdapter.viewsDoble.clear();
+                EstadisticaEntrenamientoTripleAdapter.contadorTriple = 0;
+                EstadisticaEntrenamientoTripleAdapter.tagsEntrenamientoTriple.clear();
+                EstadisticaEntrenamientoTripleAdapter.viewsTriple.clear();
                 context.startActivity(intento2);
 
                 return true;

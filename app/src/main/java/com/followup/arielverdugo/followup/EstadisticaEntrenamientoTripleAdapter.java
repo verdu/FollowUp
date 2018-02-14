@@ -7,6 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+
+import java.util.ArrayList;
+
 /**
  * Created by arielverdugo on 23/1/18.
  */
@@ -17,6 +21,9 @@ public class EstadisticaEntrenamientoTripleAdapter extends RecyclerView.Adapter<
     private String[] mData = new String[0];
     private LayoutInflater mInflater;
     private EstadisticaDefensivaAdapter.ItemClickListener mClickListener;
+    public static ArrayList<Integer> tagsEntrenamientoTriple = new ArrayList<>();
+    public static int contadorTriple = 1;
+    public static ArrayList<View> viewsTriple = new ArrayList<>();
 
     // data is passed into the constructor
     EstadisticaEntrenamientoTripleAdapter(Context context, String[] data) {
@@ -91,10 +98,16 @@ public class EstadisticaEntrenamientoTripleAdapter extends RecyclerView.Adapter<
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView myTextView1;
+        ElegantNumberButton triples;
 
         ViewHolder(View itemView) {
             super(itemView);
             myTextView1 = (TextView) itemView.findViewById(R.id.testEntrenemientoTriple);
+            triples = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberEntrenamientoSimple);
+            triples.setTag(contadorTriple);
+            viewsTriple.add(triples);
+            tagsEntrenamientoTriple.add(contadorTriple);
+            contadorTriple++;
             itemView.setOnClickListener(this);
         }
 

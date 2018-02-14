@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
 
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+
 /**
  * Created by arielverdugo on 23/1/18.
  */
@@ -37,10 +39,11 @@ public class TabEstadisticaEntrenamientoSimple  extends android.support.v4.app.F
     protected RadioButton mLinearLayoutRadioButton;
     protected RadioButton mGridLayoutRadioButton;
 
-    protected RecyclerView mRecyclerView;
+    public RecyclerView mRecyclerView;
     protected EstadisticaEntrenamientoSimpleAdapter mAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
     protected String[] mDataset;
+    public ViewGroup vistasLibres;
 
     @Override
 
@@ -65,7 +68,6 @@ public class TabEstadisticaEntrenamientoSimple  extends android.support.v4.app.F
 
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerEntrenamientoSimple);
         mLayoutManager = new LinearLayoutManager(getActivity());
-
         mCurrentLayoutManagerType = TabEstadisticaEntrenamientoSimple.LayoutManagerType.LINEAR_LAYOUT_MANAGER;
 
         if (savedInstanceState != null) {
@@ -84,7 +86,6 @@ public class TabEstadisticaEntrenamientoSimple  extends android.support.v4.app.F
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setItemViewCacheSize(6);
         mRecyclerView.setLayoutManager(new GridLayoutManager(c, numberOfColumns));
-
         return rootView;
 
 
@@ -131,6 +132,7 @@ public class TabEstadisticaEntrenamientoSimple  extends android.support.v4.app.F
             mDataset[i] = "This is element #" + i;
         }
     }
+
 
     @Override
     public void onItemClick(View view, int position) {

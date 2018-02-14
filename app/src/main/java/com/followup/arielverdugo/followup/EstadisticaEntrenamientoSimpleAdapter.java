@@ -10,6 +10,10 @@ import android.view.ViewGroup;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+
+import java.util.ArrayList;
+
 /**
  * Created by arielverdugo on 23/1/18.
  */
@@ -22,6 +26,10 @@ public class EstadisticaEntrenamientoSimpleAdapter extends RecyclerView.Adapter<
     private EstadisticaDefensivaAdapter.ItemClickListener mClickListener;
     private int number = 0;
     private int numberb = 0;
+    public static ArrayList<Integer>tagsEntrenamientoSimple = new ArrayList<>();
+    public static int contadorSimple = 1;
+    public static ArrayList<View> viewsSimple = new ArrayList<>();
+
 
     // data is passed into the constructor
     EstadisticaEntrenamientoSimpleAdapter(Context context, String[] data) {
@@ -74,6 +82,7 @@ public class EstadisticaEntrenamientoSimpleAdapter extends RecyclerView.Adapter<
             case 0:
                 EstadisticaEntrenamientoSimpleAdapter.ViewHolder viewHolder0 = (EstadisticaEntrenamientoSimpleAdapter.ViewHolder) holder;
                 viewHolder0.myTextView1.setText("Simples");
+
                 break;
 
             case 2:
@@ -86,6 +95,8 @@ public class EstadisticaEntrenamientoSimpleAdapter extends RecyclerView.Adapter<
     }
 
 
+
+
     // total number of cells
     @Override
     public int getItemCount() {
@@ -96,10 +107,16 @@ public class EstadisticaEntrenamientoSimpleAdapter extends RecyclerView.Adapter<
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView myTextView1;
+        ElegantNumberButton libres;
 
         ViewHolder(View itemView) {
             super(itemView);
             myTextView1 = (TextView) itemView.findViewById(R.id.testEntrenemientoSimple);
+            libres = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberEntrenamientoSimple);
+            libres.setTag(contadorSimple);
+            viewsSimple.add(libres);
+            tagsEntrenamientoSimple.add(contadorSimple);
+            contadorSimple++;
             itemView.setOnClickListener(this);
         }
 
@@ -108,6 +125,8 @@ public class EstadisticaEntrenamientoSimpleAdapter extends RecyclerView.Adapter<
         public void onClick(View view) {
             if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
         }
+
+
     }
 
     public class ViewHolder2 extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -150,5 +169,7 @@ public class EstadisticaEntrenamientoSimpleAdapter extends RecyclerView.Adapter<
     public interface ItemClickListener {
         void onItemClick(View view, int position);
     }
+
+
 }
 

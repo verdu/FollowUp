@@ -2,6 +2,8 @@ package com.followup.arielverdugo.followup;
 
 import com.j256.ormlite.field.DatabaseField;
 
+import java.util.Date;
+
 /**
  * Created by arielverdugo on 6/2/18.
  */
@@ -13,7 +15,7 @@ public class Entrenamiento {
     public int id;
 
     @DatabaseField
-    private Integer fecha;
+    private Date fecha;
 
     @DatabaseField
     private Integer libres;
@@ -26,7 +28,7 @@ public class Entrenamiento {
 
     public Entrenamiento(){}
 
-    public Entrenamiento(Integer fecha,Integer libres, Integer dobles, Integer triples)
+    public Entrenamiento(Date fecha,Integer libres, Integer dobles, Integer triples)
     {
         this.fecha = fecha;
         this.libres = libres;
@@ -34,11 +36,11 @@ public class Entrenamiento {
         this.triples = triples;
     }
 
-    public Integer getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(Integer fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 

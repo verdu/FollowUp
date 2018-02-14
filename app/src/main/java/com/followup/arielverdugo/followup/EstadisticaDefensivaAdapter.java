@@ -14,6 +14,8 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+
 
 /**
  * Created by arielverdugo on 29/12/17.
@@ -27,6 +29,9 @@ public class EstadisticaDefensivaAdapter extends RecyclerView.Adapter<RecyclerVi
     private ItemClickListener mClickListener;
     private int number = 0;
     private int numberb = 0;
+    public static ElegantNumberButton rebotesDefensivos;
+    public static ElegantNumberButton robos;
+    public static ElegantNumberButton bloqueos;
 
     // data is passed into the constructor
     EstadisticaDefensivaAdapter(Context context, String[] data) {
@@ -191,14 +196,17 @@ public class EstadisticaDefensivaAdapter extends RecyclerView.Adapter<RecyclerVi
                     numberPicker.setDividerColor(ContextCompat.getColor(this, R.color.colorPrimary));
                     numberPicker.setDividerColorResource(R.color.colorPrimary);*/
                     myTextView1 = (TextView) itemView.findViewById(R.id.testRebotesDefensivos);
+                    rebotesDefensivos = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberRebotesDefensivos);
                     itemView.setOnClickListener(this);
                     break;
                 case 1:
                     myTextView2 = (TextView) itemView.findViewById(R.id.testRobos);
+                    robos = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberRobos);
                     itemView.setOnClickListener(this);
 
                 case 2:
                     myTextView3 = (TextView) itemView.findViewById(R.id.testBloqueos);
+                    bloqueos = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberBloqueos);
                     itemView.setOnClickListener(this);
                     break;
 

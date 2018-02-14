@@ -68,7 +68,7 @@
     </RelativeLayout>
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
-        android:id="@+id/menu_fab"
+        android:id="@+id/menu_fabEntrenamiento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
@@ -85,7 +85,7 @@
 
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/accion_buscar"
+            android:id="@+id/accion_saveEntrenamiento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             fab:fab_colorNormal="?attr/colorAccent"

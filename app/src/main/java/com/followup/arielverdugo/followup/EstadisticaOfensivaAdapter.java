@@ -1,18 +1,18 @@
 package com.followup.arielverdugo.followup;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.annotation.ColorInt;
-import android.support.v4.content.ContextCompat;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.NumberPicker;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 
 public class EstadisticaOfensivaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -22,6 +22,18 @@ public class EstadisticaOfensivaAdapter extends RecyclerView.Adapter<RecyclerVie
     private ItemClickListener mClickListener;
     private int number = 0;
     private int numberb = 0;
+    private String dato = "";
+    public static ElegantNumberButton golesCampoHechos;
+    public static ElegantNumberButton golesCampoIntentados;
+    public static ElegantNumberButton porcentajeGolesCampo;
+    public static ElegantNumberButton triplesHechos;
+    public static ElegantNumberButton triplesIntentados;
+    public static ElegantNumberButton porcentajeTriples;
+    public static ElegantNumberButton libresHechos;
+    public static ElegantNumberButton libresIntentados;
+    public static ElegantNumberButton porcentajeLibres;
+    public static ElegantNumberButton rebotesOfensivos;
+
 
     // data is passed into the constructor
     EstadisticaOfensivaAdapter(Context context, String[] data) {
@@ -304,6 +316,7 @@ public class EstadisticaOfensivaAdapter extends RecyclerView.Adapter<RecyclerVie
         TextView myTextView9;
         TextView myTextView10;
 
+
         ViewHolder(View itemView) {
             super(itemView);
             //myTextView = (TextView) itemView.findViewById(R.id.test);
@@ -314,49 +327,61 @@ public class EstadisticaOfensivaAdapter extends RecyclerView.Adapter<RecyclerVie
                     numberPicker.setDividerColor(ContextCompat.getColor(this, R.color.colorPrimary));
                     numberPicker.setDividerColorResource(R.color.colorPrimary);*/
                     myTextView1 = (TextView) itemView.findViewById(R.id.testGolesCampoHechos);
+                    golesCampoHechos = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberGolesCampoHechos);
                     itemView.setOnClickListener(this);
                     break;
                 case 1:
                     myTextView2 = (TextView) itemView.findViewById(R.id.testGolesCampoIntentados);
+                    golesCampoIntentados = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberGolesCampoIntentados);
                     itemView.setOnClickListener(this);
 
                 case 2:
                     myTextView3 = (TextView) itemView.findViewById(R.id.testPorcentajeGolesCampo);
+                    porcentajeGolesCampo = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberPorcentajeGolesCampo);
                     itemView.setOnClickListener(this);
                     break;
                 case 3:
                     myTextView4 = (TextView) itemView.findViewById(R.id.testTriplesHechos);
+                    triplesHechos = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberTriplesHechos);
                     itemView.setOnClickListener(this);
                     break;
                 case 4:
                     myTextView5 = (TextView) itemView.findViewById(R.id.testTriplesIntentados);
+                    triplesIntentados = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberTriplesIntentados);
                     itemView.setOnClickListener(this);
                     break;
                 case 5:
                     myTextView6 = (TextView) itemView.findViewById(R.id.testPorcentajeTriples);
+                    porcentajeTriples = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberPorcentajeTriples);
                     itemView.setOnClickListener(this);
                     break;
                 case 6:
                     myTextView7 = (TextView) itemView.findViewById(R.id.testTiroLibreHecho);
+                    libresHechos = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberTiroLibreHecho);
                     itemView.setOnClickListener(this);
                     break;
                 case 7:
                     myTextView8 = (TextView) itemView.findViewById(R.id.testTiroLibreIntentado);
+                    libresIntentados = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberTiroLibreIntentado);
                     itemView.setOnClickListener(this);
                     break;
                 case 8:
                     myTextView9 = (TextView) itemView.findViewById(R.id.testProcentajeTiroLibre);
+                    porcentajeLibres = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberPorcentajeTiroLibre);
                     itemView.setOnClickListener(this);
                     break;
                 case 9:
                     myTextView10 = (TextView) itemView.findViewById(R.id.testReboteOfensivo);
+                    rebotesOfensivos = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberRebotesOfensivos);
                     itemView.setOnClickListener(this);
                     break;
 
 
             }
 
+
         }
+
 
         private void setDividerColor(NumberPicker picker, int color) {
 
@@ -383,7 +408,18 @@ public class EstadisticaOfensivaAdapter extends RecyclerView.Adapter<RecyclerVie
         public void onClick(View view) {
             if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
         }
+
+        public  void  getResultado()
+        {
+            //puedo hacer las variables estaticas para accederlas de la otra clase
+            /*dato = ViewHolder.this.golesCampoHechos.getNumber();
+            Context contexto = ViewHolder.this.golesCampoHechos.getContext();
+            Intent intent = new Intent("custom-message");
+            intent.putExtra("golesCampoHechos",dato);
+            LocalBroadcastManager.getInstance(contexto).sendBroadcast(intent);*/
+        }
     }
+
 
     public class ViewHolder2 extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView myTextView1;
@@ -475,4 +511,9 @@ public class EstadisticaOfensivaAdapter extends RecyclerView.Adapter<RecyclerVie
     public interface ItemClickListener {
         void onItemClick(View view, int position);
     }
+
+    /*public void poronga(){
+        ViewHolder.this.golesCampoHechos;
+    }*/
+
 }

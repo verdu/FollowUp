@@ -1,5 +1,6 @@
 package com.followup.arielverdugo.followup;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
@@ -17,9 +18,13 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TabWidget;
@@ -30,18 +35,20 @@ import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
  * Created by arielverdugo on 19/12/17.
  */
 
-public class InicioSeguimientoPartidoActivity extends FragmentActivity implements AdapterView.OnItemSelectedListener{
+public class InicioSeguimientoPartidoActivity extends FragmentActivity implements AdapterView.OnItemSelectedListener,DatePickerDialog.OnDateSetListener{
     private SessionManager sessionManager;
     FragmentTabHost mTabHost;
     RecyclerView.Adapter adapter;
     RecyclerView recyclerViewGenerales;
     FloatingActionButton guardar;
+    String nombreRival;
 
 
 
@@ -74,6 +81,7 @@ public class InicioSeguimientoPartidoActivity extends FragmentActivity implement
         {
             jugadoresFotos.add(jugadoresSeguimiento.get(i).getFoto());
         }
+
 
 
         CustomAdapterJugadores customAdapter = new CustomAdapterJugadores(jugadoresNombre,jugadoresApellido,jugadoresFotos,getApplicationContext());
@@ -129,37 +137,146 @@ public class InicioSeguimientoPartidoActivity extends FragmentActivity implement
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(getApplicationContext());
-                builder1.setMessage("Write your message here.");
-                builder1.setCancelable(true);
 
-                builder1.setPositiveButton(
-                        "Yes",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(InicioSeguimientoPartidoActivity.this);
+                alertDialogBuilder.setMessage("¿Desea guardar las estadísticas cargadas?");
+                        alertDialogBuilder.setPositiveButton("yes",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface arg0, int arg1) {
+                                        Toast.makeText(getApplicationContext(),"You clicked yes button",Toast.LENGTH_LONG).show();
+                                        createDialog();
+                                    }
+                                });
 
-                builder1.setNegativeButton(
-                        "No",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
+                alertDialogBuilder.setNegativeButton("No",new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
 
-                AlertDialog alert11 = builder1.create();
-                alert11.show();
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+
+            }
+        });
+    }
+
+    public void createDialog()
+    {
+
+
+
+        ViewGroup popupViewDatosPartido = (ViewGroup) getLayoutInflater().inflate(R.layout.dialog_datos_partido,null);
+        Button fecha = (Button) popupViewDatosPartido.findViewById(R.id.fecha);
+        fecha.setBackgroundResource(R.drawable.calendar);
+        final DatePickerDialog datePickerDialog = new DatePickerDialog(
+                InicioSeguimientoPartidoActivity.this, InicioSeguimientoPartidoActivity.this, 2018, 2, 7);
+        fecha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePickerDialog.show();
+                //datePickerDialog.setButton(DatePickerDialog.BUTTON_POSITIVE,"Aceptar", DatePickerDialog.OnDateSetListener);
 
             }
         });
 
+        Button rival = (Button) popupViewDatosPartido.findViewById(R.id.rival);
+
+        rival.setBackgroundResource(R.drawable.rival);
+        rival.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ViewGroup popupView = (ViewGroup) getLayoutInflater().inflate(R.layout.dialog_datos_partido_rival,null);
+
+                AlertDialog.Builder alertDialogBuilder =
+                        new AlertDialog.Builder(InicioSeguimientoPartidoActivity.this)
+                                .setTitle("Ingrese el nombre")
+                                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        // capturar y gaurdadr en bd
+                                        nombreRival = (((TextView)popupView.findViewById(R.id.nombreRival)).getText().toString());
+                                        Rival rival = new Rival(nombreRival);
+                                        RivalRepository.getInstance(InicioSeguimientoPartidoActivity.this).addRival(rival);
+
+                                        dialog.dismiss();
+                                    }
+                                })
+                                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.cancel();
+                                    }
+                                });
+                alertDialogBuilder.setView(popupView);
+                AlertDialog alertDialog = alertDialogBuilder.show();
+            }
+        });
 
 
+        AlertDialog.Builder alertDialogBuilder =
+                new AlertDialog.Builder(InicioSeguimientoPartidoActivity.this)
+                        .setTitle("Ingrese los siguientes datos")
+                        .setPositiveButton("Agregar", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // capturar y gaurdadr en bd
+                                View viewOfensiva = View.inflate(InicioSeguimientoPartidoActivity.this,R.layout.item_recycler_ofensivas_subheader_golescampo_hechos,null);
+                                //String datos = (viewOfensiva.findViewById(R.id.elegantNumberGolesCampoHechos)).toString();
+                                //Toast.makeText(InicioSeguimientoPartidoActivity.this,"Holi: "+ datos,Toast.LENGTH_LONG);
+                                Integer golesCampoHechos = Integer.valueOf(EstadisticaOfensivaAdapter.golesCampoHechos.getNumber());
+                                Integer golesCampoIntentados = Integer.valueOf(EstadisticaOfensivaAdapter.golesCampoIntentados.getNumber());
+                                Float porcentajeGolesCampo =  Float.parseFloat(EstadisticaOfensivaAdapter.porcentajeGolesCampo.getNumber());
+                                Integer triplesHechos = Integer.valueOf(EstadisticaOfensivaAdapter.triplesHechos.getNumber());
+                                Integer trilplesIntentados = Integer.valueOf(EstadisticaOfensivaAdapter.triplesIntentados.getNumber());
+                                Float procentajeTriples = Float.parseFloat(EstadisticaOfensivaAdapter.porcentajeTriples.getNumber());
+                                Integer libresHechos = Integer.valueOf(EstadisticaOfensivaAdapter.libresHechos.getNumber());
+                                Integer libresIntentados = Integer.valueOf(EstadisticaOfensivaAdapter.libresIntentados.getNumber());
+                                Float porcenjateLibres = Float.parseFloat(EstadisticaOfensivaAdapter.porcentajeLibres.getNumber());
+                                Integer rebotesOfensivos = Integer.valueOf(EstadisticaOfensivaAdapter.rebotesOfensivos.getNumber());
+                                String minutos = String.valueOf(EstadisticaGeneralAdapter.minutos.getValue());
+                                String segundos = String.valueOf(EstadisticaGeneralAdapter.segundos.getValue());
+                                String primerNumero = String.valueOf(EstadisticaGeneralAdapter.primerNumero.getValue());
+                                String segundoNumero = String.valueOf(EstadisticaGeneralAdapter.segundoNumero.getValue());
+                                Integer rebotes = Integer.valueOf(EstadisticaGeneralAdapter.rebotes.getNumber());
+                                Integer asistencias = Integer.valueOf(EstadisticaGeneralAdapter.asistencias.getNumber());
+                                Integer perdidas = Integer.valueOf(EstadisticaGeneralAdapter.perdidas.getText().toString());
+                                Integer valoracion = Integer.valueOf(EstadisticaGeneralAdapter.valoracion.getNumber());
+                                Integer bloqueos = Integer.valueOf(EstadisticaDefensivaAdapter.bloqueos.getNumber());
+                                Integer rebotesDefensivos = Integer.valueOf(EstadisticaDefensivaAdapter.rebotesDefensivos.getNumber());
+                                Integer robos = Integer.valueOf(EstadisticaDefensivaAdapter.robos.getNumber());
+
+                                int dia = datePickerDialog.getDatePicker().getDayOfMonth();
+                                int anio = datePickerDialog.getDatePicker().getYear();
+                                int mes = datePickerDialog.getDatePicker().getMonth();
+                                Date fecha = new Date(anio,mes,dia);
+                                List<Rival>rival = RivalRepository.getInstance(InicioSeguimientoPartidoActivity.this).findWhere("nombre",nombreRival);
+                                String nombreRival = rival.get(0).getNombre().toString();
+                                String minutosSegundosConcatenados = minutos + segundos;
+                                Integer minutosSegundos = Integer.parseInt(minutosSegundosConcatenados);
+                                String puntosConcatenados = primerNumero + segundoNumero;
+                                Integer puntos = Integer.valueOf(puntosConcatenados);
+
+                                Partido partido = new Partido((java.sql.Date) fecha,nombreRival,minutosSegundos,puntos,golesCampoHechos,golesCampoIntentados,porcentajeGolesCampo,triplesHechos,trilplesIntentados,procentajeTriples,libresIntentados,libresHechos,porcenjateLibres,rebotes,rebotesDefensivos,rebotesOfensivos,asistencias,robos,bloqueos,perdidas,valoracion);
+                                PartidoRepository.getInstance(InicioSeguimientoPartidoActivity.this).addPartido(partido);
+                                Toast.makeText(InicioSeguimientoPartidoActivity.this, "Seguimiento generado", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+
+
+        alertDialogBuilder.setView(popupViewDatosPartido);
+        AlertDialog alertDialog = alertDialogBuilder.show();
 
 
     }
+
+
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -172,4 +289,10 @@ public class InicioSeguimientoPartidoActivity extends FragmentActivity implement
     }
 
 
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        int anio = view.getYear();
+        int mes = view.getMonth();
+        int day = view.getDayOfMonth();
+    }
 }

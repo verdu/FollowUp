@@ -10,9 +10,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.NumberPicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.shawnlin.numberpicker.NumberPicker;
 
 
 /**
@@ -27,6 +30,15 @@ public class EstadisticaGeneralAdapter extends RecyclerView.Adapter<RecyclerView
     private ItemClickListener mClickListener;
     private int number = 0;
     private int numberb = 0;
+    public static NumberPicker minutos;
+    public static NumberPicker segundos;
+    public static NumberPicker primerNumero;
+    public static NumberPicker segundoNumero;
+    public static ElegantNumberButton asistencias;
+    public static ElegantNumberButton rebotes;
+    public static EditText perdidas;
+    public static ElegantNumberButton valoracion;
+
 
     // data is passed into the constructor
     EstadisticaGeneralAdapter(Context context, String[] data) {
@@ -245,29 +257,35 @@ public class EstadisticaGeneralAdapter extends RecyclerView.Adapter<RecyclerView
                     numberPicker.setDividerColor(ContextCompat.getColor(this, R.color.colorPrimary));
                     numberPicker.setDividerColorResource(R.color.colorPrimary);*/
                     myTextView1 = (TextView) itemView.findViewById(R.id.testMinutos);
+                    minutos = (NumberPicker) itemView.findViewById(R.id.minutos);
+                    segundos = (NumberPicker) itemView.findViewById(R.id.segundos);
                     itemView.setOnClickListener(this);
                     break;
                 case 1:
 
                     myTextView2 = (TextView) itemView.findViewById(R.id.testPuntos);
+                    primerNumero = (NumberPicker) itemView.findViewById(R.id.primerPuntoPicker);
+                   segundoNumero = (NumberPicker) itemView.findViewById(R.id.segundoPuntoPicker);
                     itemView.setOnClickListener(this);
-
-
 
                 case 2:
                     myTextView3 = (TextView) itemView.findViewById(R.id.testRebotes);
+                    rebotes = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberRebotes);
                     itemView.setOnClickListener(this);
                     break;
                 case 3:
                     myTextView4 = (TextView) itemView.findViewById(R.id.testAsistencias);
+                    asistencias = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberAsistencias);
                     itemView.setOnClickListener(this);
                     break;
                 case 4:
                     myTextView5 = (TextView) itemView.findViewById(R.id.testTov);
+                    perdidas = (EditText) itemView.findViewById(R.id.perdidas);
                     itemView.setOnClickListener(this);
                     break;
                 case 5:
                     myTextView6 = (TextView) itemView.findViewById(R.id.testValoracion);
+                    valoracion = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberValoracion);
                     itemView.setOnClickListener(this);
                     break;
 
