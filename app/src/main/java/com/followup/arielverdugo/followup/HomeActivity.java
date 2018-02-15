@@ -389,7 +389,8 @@ public class HomeActivity extends AppCompatActivity {
 
                                         Jugador j = new Jugador(NOMBRE,APELLIDO,equipos.get(equipoSelected),POSICION,ALTURA,Utils.getByteArrayFromBitmap(FOTO),IS_FALSE);
                                         JugadorRepository.getInstance(HomeActivity.this).addJugador(j);
-
+                                        //aca creo q se crea new jugardorEquipo y le paso el id del equipo y del jugador creado
+                                        
                                         Toast.makeText(HomeActivity.this, "Jugador  agregado", Toast.LENGTH_SHORT).show();
                                         dialog.dismiss();
 
