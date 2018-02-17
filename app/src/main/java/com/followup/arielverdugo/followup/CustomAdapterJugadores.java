@@ -26,6 +26,7 @@ public class CustomAdapterJugadores extends BaseAdapter implements SpinnerAdapte
     List<String>nombre;
     List<String> apellido;
     List<byte[]> foto;
+    List<String> equipo;
     private Context c;
     List<Jugador> jugadoresSeguimiento = new ArrayList<Jugador>();
     LayoutInflater inflter;
@@ -33,18 +34,18 @@ public class CustomAdapterJugadores extends BaseAdapter implements SpinnerAdapte
     TextView dropdown;
 
 
-    public CustomAdapterJugadores(List<String> nombre,List<String> apellido,List<byte[]> foto,Context c){
+    public CustomAdapterJugadores(List<String> nombre,List<String> apellido,List<byte[]> foto, List<String> equipo, Context c){
 
         this.nombre = nombre;
         this.apellido = apellido;
         this.foto = foto;
         this.c = c;
-        jugadoresSeguimiento = JugadorRepository.getInstance(c).getJugadoresFavoritos();
+        this.equipo = equipo;
         inflter = (LayoutInflater.from(c));
     }
     @Override
     public int getCount() {
-        return jugadoresSeguimiento.size();
+        return nombre.size();
     }
 
     @Override
@@ -67,20 +68,22 @@ public class CustomAdapterJugadores extends BaseAdapter implements SpinnerAdapte
         ImageView fotoJugador = (ImageView) view.findViewById(R.id.imagen_perfilJugador);
         TextView nombreJugador = (TextView) view.findViewById(R.id.nombreJugadorSeguimiento);
         TextView apellidoJugador = (TextView) view.findViewById(R.id.apellidoJugadorSeguimiento);
+        //TextView nombreEquipo = (TextView) view.findViewById(R.id.nombreEquipoSeguimiento);
 
 
-        if(jugadoresSeguimiento.get(position).getFoto() == null)
+        if(foto.get(position) == null)
         {
 
         }
         else
         {
-            Bitmap bitmapFoto = BitmapFactory.decodeByteArray(jugadoresSeguimiento.get(position).getFoto(), 0, jugadoresSeguimiento.get(position).getFoto().length);
+            Bitmap bitmapFoto = BitmapFactory.decodeByteArray(foto.get(position), 0, foto.get(position).length);
             fotoJugador.setImageBitmap(bitmapFoto);
         }
 
-        nombreJugador.setText(jugadoresSeguimiento.get(position).getNombre());
-        apellidoJugador.setText(jugadoresSeguimiento.get(position).getApellido());
+        nombreJugador.setText(nombre.get(position));
+        apellidoJugador.setText(apellido.get(position));
+        //nombreEquipo.setText(equipo.get(position));
 
         return view;
     }

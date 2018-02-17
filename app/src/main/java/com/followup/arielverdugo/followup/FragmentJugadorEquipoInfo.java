@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by arielverdugo on 31/10/17.
@@ -116,7 +117,10 @@ public class FragmentJugadorEquipoInfo extends android.support.v4.app.Fragment
 
         Equipo e = EquipoRepository.getInstance(this.getContext()).findEquipoById(getArguments().getInt("equipoId"));
 
-        mAdapter = new SeccionAdapterJugadorEquipoInfo(e, new ArrayList<Jugador>(e.jugadores), getActivity());
+        Map<Integer, Boolean> favoritos = JugadorEquipoRepository.getInstance(this.getContext()).getFavoritosPorJugadorEquipo(getArguments().getInt("equipoId"));
+
+        System.out.print("@PUTO");
+        mAdapter = new SeccionAdapterJugadorEquipoInfo(e, new ArrayList<Jugador>(e.jugadores), getActivity(), favoritos);
 
         mRecyclerViewStatic.setAdapter(mAdapter);
 

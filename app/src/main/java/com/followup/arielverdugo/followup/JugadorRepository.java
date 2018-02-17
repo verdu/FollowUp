@@ -1,10 +1,14 @@
 package com.followup.arielverdugo.followup;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteQueryBuilder;
 
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.dao.GenericRawResults;
+import com.j256.ormlite.dao.RawRowMapper;
+import com.j256.ormlite.stmt.QueryBuilder;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -41,10 +45,6 @@ public class JugadorRepository
             e.printStackTrace();
         }
         return null;
-    }
-
-    public List<Jugador> getJugadoresFavoritos(){
-        return findWhere("favorito",1);
     }
 
     public void addJugador(Jugador c){

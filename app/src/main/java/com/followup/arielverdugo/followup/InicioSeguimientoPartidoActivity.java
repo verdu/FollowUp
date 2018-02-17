@@ -63,28 +63,32 @@ public class InicioSeguimientoPartidoActivity extends FragmentActivity implement
         Spinner spinerJugadoresSeguimiento = (Spinner) findViewById(R.id.spinnerJugadoresSeguimiento);
         spinerJugadoresSeguimiento.setOnItemSelectedListener(this);
         //context = spinerJugadoresSeguimiento.getContext();
-        List<Jugador>jugadoresSeguimiento =  JugadorRepository.getInstance(this).getJugadoresFavoritos();
+        List<JugadorEquipoFavorito>jugadoresFavoritos =  JugadorEquipoFavoritoRepository.getInstance(this).findWhere("favorito", 1);
 
         ArrayList<String> jugadoresNombre = new ArrayList<>();
-        for (int i = 0; i < jugadoresSeguimiento.size(); i++)
+        for (int i = 0; i < jugadoresFavoritos.size(); i++)
         {
-            jugadoresNombre.add(jugadoresSeguimiento.get(i).getNombre());
+            jugadoresNombre.add(jugadoresFavoritos.get(i).jugadorEquipo.jugador.getNombre());
         }
         ArrayList<String> jugadoresApellido = new ArrayList<>();
-        for (int i = 0; i < jugadoresSeguimiento.size(); i++)
+        for (int i = 0; i < jugadoresFavoritos.size(); i++)
         {
-            jugadoresApellido.add(jugadoresSeguimiento.get(i).getApellido());
+            jugadoresApellido.add(jugadoresFavoritos.get(i).jugadorEquipo.jugador.getApellido());
         }
 
         ArrayList<byte[]> jugadoresFotos = new ArrayList<>();
-        for (int i = 0; i < jugadoresSeguimiento.size(); i++)
+        for (int i = 0; i < jugadoresFavoritos.size(); i++)
         {
-            jugadoresFotos.add(jugadoresSeguimiento.get(i).getFoto());
+            jugadoresFotos.add(jugadoresFavoritos.get(i).jugadorEquipo.jugador.getFoto());
         }
 
+        ArrayList<String> jugadoresEquipos = new ArrayList<>();
+        for (int i = 0; i < jugadoresFavoritos.size(); i++)
+        {
+            jugadoresEquipos.add(jugadoresFavoritos.get(i).jugadorEquipo.equipo.getNombre());
+        }
 
-
-        CustomAdapterJugadores customAdapter = new CustomAdapterJugadores(jugadoresNombre,jugadoresApellido,jugadoresFotos,getApplicationContext());
+        CustomAdapterJugadores customAdapter = new CustomAdapterJugadores(jugadoresNombre,jugadoresApellido,jugadoresFotos, jugadoresEquipos, getApplicationContext());
         spinerJugadoresSeguimiento.setAdapter(customAdapter);
 
 

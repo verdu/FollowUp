@@ -39,7 +39,9 @@ import com.followup.arielverdugo.followup.interfaces.RecyclerViewClickListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static com.followup.arielverdugo.followup.SeccionAdapterEquipoInfo.SeccionEquipoInfoViewHolder.selectedItems;
 
@@ -49,12 +51,15 @@ import static com.followup.arielverdugo.followup.SeccionAdapterEquipoInfo.Seccio
 
 public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<SeccionAdapterJugadorEquipoInfo.SeccionJugadorInfoViewHolder> {
     private List<Jugador> jugadores;
+    private List<JugadorEquipo> jugadorEquipo;
+    private List<JugadorEquipoFavorito> jugadorEquipoFavorito;
     public Equipo equipo;
-    public static List<Jugador>  jugadoresFavoritos;
+    public static List<JugadorEquipoFavorito> jugadoresFavoritos;
     private static RecyclerViewClickListener itemListener;
     private Context c;
 
     List<Jugador>jugadoresIntermedio = new ArrayList<Jugador>();
+    Map<Integer, Boolean> favoritos;
 
 
 
@@ -72,6 +77,9 @@ public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<Seccio
         public CardView cv;
         public ImageView menu;
         public CheckBox favorito;
+        public TextView idJugadorFavorito;
+        public TextView idEquipoFavorito;
+
 
 
 
@@ -89,16 +97,20 @@ public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<Seccio
             cv = (CardView) v.findViewById(R.id.cardViewJugadorEquipoInfo);
             menu =(ImageView) v.findViewById(R.id.menu);
             favorito = (CheckBox) v.findViewById(R.id.star);
+            idJugadorFavorito = (TextView) v.findViewById(R.id.idJugadorFavorito);
+            idEquipoFavorito = (TextView) v.findViewById(R.id.idEquipoFavorito);
+
 
         }
 
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public SeccionAdapterJugadorEquipoInfo(Equipo e, List<Jugador> jugadores ,Context c) {
-        this.equipo = equipo;
+    public SeccionAdapterJugadorEquipoInfo(Equipo e, List<Jugador> jugadores ,Context c, Map<Integer, Boolean> favoritos) {
+        this.equipo = e;
         this.jugadores = jugadores;
         this.c=c;
+        this.favoritos = favoritos;
 
     }
 
@@ -118,12 +130,6 @@ public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<Seccio
     public void onBindViewHolder(final SeccionJugadorInfoViewHolder viewHolder, final int i) {
 
 
-        final int id = jugadores.get(i).getId();
-        final Jugador jugadorActual = jugadores.get(i);
-        //final Jugador jugadorEditar = JugadorRepository.getInstance(EditarJugadorActivity.this).findJugadorById(idJugador);
-
-
-
         if(jugadores.get(i).getFoto() != null){
             Bitmap fotoJugador = BitmapFactory.decodeByteArray(jugadores.get(i).getFoto(), 0, jugadores.get(i).getFoto().length);
             viewHolder.fotoJugador.setImageBitmap(fotoJugador);
@@ -132,45 +138,69 @@ public class SeccionAdapterJugadorEquipoInfo extends RecyclerView.Adapter<Seccio
             viewHolder.fotoJugador.setImageResource(R.drawable.sinimagen);
         }
 
-
+        viewHolder.idJugadorFavorito.setText(Integer.toString(jugadores.get(i).getId()));
+        viewHolder.idEquipoFavorito.setText(Integer.toString(equipo.getId()));
         viewHolder.nombreJugador.setText(jugadores.get(i).getNombre() + " " +jugadores.get(i).getApellido());
         viewHolder.posicion.setText(jugadores.get(i).getPosicion());
         viewHolder.menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showPopupMenu(viewHolder.menu,i,c,id);
+                showPopupMenu(viewHolder.menu,i,c,jugadores.get(i).getId());
             }
         });
 
 
-        if(jugadorActual.isFavourite())
+        if(favoritos.size() > 0 && favoritos.get(jugadores.get(i).getId()) != null && favoritos.get(jugadores.get(i).getId()))
         {
             viewHolder.favorito.setChecked(true);
         }
         else
         {
             viewHolder.favorito.setChecked(false);
-
         }
 
         viewHolder.favorito.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                jugadoresFavoritos = JugadorRepository.getInstance(c).getJugadoresFavoritos();
+                //jugadoresFavoritos = JugadorRepository.;
                 if(!viewHolder.favorito.isChecked())
                 {
-                   //SeguimientoActivity.jugadoresFavoritos.remove(i);
-                    jugadoresFavoritos.remove(i);
 
-                    jugadorActual.setFavourite(0);
-                    JugadorRepository.getInstance(c).updateJugador(jugadorActual);
+                    Map<String,String>paramsBusqueda = new HashMap<String,String>();
+                    paramsBusqueda.put("id_equipo",viewHolder.idEquipoFavorito.getText().toString());
+                    paramsBusqueda.put("id_jugador",viewHolder.idJugadorFavorito.getText().toString());
+                    List<JugadorEquipo> je = JugadorEquipoRepository.getInstance(c).findWhere(paramsBusqueda);
+
+                    Map<String,String>params = new HashMap<String,String>();
+                    params.put("id_jugador_equipo",Integer.toString(je.get(0).getId()));
+                    JugadorEquipoFavoritoRepository.getInstance(c).deleteJugadorEquipoFavoritoByParams(params);
+
+                   //SeguimientoActivity.jugadoresFavoritos.remove(i);
+                    //jugadoresFavoritos.remove(i);
+
+                    //jugadorEquipoFavoritoActual.setFavorito(0);
+                    //JugadorEquipoFavoritoRepository.getInstance(c).updateJugadorEquipoFavorito(jugadorEquipoFavoritoActual);
+
                 }
                 else {
-                    //SeguimientoActivity.jugadoresFavoritos.add(jugadorActual);
-                    jugadoresFavoritos.add(jugadorActual);
 
-                    jugadorActual.setFavourite(1);
-                    JugadorRepository.getInstance(c).updateJugador(jugadorActual);
+                    Map<String,String>params = new HashMap<String,String>();
+                    params.put("id_equipo",viewHolder.idEquipoFavorito.getText().toString());
+                    params.put("id_jugador",viewHolder.idJugadorFavorito.getText().toString());
+
+                    List<JugadorEquipo> je = JugadorEquipoRepository.getInstance(c).findWhere(params);
+
+                    JugadorEquipoFavorito jef = new JugadorEquipoFavorito();
+                    jef.setJugadorEquipo(je.get(0));
+                    jef.setFavorito(1);
+                    JugadorEquipoFavoritoRepository.getInstance(c).addJugadorEquipoFavorito(jef);
+
+
+                    //SeguimientoActivity.jugadoresFavoritos.add(jugadorActual);
+                    //jugadoresFavoritos.add(jugadorEquipoFavoritoActual);
+
+                    //jugadorEquipoFavoritoActual.setFavorito(1);
+                    //JugadorEquipoFavoritoRepository.getInstance(c).updateJugadorEquipoFavorito(jugadorEquipoFavoritoActual);
                 }
             }
         });
@@ -223,8 +253,9 @@ class MyMenuItemClickListener implements PopupMenu.OnMenuItemClickListener{
                 intento.putExtra("id",id);
                 context.startActivity(intento);
                 Equipo e = EquipoRepository.getInstance(context).findEquipoById(JugadorEquipoInfoActivity.idEquipo);
+                Map<Integer, Boolean> favoritos = JugadorEquipoRepository.getInstance(context).getFavoritosPorJugadorEquipo(e.getId());
                 if(EditarJugadorActivity.editado.equals(true)) {
-                    lastmAdapter = new SeccionAdapterJugadorEquipoInfo(e, new ArrayList<Jugador>(e.jugadores), context);
+                    lastmAdapter = new SeccionAdapterJugadorEquipoInfo(e, new ArrayList<Jugador>(e.jugadores), context, favoritos);
                     FragmentJugadorEquipoInfo.mRecyclerViewStatic.setAdapter(lastmAdapter);
                 }
 
@@ -249,8 +280,8 @@ class MyMenuItemClickListener implements PopupMenu.OnMenuItemClickListener{
                                 //para refrescar los equipos
                                 Intent i1 = new Intent (context, JugadorEquipoInfoActivity.class);
                                 context.startActivity(i1);
-
-                                lastmAdapter = new SeccionAdapterJugadorEquipoInfo(e,new ArrayList<Jugador>(e.jugadores),context);
+                                Map<Integer, Boolean> favoritos = JugadorEquipoRepository.getInstance(context).getFavoritosPorJugadorEquipo(e.getId());
+                                lastmAdapter = new SeccionAdapterJugadorEquipoInfo(e,new ArrayList<Jugador>(e.jugadores),context, favoritos);
                                 FragmentJugadorEquipoInfo.mRecyclerViewStatic.setAdapter(lastmAdapter);
                                 //agregue esto
 

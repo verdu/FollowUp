@@ -387,8 +387,14 @@ public class HomeActivity extends AppCompatActivity {
                                         final String POSICION = spinnerPosicion.getSelectedItem().toString();
                                         final int ALTURA = Integer.parseInt(spinnerAlturas.getSelectedItem().toString());
 
-                                        Jugador j = new Jugador(NOMBRE,APELLIDO,equipos.get(equipoSelected),POSICION,ALTURA,Utils.getByteArrayFromBitmap(FOTO),IS_FALSE);
+                                        Jugador j = new Jugador(NOMBRE,APELLIDO,equipos.get(equipoSelected),POSICION,ALTURA,Utils.getByteArrayFromBitmap(FOTO));
                                         JugadorRepository.getInstance(HomeActivity.this).addJugador(j);
+
+                                        JugadorEquipo jugadorEquipo = new JugadorEquipo(equipos.get(equipoSelected),j);
+                                        JugadorEquipoRepository.getInstance(HomeActivity.this).addJugadorEquipo(jugadorEquipo);
+
+                                        JugadorEquipoFavorito jugadorEquipoFavorito = new JugadorEquipoFavorito(jugadorEquipo,IS_FALSE);
+                                        JugadorEquipoFavoritoRepository.getInstance(HomeActivity.this).addJugadorEquipoFavorito(jugadorEquipoFavorito);
 
                                         Toast.makeText(HomeActivity.this, "Jugador  agregado", Toast.LENGTH_SHORT).show();
                                         dialog.dismiss();

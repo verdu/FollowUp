@@ -30,7 +30,7 @@ public class SeguimientoActivity extends AppCompatActivity {
         navigationTabStrip.setViewPager(viewPager);
 
 
-        jugadoresFavoritos =  JugadorRepository.getInstance(this).getJugadoresFavoritos();
+        //jugadoresFavoritos =  JugadorRepository.getInstance(this).getJugadoresFavoritos();
     }
 
 }

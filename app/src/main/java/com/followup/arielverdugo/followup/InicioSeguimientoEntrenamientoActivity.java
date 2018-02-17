@@ -59,7 +59,7 @@ public class InicioSeguimientoEntrenamientoActivity extends FragmentActivity imp
         Spinner spinerJugadoresSeguimiento = (Spinner) findViewById(R.id.spinnerJugadoresSeguimientoEntrenemiento);
         spinerJugadoresSeguimiento.setOnItemSelectedListener(this);
 
-        List<Jugador> jugadoresSeguimiento =  JugadorRepository.getInstance(this).getJugadoresFavoritos();
+        /*List<Jugador> jugadoresSeguimiento =  JugadorRepository.getInstance(this).getJugadoresFavoritos();
 
 
         ArrayList<String> jugadoresNombre = new ArrayList<>();
@@ -202,7 +202,7 @@ public class InicioSeguimientoEntrenamientoActivity extends FragmentActivity imp
         alertDialogBuilder.setView(popupViewDatosEntrenamiento);
         AlertDialog alertDialog = alertDialogBuilder.show();
 
-
+*/
     }
 
 

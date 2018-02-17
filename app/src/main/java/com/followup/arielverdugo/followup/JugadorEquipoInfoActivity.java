@@ -18,8 +18,6 @@ import java.util.List;
 
 public class JugadorEquipoInfoActivity extends FragmentActivity{
 
-    private SessionManager sessionManager;
-    List<Jugador> jugadoresTotales =  JugadorRepository.getInstance(this).getJugadores();
     List<Equipo> equiposTotales = EquipoRepository.getInstance(JugadorEquipoInfoActivity.this).getEquipos();
     FragmentTabHost mTabHost;
     static String nombreTab;
@@ -36,9 +34,6 @@ public class JugadorEquipoInfoActivity extends FragmentActivity{
         setContentView(R.layout.activity_jugadorinfo);
 
         jugadorEquipoActivity = this;
-        sessionManager = new SessionManager(this);
-
-
         for(int i = 0; i < equiposTotales.size(); i++)
         {
 

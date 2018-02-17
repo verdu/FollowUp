@@ -9,15 +9,15 @@ import com.j256.ormlite.field.DatabaseField;
 //@DatabaseTable(tableName = "jugador_por_equipo")
 public class JugadorEquipo {
     @DatabaseField(generatedId = true)
-    private int id;
+    public int id;
 
 
     // This is a foreign object which just stores the id from the User object in this table.
-    @DatabaseField(foreign = true, columnName = "id_equipo")
+    @DatabaseField(foreign = true, foreignAutoRefresh = true, columnName = "id_equipo",maxForeignAutoRefreshLevel = 5)
     Equipo equipo;
 
     // This is a foreign object which just stores the id from the Post object in this table.
-    @DatabaseField(foreign = true, columnName = "id_jugador")
+    @DatabaseField(foreign = true, foreignAutoRefresh = true, columnName = "id_jugador",maxForeignAutoRefreshLevel = 5)
     Jugador jugador;
 
     public JugadorEquipo(Equipo equipo,Jugador jugador)
@@ -30,5 +30,10 @@ public class JugadorEquipo {
     {
 
     }
+    public int getId()
+    {
+        return id;
+    }
+
 
 }
