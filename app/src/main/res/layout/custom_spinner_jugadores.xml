@@ -66,6 +66,18 @@
             android:layout_centerVertical="true"
             android:src="@drawable/right_arrow_red" />
 
+        <TextView
+            android:id="@+id/idJugadorSpinner"
+            android:layout_width="0px"
+            android:layout_height="0px"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/idEquipoSpinner"
+            android:layout_width="0px"
+            android:layout_height="0px"
+            android:visibility="invisible"/>
+
 
     </RelativeLayout>
 

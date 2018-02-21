@@ -94,6 +94,7 @@ public class HorizontalPageAdapter extends PagerAdapter implements View.OnClickL
             //verticalInfiniteCycleViewPager.setOnClickListener();
         } else {
             view = mLayoutInflater.inflate(R.layout.item, container, false);
+            //UtilsNew.setupItemNew(view,SeguimientoActivity.jugadoresFavoritos.get(position));
             UtilsNew.setupItemNew(view,SeguimientoActivity.jugadoresFavoritos.get(position));
             view.setOnClickListener(new View.OnClickListener() {
                 @Override

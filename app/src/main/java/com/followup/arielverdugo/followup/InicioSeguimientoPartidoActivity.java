@@ -36,7 +36,9 @@ import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by arielverdugo on 19/12/17.
@@ -49,7 +51,28 @@ public class InicioSeguimientoPartidoActivity extends FragmentActivity implement
     RecyclerView recyclerViewGenerales;
     FloatingActionButton guardar;
     String nombreRival;
-
+    public Spinner spinerJugadoresSeguimiento;
+    public Integer golesCampoHechos = 0;
+    public Integer golesCampoIntentados = 0;
+    public Float porcentajeGolesCampo;
+    public Integer triplesHechos = 0;
+    public Integer trilplesIntentados = 0;
+    public Float procentajeTriples;
+    public Integer libresHechos = 0;
+    public Integer libresIntentados = 0;
+    public Float porcenjateLibres;
+    public Integer rebotesOfensivos = 0;
+    public String minutos = "0";
+    public String segundos = "0";
+    public String primerNumero = "0";
+    public String segundoNumero = "0";
+    public Integer rebotes = 0;
+    public Integer asistencias = 0;
+    public Integer perdidas = 0;
+    public Integer valoracion = 0;
+    public Integer bloqueos = 0;
+    public Integer rebotesDefensivos = 0;
+    public Integer robos = 0;
 
 
 
@@ -60,7 +83,7 @@ public class InicioSeguimientoPartidoActivity extends FragmentActivity implement
         sessionManager = new SessionManager(this);
 
         //Getting the instance of Spinner and applying OnItemSelectedListener on it
-        Spinner spinerJugadoresSeguimiento = (Spinner) findViewById(R.id.spinnerJugadoresSeguimiento);
+        spinerJugadoresSeguimiento = (Spinner) findViewById(R.id.spinnerJugadoresSeguimiento);
         spinerJugadoresSeguimiento.setOnItemSelectedListener(this);
         //context = spinerJugadoresSeguimiento.getContext();
         List<JugadorEquipoFavorito>jugadoresFavoritos =  JugadorEquipoFavoritoRepository.getInstance(this).findWhere("favorito", 1);
@@ -88,7 +111,20 @@ public class InicioSeguimientoPartidoActivity extends FragmentActivity implement
             jugadoresEquipos.add(jugadoresFavoritos.get(i).jugadorEquipo.equipo.getNombre());
         }
 
-        CustomAdapterJugadores customAdapter = new CustomAdapterJugadores(jugadoresNombre,jugadoresApellido,jugadoresFotos, jugadoresEquipos, getApplicationContext());
+        ArrayList<Integer>idJugadores = new ArrayList<>();
+        for (int i = 0; i < jugadoresFavoritos.size(); i++)
+        {
+            idJugadores.add(jugadoresFavoritos.get(i).jugadorEquipo.jugador.getId());
+        }
+
+        ArrayList<Integer>idEquipos = new ArrayList<>();
+        for (int i = 0; i < jugadoresFavoritos.size(); i++)
+        {
+            idEquipos.add(jugadoresFavoritos.get(i).jugadorEquipo.equipo.getId());
+        }
+
+
+        CustomAdapterJugadores customAdapter = new CustomAdapterJugadores(jugadoresNombre,jugadoresApellido,jugadoresFotos, jugadoresEquipos,idJugadores ,idEquipos,getApplicationContext());
         spinerJugadoresSeguimiento.setAdapter(customAdapter);
 
 
@@ -227,27 +263,143 @@ public class InicioSeguimientoPartidoActivity extends FragmentActivity implement
                                 View viewOfensiva = View.inflate(InicioSeguimientoPartidoActivity.this,R.layout.item_recycler_ofensivas_subheader_golescampo_hechos,null);
                                 //String datos = (viewOfensiva.findViewById(R.id.elegantNumberGolesCampoHechos)).toString();
                                 //Toast.makeText(InicioSeguimientoPartidoActivity.this,"Holi: "+ datos,Toast.LENGTH_LONG);
-                                Integer golesCampoHechos = Integer.valueOf(EstadisticaOfensivaAdapter.golesCampoHechos.getNumber());
-                                Integer golesCampoIntentados = Integer.valueOf(EstadisticaOfensivaAdapter.golesCampoIntentados.getNumber());
-                                Float porcentajeGolesCampo =  Float.parseFloat(EstadisticaOfensivaAdapter.porcentajeGolesCampo.getNumber());
-                                Integer triplesHechos = Integer.valueOf(EstadisticaOfensivaAdapter.triplesHechos.getNumber());
-                                Integer trilplesIntentados = Integer.valueOf(EstadisticaOfensivaAdapter.triplesIntentados.getNumber());
-                                Float procentajeTriples = Float.parseFloat(EstadisticaOfensivaAdapter.porcentajeTriples.getNumber());
-                                Integer libresHechos = Integer.valueOf(EstadisticaOfensivaAdapter.libresHechos.getNumber());
-                                Integer libresIntentados = Integer.valueOf(EstadisticaOfensivaAdapter.libresIntentados.getNumber());
-                                Float porcenjateLibres = Float.parseFloat(EstadisticaOfensivaAdapter.porcentajeLibres.getNumber());
-                                Integer rebotesOfensivos = Integer.valueOf(EstadisticaOfensivaAdapter.rebotesOfensivos.getNumber());
-                                String minutos = String.valueOf(EstadisticaGeneralAdapter.minutos.getValue());
-                                String segundos = String.valueOf(EstadisticaGeneralAdapter.segundos.getValue());
-                                String primerNumero = String.valueOf(EstadisticaGeneralAdapter.primerNumero.getValue());
-                                String segundoNumero = String.valueOf(EstadisticaGeneralAdapter.segundoNumero.getValue());
-                                Integer rebotes = Integer.valueOf(EstadisticaGeneralAdapter.rebotes.getNumber());
-                                Integer asistencias = Integer.valueOf(EstadisticaGeneralAdapter.asistencias.getNumber());
-                                Integer perdidas = Integer.valueOf(EstadisticaGeneralAdapter.perdidas.getText().toString());
-                                Integer valoracion = Integer.valueOf(EstadisticaGeneralAdapter.valoracion.getNumber());
-                                Integer bloqueos = Integer.valueOf(EstadisticaDefensivaAdapter.bloqueos.getNumber());
-                                Integer rebotesDefensivos = Integer.valueOf(EstadisticaDefensivaAdapter.rebotesDefensivos.getNumber());
-                                Integer robos = Integer.valueOf(EstadisticaDefensivaAdapter.robos.getNumber());
+                                if(EstadisticaOfensivaAdapter.golesCampoHechos.getNumber() == null)
+                                {
+                                }
+                                else{
+                                    golesCampoHechos = Integer.valueOf(EstadisticaOfensivaAdapter.golesCampoHechos.getNumber());
+
+                                }
+                                if(EstadisticaOfensivaAdapter.golesCampoIntentados.getNumber() == null)
+                                {
+                                }
+                                else {
+                                    golesCampoIntentados = Integer.valueOf(EstadisticaOfensivaAdapter.golesCampoIntentados.getNumber());
+                                }
+                                if (golesCampoHechos == 0 && golesCampoIntentados == 0)
+                                {
+                                }
+                                else{
+                                    porcentajeGolesCampo = (float)(golesCampoHechos*100)/golesCampoIntentados;
+                                }
+                                if(EstadisticaOfensivaAdapter.triplesHechos.getNumber() == null)
+                                {
+                                }
+                                else
+                                {
+                                    triplesHechos = Integer.valueOf(EstadisticaOfensivaAdapter.triplesHechos.getNumber());
+                                }
+                                if(EstadisticaOfensivaAdapter.triplesIntentados.getNumber() == null)
+                                {
+                                }
+                                else{
+                                    trilplesIntentados = Integer.valueOf(EstadisticaOfensivaAdapter.triplesIntentados.getNumber());
+                                }
+                                if(triplesHechos == 0 && trilplesIntentados == 0)
+                                {
+                                }
+                                else{
+                                    procentajeTriples = (float)(triplesHechos*100)/trilplesIntentados;
+                                }
+                                if(EstadisticaOfensivaAdapter.libresHechos.getNumber() == null)
+                                {
+                                }
+                                else{
+                                    libresHechos = Integer.valueOf(EstadisticaOfensivaAdapter.libresHechos.getNumber());
+                                }
+                                if(EstadisticaOfensivaAdapter.libresIntentados.getNumber() == null)
+                                {
+                                }
+                                else{
+                                    libresIntentados = Integer.valueOf(EstadisticaOfensivaAdapter.libresIntentados.getNumber());
+                                }
+                                if(libresHechos == 0 && libresIntentados == 0)
+                                {
+                                }
+                                else{
+                                    porcenjateLibres = (float)(libresHechos*100)/libresIntentados;
+                                }
+                                if(EstadisticaOfensivaAdapter.rebotesOfensivos.getNumber() == null)
+                                {
+                                }
+                                else{
+                                    rebotesOfensivos = Integer.valueOf(EstadisticaOfensivaAdapter.rebotesOfensivos.getNumber());
+                                }
+                                if(EstadisticaGeneralAdapter.minutos.getValue() == 0)
+                                {
+                                }
+                                else{
+                                    minutos = String.valueOf(EstadisticaGeneralAdapter.minutos.getValue());
+                                }
+                                if(EstadisticaGeneralAdapter.segundos.getValue() == 0)
+                                {
+                                }
+                                else{
+                                    segundos = String.valueOf(EstadisticaGeneralAdapter.segundos.getValue());
+                                }
+                                if(EstadisticaGeneralAdapter.primerNumero.getValue() == 0)
+                                {
+
+                                }
+                                else{
+                                    primerNumero = String.valueOf(EstadisticaGeneralAdapter.primerNumero.getValue());
+                                }
+                                if(EstadisticaGeneralAdapter.segundoNumero.getValue() == 0)
+                                {
+
+                                }
+                                else{
+                                    segundoNumero = String.valueOf(EstadisticaGeneralAdapter.segundoNumero.getValue());
+                                }
+                                if(EstadisticaGeneralAdapter.rebotes.getNumber() == null)
+                                {
+
+                                }
+                                else {
+                                    rebotes = Integer.valueOf(EstadisticaGeneralAdapter.rebotes.getNumber());
+                                }
+                                if(EstadisticaGeneralAdapter.asistencias.getNumber() == null)
+                                {
+
+                                }
+                                else{
+                                    asistencias = Integer.valueOf(EstadisticaGeneralAdapter.asistencias.getNumber());
+                                }
+                                if(EstadisticaGeneralAdapter.perdidas.getText().toString() == "")
+                                {
+
+                                }
+                                else{
+                                    perdidas = Integer.valueOf(EstadisticaGeneralAdapter.perdidas.getText().toString());
+                                }
+                                if(EstadisticaGeneralAdapter.valoracion.getNumber() == null)
+                                {
+
+                                }
+                                else{
+                                    valoracion = Integer.valueOf(EstadisticaGeneralAdapter.valoracion.getNumber());
+                                }
+                                if(EstadisticaDefensivaAdapter.bloqueos.getNumber() == null)
+                                {
+
+                                }
+                                else{
+                                    bloqueos = Integer.valueOf(EstadisticaDefensivaAdapter.bloqueos.getNumber());
+                                }
+                                if(EstadisticaDefensivaAdapter.rebotesDefensivos.getNumber() == null)
+                                {
+
+                                }
+                                else{
+                                    rebotesDefensivos = Integer.valueOf(EstadisticaDefensivaAdapter.rebotesDefensivos.getNumber());
+                                }
+                                if(EstadisticaDefensivaAdapter.robos.getNumber() == null)
+                                {
+
+                                }
+                                else{
+                                    robos = Integer.valueOf(EstadisticaDefensivaAdapter.robos.getNumber());
+                                }
 
                                 int dia = datePickerDialog.getDatePicker().getDayOfMonth();
                                 int anio = datePickerDialog.getDatePicker().getYear();
@@ -260,8 +412,20 @@ public class InicioSeguimientoPartidoActivity extends FragmentActivity implement
                                 String puntosConcatenados = primerNumero + segundoNumero;
                                 Integer puntos = Integer.valueOf(puntosConcatenados);
 
-                                Partido partido = new Partido((java.sql.Date) fecha,nombreRival,minutosSegundos,puntos,golesCampoHechos,golesCampoIntentados,porcentajeGolesCampo,triplesHechos,trilplesIntentados,procentajeTriples,libresIntentados,libresHechos,porcenjateLibres,rebotes,rebotesDefensivos,rebotesOfensivos,asistencias,robos,bloqueos,perdidas,valoracion);
+                                java.sql.Date sqlStartDate = new java.sql.Date(fecha.getTime());
+                                Partido partido = new Partido(sqlStartDate,nombreRival,minutosSegundos,puntos,golesCampoHechos,golesCampoIntentados,porcentajeGolesCampo,triplesHechos,trilplesIntentados,procentajeTriples,libresIntentados,libresHechos,porcenjateLibres,rebotes,rebotesDefensivos,rebotesOfensivos,asistencias,robos,bloqueos,perdidas,valoracion);
                                 PartidoRepository.getInstance(InicioSeguimientoPartidoActivity.this).addPartido(partido);
+
+                                final View jugadorSeguimiento = spinerJugadoresSeguimiento.getSelectedView();
+                                String idEquipoSpinner  = (((TextView)jugadorSeguimiento.findViewById(R.id.idEquipoSpinner)).getText().toString());
+                                String idJugadorSpinner  = (((TextView)jugadorSeguimiento.findViewById(R.id.idJugadorSpinner)).getText().toString());
+                                Map<String,String>paramsBusqueda = new HashMap<String,String>();
+                                paramsBusqueda.put("id_equipo",idEquipoSpinner);
+                                paramsBusqueda.put("id_jugador",idJugadorSpinner);
+                                List<JugadorEquipo> je = JugadorEquipoRepository.getInstance(InicioSeguimientoPartidoActivity.this).findWhere(paramsBusqueda);
+                                PartidoEntrenamiento partidoEntrenamiento = new PartidoEntrenamiento(je.get(0),partido,null);
+                                PartidoEntrenamientoRepository.getInstance(InicioSeguimientoPartidoActivity.this).addEstadisticaPartidoEntrenamiento(partidoEntrenamiento);
+
                                 Toast.makeText(InicioSeguimientoPartidoActivity.this, "Seguimiento generado", Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
                             }

@@ -26,7 +26,9 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.getbase.floatingactionbutton.FloatingActionButton;
@@ -45,7 +47,7 @@ public class InicioSeguimientoEntrenamientoActivity extends FragmentActivity imp
     public TabEstadisticaEntrenamientoSimple instanciaLibres = new TabEstadisticaEntrenamientoSimple();
     public Integer algo = 0;
     public Integer total = 0;
-
+    public Spinner spinerJugadoresSeguimiento;
 
 
 
@@ -56,31 +58,47 @@ public class InicioSeguimientoEntrenamientoActivity extends FragmentActivity imp
         sessionManager = new SessionManager(this);
 
         //Getting the instance of Spinner and applying OnItemSelectedListener on it
-        Spinner spinerJugadoresSeguimiento = (Spinner) findViewById(R.id.spinnerJugadoresSeguimientoEntrenemiento);
+        spinerJugadoresSeguimiento = (Spinner) findViewById(R.id.spinnerJugadoresSeguimientoEntrenemiento);
         spinerJugadoresSeguimiento.setOnItemSelectedListener(this);
-
-        /*List<Jugador> jugadoresSeguimiento =  JugadorRepository.getInstance(this).getJugadoresFavoritos();
-
+        //context = spinerJugadoresSeguimiento.getContext();
+        List<JugadorEquipoFavorito>jugadoresFavoritos =  JugadorEquipoFavoritoRepository.getInstance(this).findWhere("favorito", 1);
 
         ArrayList<String> jugadoresNombre = new ArrayList<>();
-        for (int i = 0; i < jugadoresSeguimiento.size(); i++)
+        for (int i = 0; i < jugadoresFavoritos.size(); i++)
         {
-            jugadoresNombre.add(jugadoresSeguimiento.get(i).getNombre());
+            jugadoresNombre.add(jugadoresFavoritos.get(i).jugadorEquipo.jugador.getNombre());
         }
         ArrayList<String> jugadoresApellido = new ArrayList<>();
-        for (int i = 0; i < jugadoresSeguimiento.size(); i++)
+        for (int i = 0; i < jugadoresFavoritos.size(); i++)
         {
-            jugadoresApellido.add(jugadoresSeguimiento.get(i).getApellido());
+            jugadoresApellido.add(jugadoresFavoritos.get(i).jugadorEquipo.jugador.getApellido());
         }
 
         ArrayList<byte[]> jugadoresFotos = new ArrayList<>();
-        for (int i = 0; i < jugadoresSeguimiento.size(); i++)
+        for (int i = 0; i < jugadoresFavoritos.size(); i++)
         {
-            jugadoresFotos.add(jugadoresSeguimiento.get(i).getFoto());
+            jugadoresFotos.add(jugadoresFavoritos.get(i).jugadorEquipo.jugador.getFoto());
         }
 
+        ArrayList<String> jugadoresEquipos = new ArrayList<>();
+        for (int i = 0; i < jugadoresFavoritos.size(); i++)
+        {
+            jugadoresEquipos.add(jugadoresFavoritos.get(i).jugadorEquipo.equipo.getNombre());
+        }
 
-        CustomAdapterJugadores customAdapter = new CustomAdapterJugadores(jugadoresNombre,jugadoresApellido,jugadoresFotos,getApplicationContext());
+        ArrayList<Integer>idJugadores = new ArrayList<>();
+        for (int i = 0; i < jugadoresFavoritos.size(); i++)
+        {
+            idJugadores.add(jugadoresFavoritos.get(i).jugadorEquipo.jugador.getId());
+        }
+
+        ArrayList<Integer>idEquipos = new ArrayList<>();
+        for (int i = 0; i < jugadoresFavoritos.size(); i++)
+        {
+            idEquipos.add(jugadoresFavoritos.get(i).jugadorEquipo.equipo.getId());
+        }
+
+        CustomAdapterJugadores customAdapter = new CustomAdapterJugadores(jugadoresNombre,jugadoresApellido,jugadoresFotos, jugadoresEquipos,idJugadores,idEquipos ,getApplicationContext());
         spinerJugadoresSeguimiento.setAdapter(customAdapter);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerSeleccionarEntrenamiento);
@@ -186,8 +204,19 @@ public class InicioSeguimientoEntrenamientoActivity extends FragmentActivity imp
                                 int mes = datePickerDialog.getDatePicker().getMonth();
                                 Date fecha = new Date(anio,mes,dia);
 
-                                Entrenamiento entrenamiento = new Entrenamiento((java.sql.Date)fecha,getValuesLibres(),getValuesDobles(),getValuesTriples());
+                                java.sql.Date sqlStartDate = new java.sql.Date(fecha.getTime());
+                                Entrenamiento entrenamiento = new Entrenamiento(sqlStartDate,getValuesLibres(),getValuesDobles(),getValuesTriples());
                                 EntrenamientoRepository.getInstance(InicioSeguimientoEntrenamientoActivity.this).addEntrenamiento(entrenamiento);
+
+                                final View jugadorSeguimiento = spinerJugadoresSeguimiento.getSelectedView();
+                                String idEquipoSpinner = (((TextView)jugadorSeguimiento.findViewById(R.id.idEquipoSpinner)).getText().toString());
+                                String idJugadorSpinner =  (((TextView)jugadorSeguimiento.findViewById(R.id.idJugadorSpinner)).getText().toString());
+                                Map<String,String> paramsBusqueda = new HashMap<String,String>();
+                                paramsBusqueda.put("id_equipo",idEquipoSpinner);
+                                paramsBusqueda.put("id_jugador",idJugadorSpinner);
+                                List<JugadorEquipo> je = JugadorEquipoRepository.getInstance(InicioSeguimientoEntrenamientoActivity.this).findWhere(paramsBusqueda);
+                                PartidoEntrenamiento partEnt = new PartidoEntrenamiento(je.get(0),null,entrenamiento);
+
                                 Toast.makeText(InicioSeguimientoEntrenamientoActivity.this, "Seguimiento generado", Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
                             }
@@ -202,7 +231,7 @@ public class InicioSeguimientoEntrenamientoActivity extends FragmentActivity imp
         alertDialogBuilder.setView(popupViewDatosEntrenamiento);
         AlertDialog alertDialog = alertDialogBuilder.show();
 
-*/
+
     }
 
 

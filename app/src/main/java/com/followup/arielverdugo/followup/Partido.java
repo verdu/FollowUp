@@ -278,5 +278,11 @@ public class Partido {
         this.valoracion = valoracion;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 }

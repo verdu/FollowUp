@@ -21,7 +21,7 @@ public class TabEstadisticaOfensiva extends android.support.v4.app.Fragment impl
     private static final String TAG = "RecyclerViewFragment";
     private static final String KEY_LAYOUT_MANAGER = "layoutManager";
     private static final int SPAN_COUNT = 2;
-    private static final int DATASET_COUNT = 20;
+    private static final int DATASET_COUNT = 14;
     RecyclerView recyclerViewGenerales;
 
     private StaggeredGridLayoutManager gaggeredGridLayoutManager;
@@ -80,7 +80,7 @@ public class TabEstadisticaOfensiva extends android.support.v4.app.Fragment impl
         mRecyclerView.setAdapter(mAdapter);
         int numberOfColumns = 2;
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setItemViewCacheSize(20);
+        mRecyclerView.setItemViewCacheSize(14);
         mRecyclerView.setLayoutManager(new GridLayoutManager(c, numberOfColumns));
 
         ///////////////////////////////////////////////////////////////////////////

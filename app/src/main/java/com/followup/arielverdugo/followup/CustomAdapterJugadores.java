@@ -27,6 +27,8 @@ public class CustomAdapterJugadores extends BaseAdapter implements SpinnerAdapte
     List<String> apellido;
     List<byte[]> foto;
     List<String> equipo;
+    List<Integer> idJugador;
+    List<Integer> idEquipo;
     private Context c;
     List<Jugador> jugadoresSeguimiento = new ArrayList<Jugador>();
     LayoutInflater inflter;
@@ -34,11 +36,13 @@ public class CustomAdapterJugadores extends BaseAdapter implements SpinnerAdapte
     TextView dropdown;
 
 
-    public CustomAdapterJugadores(List<String> nombre,List<String> apellido,List<byte[]> foto, List<String> equipo, Context c){
+    public CustomAdapterJugadores(List<String> nombre,List<String> apellido,List<byte[]> foto, List<String> equipo,List<Integer>idJugador,List<Integer>idEquipo, Context c){
 
         this.nombre = nombre;
         this.apellido = apellido;
         this.foto = foto;
+        this.idJugador = idJugador;
+        this.idEquipo = idEquipo;
         this.c = c;
         this.equipo = equipo;
         inflter = (LayoutInflater.from(c));
@@ -68,6 +72,8 @@ public class CustomAdapterJugadores extends BaseAdapter implements SpinnerAdapte
         ImageView fotoJugador = (ImageView) view.findViewById(R.id.imagen_perfilJugador);
         TextView nombreJugador = (TextView) view.findViewById(R.id.nombreJugadorSeguimiento);
         TextView apellidoJugador = (TextView) view.findViewById(R.id.apellidoJugadorSeguimiento);
+        TextView idJugadorSpinner = (TextView) view.findViewById(R.id.idJugadorSpinner);
+        TextView idEquipoSpinner = (TextView) view.findViewById(R.id.idEquipoSpinner);
         //TextView nombreEquipo = (TextView) view.findViewById(R.id.nombreEquipoSeguimiento);
 
 
@@ -84,6 +90,9 @@ public class CustomAdapterJugadores extends BaseAdapter implements SpinnerAdapte
         nombreJugador.setText(nombre.get(position));
         apellidoJugador.setText(apellido.get(position));
         //nombreEquipo.setText(equipo.get(position));
+
+        idJugadorSpinner.setText(Integer.toString(idJugador.get(position)));
+        idEquipoSpinner.setText(Integer.toString(idEquipo.get(position)));
 
         return view;
     }

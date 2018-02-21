@@ -25,13 +25,10 @@ public class EstadisticaOfensivaAdapter extends RecyclerView.Adapter<RecyclerVie
     private String dato = "";
     public static ElegantNumberButton golesCampoHechos;
     public static ElegantNumberButton golesCampoIntentados;
-    public static ElegantNumberButton porcentajeGolesCampo;
     public static ElegantNumberButton triplesHechos;
     public static ElegantNumberButton triplesIntentados;
-    public static ElegantNumberButton porcentajeTriples;
     public static ElegantNumberButton libresHechos;
     public static ElegantNumberButton libresIntentados;
-    public static ElegantNumberButton porcentajeLibres;
     public static ElegantNumberButton rebotesOfensivos;
 
 
@@ -73,34 +70,22 @@ public class EstadisticaOfensivaAdapter extends RecyclerView.Adapter<RecyclerVie
                 return new ViewHolder(view1);
 
             case 2:
-                View view2 = mInflater.inflate(R.layout.item_recycler_ofensivas_header_golescampo_porcentaje, parent, false);
-                return new ViewHolder(view2);
-
-            case 3:
                 View view3 = mInflater.inflate(R.layout.item_recycler_ofensivas_header_triples_hechos, parent, false);
                 return new ViewHolder(view3);
 
-            case 4:
+            case 3:
                 View view4 = mInflater.inflate(R.layout.item_recycler_ofensivas_header_triples_intentados, parent, false);
                 return new ViewHolder(view4);
 
-            case 5:
-                View view5 = mInflater.inflate(R.layout.item_recycler_ofensivas_header_triples_porcentaje, parent, false);
-                return new ViewHolder(view5);
-
-            case 6:
+            case 4:
                 View view6 = mInflater.inflate(R.layout.item_recycler_ofensivas_header_simples_hechos, parent, false);
                 return new ViewHolder(view6);
 
-            case 7:
+            case 5:
                 View view7 = mInflater.inflate(R.layout.item_recycler_ofensivas_header_simples_intentados, parent, false);
                 return new ViewHolder(view7);
 
-            case 8:
-                View view8 = mInflater.inflate(R.layout.item_recycler_ofensivas_header_simples_porcentaje, parent, false);
-                return new ViewHolder(view8);
-
-            case 9:
+            case 6:
                 View view9 = mInflater.inflate(R.layout.item_recycler_ofensivas_header_rebote_ofensivo, parent, false);
                 return new ViewHolder(view9);
 
@@ -124,34 +109,22 @@ public class EstadisticaOfensivaAdapter extends RecyclerView.Adapter<RecyclerVie
                 return new ViewHolder2(view1);
 
             case 2:
-                View view2 = mInflater.inflate(R.layout.item_recycler_ofensivas_subheader_golescampo_porcentaje, parent, false);
-                return new ViewHolder2(view2);
-
-            case 3:
                 View view3 = mInflater.inflate(R.layout.item_recycler_ofensivas_subheader_triples_hechos, parent, false);
                 return new ViewHolder2(view3);
 
-            case 4:
+            case 3:
                 View view4 = mInflater.inflate(R.layout.item_recycler_ofensivas_subheader_triples_intentados, parent, false);
                 return new ViewHolder2(view4);
 
-            case 5:
-                View view5 = mInflater.inflate(R.layout.item_recycler_ofensivas_subheader_triples_porcentaje, parent, false);
-                return new ViewHolder2(view5);
-
-            case 6:
+            case 4:
                 View view6 = mInflater.inflate(R.layout.item_recycler_ofensivas_subheader_simples_hechos, parent, false);
                 return new ViewHolder2(view6);
 
-            case 7:
+            case 5:
                 View view7 = mInflater.inflate(R.layout.item_recycler_ofensivas_subheader_simples_intentados, parent, false);
                 return new ViewHolder2(view7);
 
-            case 8:
-                View view8 = mInflater.inflate(R.layout.item_recycler_ofensivas_subheader_simples_porcentaje, parent, false);
-                return new ViewHolder2(view8);
-
-            case 9:
+            case 6:
                 View view9 = mInflater.inflate(R.layout.item_recycler_ofensivas_subheader_rebote_ofensivo, parent, false);
                 return new ViewHolder2(view9);
 
@@ -194,42 +167,31 @@ public class EstadisticaOfensivaAdapter extends RecyclerView.Adapter<RecyclerVie
                         viewHolder1.myTextView2.setText("Goles de campo Intentados");
                         number++;
                         break;
+
                     case 4:
-                        ViewHolder viewHolder2 = (ViewHolder) holder;
-                        viewHolder2.myTextView3.setText("Porcentaje de goles de campo");
-                        number++;
-                        break;
-                    case 6:
                         ViewHolder viewHolder3 = (ViewHolder) holder;
                         viewHolder3.myTextView4.setText("Triple hecho");
                         number++;
                         break;
-                    case 8:
+
+                    case 6:
                         ViewHolder viewHolder4 = (ViewHolder) holder;
                         viewHolder4.myTextView5.setText("Triple intentado");
                         number++;
                         break;
-                    case 10:
-                        ViewHolder viewHolder5 = (ViewHolder) holder;
-                        viewHolder5.myTextView6.setText("Porcentaje de Triples");
-                        number++;
-                        break;
-                    case 12:
+
+                    case 8:
                         ViewHolder viewHolder6 = (ViewHolder) holder;
                         viewHolder6.myTextView7.setText("Tiro libre hecho");
                         number++;
                         break;
-                    case 14:
+                    case 10:
                         ViewHolder viewHolder7 = (ViewHolder) holder;
                         viewHolder7.myTextView8.setText("Tiro libre intentado");
                         number++;
                         break;
-                    case 16:
-                        ViewHolder viewHolder8 = (ViewHolder) holder;
-                        viewHolder8.myTextView9.setText("Porcentaje de Tiro libre");
-                        number++;
-                        break;
-                    case 18:
+
+                    case 12:
                         ViewHolder viewHolder9 = (ViewHolder) holder;
                         viewHolder9.myTextView10.setText("Rebotes Ofensivos");
                         number++;
@@ -273,21 +235,6 @@ public class EstadisticaOfensivaAdapter extends RecyclerView.Adapter<RecyclerVie
                     case 13:
                         ViewHolder2 viewHolder6 = (ViewHolder2)holder;
                         viewHolder6.myTextView7.setText("es");
-                        numberb++;
-                        break;
-                    case 15:
-                        ViewHolder2 viewHolder7 = (ViewHolder2)holder;
-                        viewHolder7.myTextView8.setText("es");
-                        numberb++;
-                        break;
-                    case 17:
-                        ViewHolder2 viewHolder8 = (ViewHolder2)holder;
-                        viewHolder8.myTextView9.setText("es");
-                        numberb++;
-                        break;
-                    case 19:
-                        ViewHolder2 viewHolder9 = (ViewHolder2)holder;
-                        viewHolder9.myTextView10.setText("es");
                         numberb++;
                         break;
                 }
@@ -336,41 +283,28 @@ public class EstadisticaOfensivaAdapter extends RecyclerView.Adapter<RecyclerVie
                     itemView.setOnClickListener(this);
 
                 case 2:
-                    myTextView3 = (TextView) itemView.findViewById(R.id.testPorcentajeGolesCampo);
-                    porcentajeGolesCampo = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberPorcentajeGolesCampo);
-                    itemView.setOnClickListener(this);
-                    break;
-                case 3:
                     myTextView4 = (TextView) itemView.findViewById(R.id.testTriplesHechos);
                     triplesHechos = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberTriplesHechos);
                     itemView.setOnClickListener(this);
                     break;
-                case 4:
+                case 3:
                     myTextView5 = (TextView) itemView.findViewById(R.id.testTriplesIntentados);
                     triplesIntentados = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberTriplesIntentados);
                     itemView.setOnClickListener(this);
                     break;
-                case 5:
-                    myTextView6 = (TextView) itemView.findViewById(R.id.testPorcentajeTriples);
-                    porcentajeTriples = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberPorcentajeTriples);
-                    itemView.setOnClickListener(this);
-                    break;
-                case 6:
+
+                case 4:
                     myTextView7 = (TextView) itemView.findViewById(R.id.testTiroLibreHecho);
                     libresHechos = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberTiroLibreHecho);
                     itemView.setOnClickListener(this);
                     break;
-                case 7:
+                case 5:
                     myTextView8 = (TextView) itemView.findViewById(R.id.testTiroLibreIntentado);
                     libresIntentados = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberTiroLibreIntentado);
                     itemView.setOnClickListener(this);
                     break;
-                case 8:
-                    myTextView9 = (TextView) itemView.findViewById(R.id.testProcentajeTiroLibre);
-                    porcentajeLibres = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberPorcentajeTiroLibre);
-                    itemView.setOnClickListener(this);
-                    break;
-                case 9:
+
+                case 6:
                     myTextView10 = (TextView) itemView.findViewById(R.id.testReboteOfensivo);
                     rebotesOfensivos = (ElegantNumberButton) itemView.findViewById(R.id.elegantNumberRebotesOfensivos);
                     itemView.setOnClickListener(this);
@@ -444,36 +378,29 @@ public class EstadisticaOfensivaAdapter extends RecyclerView.Adapter<RecyclerVie
                     myTextView2 = (TextView) itemView.findViewById(R.id.testSubGolesCampoIntentados);
                     itemView.setOnClickListener(this);
                     break;
+
                 case 2:
-                    myTextView3 = (TextView) itemView.findViewById(R.id.testSubPorcentajeGolesCampo);
+                    myTextView3 = (TextView) itemView.findViewById(R.id.testSubTrilpleHechos);
                     itemView.setOnClickListener(this);
                     break;
+
                 case 3:
-                    myTextView4 = (TextView) itemView.findViewById(R.id.testSubTrilpleHechos);
+                    myTextView4 = (TextView) itemView.findViewById(R.id.testSubTtripleIntentados);
                     itemView.setOnClickListener(this);
                     break;
+
                 case 4:
-                    myTextView5 = (TextView) itemView.findViewById(R.id.testSubTtripleIntentados);
+                    myTextView5 = (TextView) itemView.findViewById(R.id.testSubTiroLibreHecho);
                     itemView.setOnClickListener(this);
                     break;
+
                 case 5:
-                    myTextView6 = (TextView) itemView.findViewById(R.id.testSubPorcentajeTriple);
+                    myTextView6 = (TextView) itemView.findViewById(R.id.testSubTiroLibreIntentado);
                     itemView.setOnClickListener(this);
                     break;
+
                 case 6:
-                    myTextView7 = (TextView) itemView.findViewById(R.id.testSubTiroLibreHecho);
-                    itemView.setOnClickListener(this);
-                    break;
-                case 7:
-                    myTextView8 = (TextView) itemView.findViewById(R.id.testSubTiroLibreIntentado);
-                    itemView.setOnClickListener(this);
-                    break;
-                case 8:
-                    myTextView9 = (TextView) itemView.findViewById(R.id.testSubPorcentajeTiroLibre);
-                    itemView.setOnClickListener(this);
-                    break;
-                case 9:
-                    myTextView10 = (TextView) itemView.findViewById(R.id.testSubReboteOfensivo);
+                    myTextView7 = (TextView) itemView.findViewById(R.id.testSubReboteOfensivo);
                     itemView.setOnClickListener(this);
                     break;
 
